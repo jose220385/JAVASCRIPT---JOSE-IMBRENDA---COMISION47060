@@ -18,7 +18,7 @@ while (validarContrasenia(contrasenia)) {
 // carga de datos PERSONALES
 
 const validarDatos = (parametro, limiteInferior, limiteSuperior) => {
-    if (!isNaN(parametro) && parametro >= limiteInferior && parametro <= limiteSuperior) {
+    if (!isNaN(parametro) || parametro >= limiteInferior || parametro <= limiteSuperior) {
         return true
     } else {
         return false
@@ -49,9 +49,9 @@ alert("A continuacion te haremos una serie de preguntas para poder darte la mejo
 
 // carga de datos COMPLEMENTARIOS
 const validarOpciones = (opciones, argumentos, cantidadOpciones) => {
-    if (!isNaN(opciones) && opciones < 1 && opciones > cantidadOpciones) {
+    if (isNaN(opciones) || (opciones < 1 || opciones > cantidadOpciones)) {
         opciones = parseInt(prompt("Respuesta Invalida. Reintente. " + argumentos))
-        validarOpciones(opciones, argumentos)
+        validarOpciones(opciones, argumentos, cantidadOpciones)
     } else {
         return opciones
     }
@@ -59,15 +59,19 @@ const validarOpciones = (opciones, argumentos, cantidadOpciones) => {
 
 const OPCIONES_OBJETIVO = "Indique su objetivo en entrenamiento deportivo, Coloque (1) si desea desarrollar mayor masa muscular, (2) si desea tonificar su cuerpo sin perder peso, (3) si desea hacer un entrenamiento para bajar de peso y (4) si desea solamente hacer un entrenamiento recreativo"
 let objetivo = parseInt(prompt(OPCIONES_OBJETIVO))
-validarOpciones(objetivo, OPCIONES_OBJETIVO, 4)
+let validacionObjetivo = validarOpciones(objetivo, OPCIONES_OBJETIVO, 4)
+objetivo = validacionObjetivo
 
 const OPCIONES_EXPERIENCIA = "Indique su nivel de experiencia en entrenamiento deportivo, Coloque (1) si no tiene experiencia, (2) si tiene menos de 1 año de experiencia, (3) si tiene de 2 a 4 años de experiencia y (4) si tiene mas de 5 años de experiencia"
 let nivelExperiencia = parseInt(prompt(OPCIONES_EXPERIENCIA))
-validarOpciones(nivelExperiencia, OPCIONES_EXPERIENCIA, 4)
+let validacionNivelExperiencia = validarOpciones(nivelExperiencia, OPCIONES_EXPERIENCIA, 4)
+nivelExperiencia = validacionNivelExperiencia
 
 const OPCIONES_RESTRICCIONES_ALIMENTICIAS = "Indique si no puede injerir alguno de los siguientes alimentos: (1) Azucar, (2) Sal, (3) Alimentos con TACC, (4) Derivados del mundo animal, (5)No tengo restricciones alimenticias"
 let restriccionesAlimenticias = parseInt(prompt(OPCIONES_RESTRICCIONES_ALIMENTICIAS))
-validarOpciones(restriccionesAlimenticias, OPCIONES_RESTRICCIONES_ALIMENTICIAS, 5)
+let validacionRestriccionesAlimenticias = validarOpciones(restriccionesAlimenticias, OPCIONES_RESTRICCIONES_ALIMENTICIAS, 5)
+restriccionesAlimenticias = validacionRestriccionesAlimenticias
+
 
 //Calculos para rutina y dieta
 
