@@ -7,16 +7,6 @@ const validarContrasenia = (contrasenia) => {
         return false
     }
 }
-
-
-const USUARIO = prompt("Bienvenido al Sistema Interactivo de Personal Trainer y Nutricion. Ingrese su nombre de Usuario para crear una nueva cuenta.")
-let contrasenia = prompt("Ingrese una contraseña con al menos 6 caracteres")
-
-while (validarContrasenia(contrasenia)) {
-    contrasenia = prompt("La contraseña no cumple con la cantidad de caracteres requeridos. Ingrese una contraseña con al menos 6 caracteres")
-}
-// carga de datos PERSONALES
-
 const validarDatos = (parametro, limiteInferior, limiteSuperior) => {
     if (!isNaN(parametro) || parametro >= limiteInferior || parametro <= limiteSuperior) {
         return true
@@ -25,6 +15,60 @@ const validarDatos = (parametro, limiteInferior, limiteSuperior) => {
     }
 }
 
+const validarOpciones = (opciones, argumentos, cantidadOpciones) => {
+    if (isNaN(opciones) || (opciones < 1 || opciones > cantidadOpciones)) {
+        opciones = parseInt(prompt("Respuesta Invalida. Reintente. " + argumentos))
+        validarOpciones(opciones, argumentos, cantidadOpciones)
+    } else {
+        return opciones
+    }
+}
+
+
+
+const RESPUESTA_INICIAL = prompt("Bienvenido al Sistema Interactivo de Personal Trainer y Nutricion. Indique con SI o NO si usted ya es un usuario ingresado")
+
+let usuarios = []
+
+if (RESPUESTA_INICIAL.trim().toLocaleUpperCase() === "NO") {
+    alert("A continuacion comenzaremos con la carga de datos para ingresarlo como usuario")
+    let usuario = prompt("Ingrese un nombre de Usuario")
+    let contrasenia = prompt("Ingrese una contraseña con al menos 6 caracteres")
+    while (validarContrasenia(contrasenia)) {
+        contrasenia = prompt("La contraseña no cumple con la cantidad de caracteres requeridos. Ingrese una contraseña con al menos 6 caracteres")
+    }
+    let nombre = prompt("Indique su Nombre")
+    let apellido = prompt("Indique su Apellido")
+    let edad = parseInt(prompt("Indique su edad"))
+    let peso = parseFloat(prompt("Indique su peso en kg"))
+    while (!validarDatos(peso, 30, 300)) {
+        peso = parseFloat(prompt("Peso mal ingresado. Indique su peso en Kg"))
+        let altura = parseFloat(prompt("Indique su altura en metros"))
+    }
+    let altura = parseFloat(prompt("Indique su altura en metros"))
+    while (!validarDatos(altura, 0.30, 3)) {
+        altura = parseFloat(prompt("Altura mal ingresada. Indique su altura en metros"))
+    }
+    let nuevoUsuario = new Usuario(usuario, contrasenia, nombre, apellido, edad, peso, altura)
+    usuarios.push(nuevoUsuario)
+
+    /*  alert("Tu ficha tecnica es la siguiente: (Nombre: " + NOMBRE + ")" + " (Apellido: " + APELLIDO + ")" + " (Edad: " + edad + ")" + " (Peso: " + peso + "kg)" + " (Altura: " + altura + "metros)") */
+}
+
+
+
+/* let contrasenia = prompt("Ingrese una contraseña con al menos 6 caracteres") */
+
+/* while (validarContrasenia(contrasenia)) {
+    contrasenia = prompt("La contraseña no cumple con la cantidad de caracteres requeridos. Ingrese una contraseña con al menos 6 caracteres")
+}
+ */
+
+
+// carga de datos PERSONALES
+
+
+/* 
 alert("Bienvenido " + USUARIO + " a continuacion te pediremos algunos datos para completar tu ficha tecnica")
 const ANIO_ACTUAL = 2023
 const NOMBRE = prompt("Indique su Nombre")
@@ -43,19 +87,19 @@ while (!validarDatos(altura, 0.30, 3)) {
     altura = parseFloat(prompt("Altura mal ingresada. Indique su altura en metros"))
 }
 alert("Tu ficha tecnica es la siguiente: (Nombre: " + NOMBRE + ")" + " (Apellido: " + APELLIDO + ")" + " (Edad: " + edad + ")" + " (Peso: " + peso + "kg)" + " (Altura: " + altura + "metros)")
-
+*/
 alert("A continuacion te haremos una serie de preguntas para poder darte la mejor rutina de ejercicios y plan nutricional que se adapte a tus necesidades")
 
 
 // carga de datos COMPLEMENTARIOS
-const validarOpciones = (opciones, argumentos, cantidadOpciones) => {
+/* const validarOpciones = (opciones, argumentos, cantidadOpciones) => {
     if (isNaN(opciones) || (opciones < 1 || opciones > cantidadOpciones)) {
         opciones = parseInt(prompt("Respuesta Invalida. Reintente. " + argumentos))
         validarOpciones(opciones, argumentos, cantidadOpciones)
     } else {
         return opciones
     }
-}
+} */
 
 const OPCIONES_OBJETIVO = "Indique su objetivo en entrenamiento deportivo, Coloque (1) si desea desarrollar mayor masa muscular, (2) si desea tonificar su cuerpo sin perder peso, (3) si desea hacer un entrenamiento para bajar de peso y (4) si desea solamente hacer un entrenamiento recreativo"
 let objetivo = parseInt(prompt(OPCIONES_OBJETIVO))
@@ -72,7 +116,17 @@ let restriccionesAlimenticias = parseInt(prompt(OPCIONES_RESTRICCIONES_ALIMENTIC
 let validacionRestriccionesAlimenticias = validarOpciones(restriccionesAlimenticias, OPCIONES_RESTRICCIONES_ALIMENTICIAS, 5)
 restriccionesAlimenticias = validacionRestriccionesAlimenticias
 
+let unEntrenamiento = new Entrenamiento(objetivo, nivelExperiencia)
 
+for (const propiedad in usuarios[0]) {
+    usuarios[0].entrenamiento = unEntrenamiento
+}
+
+for (const nuevoUsuario of usuarios) {
+    console.log(nuevoUsuario)
+}
+
+/*
 //Calculos para rutina y dieta
 
 // Calculo de indice de masa corporal
@@ -446,3 +500,4 @@ switch (tipoDeEntrenamiento(imc(peso, altura), edad, objetivo, nivelExperiencia)
 }
 
 alert("GRACIAS POR HABER USADO EL SISTEMA INTERACTIVO DE PERSONAL TRAINER")
+ */
