@@ -24,11 +24,31 @@ const validarOpciones = (opciones, argumentos, cantidadOpciones) => {
     }
 }
 
+const validarUsuarioYcontrasenia = (usuario, contrasenia) => {
+    usuarioEncontrado = usuarios.some((parametro) => {
+        return parametro.nombreUsuario === usuario
+    })
+    contraseniaEncontrada = usuarios.some((parametro) => {
+        return parametro.contrasenia === contrasenia
+    })
+    return usuarioEncontrado && contraseniaEncontrada
+}
+
 
 
 const RESPUESTA_INICIAL = prompt("Bienvenido al Sistema Interactivo de Personal Trainer y Nutricion. Indique con SI o NO si usted ya es un usuario ingresado")
 
-let usuarios = []
+let usuarios = [
+    {
+        nombreUsuario: "pepeim",
+        contrasenia: "123456",
+        nombre: "Pedro",
+        apellido: "Perez",
+        edad: 34,
+        peso: 87,
+        altura: 1.78,
+    },
+]
 
 if (RESPUESTA_INICIAL.trim().toLocaleUpperCase() === "NO") {
     alert("A continuacion comenzaremos con la carga de datos para ingresarlo como usuario")
@@ -49,10 +69,50 @@ if (RESPUESTA_INICIAL.trim().toLocaleUpperCase() === "NO") {
     while (!validarDatos(altura, 0.30, 3)) {
         altura = parseFloat(prompt("Altura mal ingresada. Indique su altura en metros"))
     }
+
     let nuevoUsuario = new Usuario(usuario, contrasenia, nombre, apellido, edad, peso, altura)
+
+    alert("A continuacion te haremos una serie de preguntas para poder darte la mejor rutina de ejercicios y plan nutricional que se adapte a tus necesidades")
+
+    const OPCIONES_OBJETIVO = "Indique su objetivo en entrenamiento deportivo, Coloque (1) si desea desarrollar mayor masa muscular, (2) si desea tonificar su cuerpo sin perder peso, (3) si desea hacer un entrenamiento para bajar de peso y (4) si desea solamente hacer un entrenamiento recreativo"
+    let objetivo = parseInt(prompt(OPCIONES_OBJETIVO))
+    let validacionObjetivo = validarOpciones(objetivo, OPCIONES_OBJETIVO, 4)
+    objetivo = validacionObjetivo
+
+    const OPCIONES_EXPERIENCIA = "Indique su nivel de experiencia en entrenamiento deportivo, Coloque (1) si no tiene experiencia, (2) si tiene menos de 1 año de experiencia, (3) si tiene de 2 a 4 años de experiencia y (4) si tiene mas de 5 años de experiencia"
+    let nivelExperiencia = parseInt(prompt(OPCIONES_EXPERIENCIA))
+    let validacionNivelExperiencia = validarOpciones(nivelExperiencia, OPCIONES_EXPERIENCIA, 4)
+    nivelExperiencia = validacionNivelExperiencia
+
+    const OPCIONES_RESTRICCIONES_ALIMENTICIAS = "Indique si no puede injerir alguno de los siguientes alimentos: (1) Azucar, (2) Sal, (3) Alimentos con TACC, (4) Derivados del mundo animal, (5)No tengo restricciones alimenticias"
+    let restriccionesAlimenticias = parseInt(prompt(OPCIONES_RESTRICCIONES_ALIMENTICIAS))
+    let validacionRestriccionesAlimenticias = validarOpciones(restriccionesAlimenticias, OPCIONES_RESTRICCIONES_ALIMENTICIAS, 5)
+    restriccionesAlimenticias = validacionRestriccionesAlimenticias
+
+    let unEntrenamiento = new Entrenamiento(objetivo, nivelExperiencia)
+
+    for (const propiedad in nuevoUsuario) {
+        nuevoUsuario.entrenamiento = unEntrenamiento
+    }
+
+    for (const nuevoUsuario of usuarios) {
+        console.log(nuevoUsuario)
+    }
+
     usuarios.push(nuevoUsuario)
 
     /*  alert("Tu ficha tecnica es la siguiente: (Nombre: " + NOMBRE + ")" + " (Apellido: " + APELLIDO + ")" + " (Edad: " + edad + ")" + " (Peso: " + peso + "kg)" + " (Altura: " + altura + "metros)") */
+} else {
+    let usuario = prompt("Ingrese su nombre de Usuario")
+    let contrasenia = prompt("Ingrese su contraseña")
+
+    while (!validarUsuarioYcontrasenia(usuario, contrasenia)) {
+        alert("Usuario o contraseña incorrecta, reintente")
+        usuario = prompt("Ingrese su nombre de Usuario")
+        contrasenia = prompt("Ingrese su contraseña")
+    }
+    alert("Usuario y contraseña ingresada con exito")
+
 }
 
 
@@ -68,7 +128,7 @@ if (RESPUESTA_INICIAL.trim().toLocaleUpperCase() === "NO") {
 // carga de datos PERSONALES
 
 
-/* 
+/*
 alert("Bienvenido " + USUARIO + " a continuacion te pediremos algunos datos para completar tu ficha tecnica")
 const ANIO_ACTUAL = 2023
 const NOMBRE = prompt("Indique su Nombre")
@@ -88,7 +148,7 @@ while (!validarDatos(altura, 0.30, 3)) {
 }
 alert("Tu ficha tecnica es la siguiente: (Nombre: " + NOMBRE + ")" + " (Apellido: " + APELLIDO + ")" + " (Edad: " + edad + ")" + " (Peso: " + peso + "kg)" + " (Altura: " + altura + "metros)")
 */
-alert("A continuacion te haremos una serie de preguntas para poder darte la mejor rutina de ejercicios y plan nutricional que se adapte a tus necesidades")
+
 
 
 // carga de datos COMPLEMENTARIOS
@@ -101,30 +161,7 @@ alert("A continuacion te haremos una serie de preguntas para poder darte la mejo
     }
 } */
 
-const OPCIONES_OBJETIVO = "Indique su objetivo en entrenamiento deportivo, Coloque (1) si desea desarrollar mayor masa muscular, (2) si desea tonificar su cuerpo sin perder peso, (3) si desea hacer un entrenamiento para bajar de peso y (4) si desea solamente hacer un entrenamiento recreativo"
-let objetivo = parseInt(prompt(OPCIONES_OBJETIVO))
-let validacionObjetivo = validarOpciones(objetivo, OPCIONES_OBJETIVO, 4)
-objetivo = validacionObjetivo
 
-const OPCIONES_EXPERIENCIA = "Indique su nivel de experiencia en entrenamiento deportivo, Coloque (1) si no tiene experiencia, (2) si tiene menos de 1 año de experiencia, (3) si tiene de 2 a 4 años de experiencia y (4) si tiene mas de 5 años de experiencia"
-let nivelExperiencia = parseInt(prompt(OPCIONES_EXPERIENCIA))
-let validacionNivelExperiencia = validarOpciones(nivelExperiencia, OPCIONES_EXPERIENCIA, 4)
-nivelExperiencia = validacionNivelExperiencia
-
-const OPCIONES_RESTRICCIONES_ALIMENTICIAS = "Indique si no puede injerir alguno de los siguientes alimentos: (1) Azucar, (2) Sal, (3) Alimentos con TACC, (4) Derivados del mundo animal, (5)No tengo restricciones alimenticias"
-let restriccionesAlimenticias = parseInt(prompt(OPCIONES_RESTRICCIONES_ALIMENTICIAS))
-let validacionRestriccionesAlimenticias = validarOpciones(restriccionesAlimenticias, OPCIONES_RESTRICCIONES_ALIMENTICIAS, 5)
-restriccionesAlimenticias = validacionRestriccionesAlimenticias
-
-let unEntrenamiento = new Entrenamiento(objetivo, nivelExperiencia)
-
-for (const propiedad in usuarios[0]) {
-    usuarios[0].entrenamiento = unEntrenamiento
-}
-
-for (const nuevoUsuario of usuarios) {
-    console.log(nuevoUsuario)
-}
 
 /*
 //Calculos para rutina y dieta

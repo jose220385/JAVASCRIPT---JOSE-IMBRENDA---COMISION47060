@@ -1,7 +1,7 @@
 class Usuario {
     constructor(
         nombreUsuario,
-        contraseña,
+        contrasenia,
         //dni,
         nombre,
         apellido,
@@ -12,7 +12,7 @@ class Usuario {
         restriccionesAlimenticias
     ) {
         this.nombreUsuario = nombreUsuario;
-        this.contraseña = contraseña;
+        this.contrasenia = contrasenia;
         //this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
