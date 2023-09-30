@@ -3,20 +3,32 @@ const RESPUESTA_INICIAL = prompt("Bienvenido al Sistema Interactivo de Personal 
 if (RESPUESTA_INICIAL.trim().toLocaleUpperCase() === "NO") {
     alert("A continuacion comenzaremos con la carga de datos para ingresarlo como usuario")
     let usuario = prompt("Ingrese un nombre de Usuario")
+    while(usuario.length == 0){
+        usuario = prompt("Campo Requerido. Ingrese un nombre de Usuario")
+    }
     let contrasenia = prompt("Ingrese una contraseña con al menos 6 caracteres")
     while (validarContrasenia(contrasenia)) {
         contrasenia = prompt("La contraseña no cumple con la cantidad de caracteres requeridos. Ingrese una contraseña con al menos 6 caracteres")
     }
     let nombre = prompt("Indique su Nombre")
+    while(!validarString(nombre)){
+        nombre = prompt("Campo en blanco o mal ingresado. Ingrese su nombre nuevamente")
+    }
+    
     let apellido = prompt("Indique su Apellido")
+    while(!validarString(apellido)){
+        apellido = prompt("Campo en blanco o mal ingresado. Ingrese su apellido nuevamente")
+    }   
     let edad = parseInt(prompt("Indique su edad"))
+    while (!validarDatos(edad, 10, 110)) {
+        edad = parseInt(prompt("Edad mal ingresada. Indique su edad"))
+    }
     let peso = parseFloat(prompt("Indique su peso en kg"))
-    while (!validarDatos(peso, 30, 300)) {
+    while (!validarDatos(peso, 50, 300)) {
         peso = parseFloat(prompt("Peso mal ingresado. Indique su peso en Kg"))
-        let altura = parseFloat(prompt("Indique su altura en metros"))
     }
     let altura = parseFloat(prompt("Indique su altura en metros"))
-    while (!validarDatos(altura, 0.30, 3)) {
+    while (!validarDatos(altura, 0.8, 3)) {
         altura = parseFloat(prompt("Altura mal ingresada. Indique su altura en metros"))
     }
 

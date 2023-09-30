@@ -7,14 +7,21 @@ const validarContrasenia = (contrasenia) => {
     }
 }
 
+//Funcion para validar que no haya un campo vacio o se ingrese numeros
+const validarString = (parametro) =>{
+    let variableDeValidacion = new RegExp('^[A-Z]+$', 'i');
+    return variableDeValidacion.test(parametro) && parametro.length != 0      
+}
+
 // Funcion para validar carga de datos
 const validarDatos = (parametro, limiteInferior, limiteSuperior) => {
-    if (!isNaN(parametro) || parametro >= limiteInferior || parametro <= limiteSuperior) {
+    if (!isNaN(parametro) && parametro > limiteInferior && parametro < limiteSuperior) {
         return true
     } else {
         return false
     }
 }
+
 //Funcion para validar opciones
 const validarOpciones = (opciones, argumentos, cantidadOpciones) => {
     if (isNaN(opciones) || (opciones < 1 || opciones > cantidadOpciones)) {
