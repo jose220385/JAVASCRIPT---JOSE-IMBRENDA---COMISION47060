@@ -1,36 +1,4 @@
-/* // Funcion para validad largo de contraseña
-const validarContrasenia = (contrasenia) => {
-    if (contrasenia.length < 6) {
-        return true
-    } else {
-        return false
-    }
-}
 
-//Funcion para validar que no haya un campo vacio o se ingrese numeros
-const validarString = (parametro) =>{
-    let variableDeValidacion = new RegExp('^[A-Z]+$', 'i');
-    return variableDeValidacion.test(parametro) && parametro.length != 0      
-}
-
-// Funcion para validar carga de datos
-const validarDatos = (parametro, limiteInferior, limiteSuperior) => {
-    if (!isNaN(parametro) && parametro > limiteInferior && parametro < limiteSuperior) {
-        return true
-    } else {
-        return false
-    }
-}
-
-//Funcion para validar opciones
-const validarOpciones = (opciones, argumentos, cantidadOpciones) => {
-    if (isNaN(opciones) || (opciones < 1 || opciones > cantidadOpciones)) {
-        opciones = parseInt(prompt("Respuesta Invalida. Reintente. " + argumentos))
-        validarOpciones(opciones, argumentos, cantidadOpciones)
-    } else {
-        return opciones
-    }
-} */
 
 //Funcion para validar Usuario y contraseña en caso que el Usuario exista
 const validarUsuarioYcontrasenia = (usuario, contrasenia) => {
@@ -48,13 +16,6 @@ const validarUsuarioYcontrasenia = (usuario, contrasenia) => {
 const usuarioExistente = (usuario) => {
     return usuariosRecuperados.some((unUsuarioRecuperado) => unUsuarioRecuperado.nombreUsuario === usuario)
 }
-
-//Funcion renderizar mensaje en log in o registro de usuario
-
-/* const renderizarMensaje =(mensaje)=>{
-    let contenedorMensaje = document.getElementById("contenedorMensaje")
-    contenedorMensaje.innerHTML = `<h2> ${mensaje} </h2>`
-} */
 
 const renderizarMensaje =(id, mensaje)=>{
     let contenedorMensaje = document.getElementById(id)

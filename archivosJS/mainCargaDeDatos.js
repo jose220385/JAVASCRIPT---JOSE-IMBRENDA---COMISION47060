@@ -1,5 +1,4 @@
 const DATOS_TEMPORALES = JSON.parse(sessionStorage.getItem('datosTemporales'))
-console.log(DATOS_TEMPORALES);
 const MENSAJE_BIENVENIDA = document.getElementsByTagName('h1')
 MENSAJE_BIENVENIDA[0].innerText = `Bienvenido ${DATOS_TEMPORALES.nombre} !!!`
 
