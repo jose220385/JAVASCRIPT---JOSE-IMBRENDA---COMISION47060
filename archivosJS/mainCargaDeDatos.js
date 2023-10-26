@@ -10,10 +10,10 @@ formularioUsuarioNuevo.addEventListener('submit', (e)=>{
     const peso = document.getElementById('peso').value
     const altura = document.getElementById('altura').value
     const nuevoUsuario = new Usuario(DATOS_TEMPORALES.usuario, DATOS_TEMPORALES.contrasenia, DATOS_TEMPORALES.nombre, DATOS_TEMPORALES.apellido, calcularEdad(fechaNacimiento), peso, altura)
-    const objetivo = document.getElementById('objetivosEntrenamiento').value
-    const nivelExperiencia = document.getElementById('nivelExperiencia').value
+    const objetivo = parseInt(document.getElementById('objetivosEntrenamiento').value)
+    const nivelExperiencia = parseInt(document.getElementById('nivelExperiencia').value)
     const unEntrenamiento = new Entrenamiento(objetivo, nivelExperiencia)
-
+    const restriccionesAlimenticias = parseInt(document.getElementById('restriccionesAlimenticias').value)
     for (const propiedad in nuevoUsuario) {
         nuevoUsuario.entrenamiento = unEntrenamiento
         nuevoUsuario.restriccionesAlimenticias = restriccionesAlimenticias
@@ -21,7 +21,6 @@ formularioUsuarioNuevo.addEventListener('submit', (e)=>{
 
     usuarios.push(nuevoUsuario)
 
-    registrarLogueo(JSON.stringify(usuanuevoUsuario))
+    registrarLogueo(nuevoUsuario)
     window.location.href = "../index.html";
-
 })

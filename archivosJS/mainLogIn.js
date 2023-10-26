@@ -11,7 +11,7 @@ FORMULARIO_LOGIN.addEventListener("submit", (e)=>{
     usuario = FORMULARIO_LOGIN.children[0].value
     contrasenia = FORMULARIO_LOGIN.children[1].value
     if(validarUsuarioYcontrasenia(usuario, contrasenia)){
-        registrarLogueo(usuario)
+        registrarLogueo(devuelveValoresYconviertoUsuario(usuario))
         window.location.href = "../index.html";
     } else{
         renderizarMensaje("contenedorMensaje","Usuario o contraseña incorrectos")

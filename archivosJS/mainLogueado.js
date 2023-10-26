@@ -1,5 +1,26 @@
-const usuario = recuperarUsuarioLogueado() 
+const usuarioLogueado = recuperarUsuarioLogueado();
+console.log(usuarioLogueado);
+let usuario;
 
-devuelveValoresYconviertoUsuario (usuario)
+const entrenamientoLogueado = usuarioLogueado.entrenamiento;
+const entrenamiento = new Entrenamiento(
+  entrenamientoLogueado.objetivo,
+  entrenamientoLogueado.experiencia
+);
+usuario = new Usuario(
+  usuarioLogueado.nombreUsuario,
+  usuarioLogueado.contrasenia,
+  usuarioLogueado.nombre,
+  usuarioLogueado.apellido,
+  usuarioLogueado.edad,
+  usuarioLogueado.peso,
+  usuarioLogueado.altura,
+  entrenamiento,
+  usuarioLogueado.restriccionesAlimenticias
+);
 
-determinaTipoEntrenamientoYAlimentacion(devuelveValoresYconviertoUsuario(usuario).entrenamiento.tipoDeEntrenamiento(devuelveValoresYconviertoUsuario(usuario).imc(), devuelveValoresYconviertoUsuario(usuario).edad), devuelveValoresYconviertoUsuario(usuario).restriccionesAlimenticias)
+console.log(usuario);
+determinaTipoEntrenamientoYAlimentacion(
+  usuario.entrenamiento.tipoDeEntrenamiento(usuario.imc(), usuario.edad),
+  usuario.restriccionesAlimenticias
+);

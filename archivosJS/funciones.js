@@ -64,13 +64,13 @@ const renderizarMensaje =(id, mensaje)=>{
 //Funcion para registrar inicio de sesion
 const USER_LOGGED_KEY = "usuarioLogueado"
 const registrarLogueo = (usuario) =>{
-    localStorage.setItem(USER_LOGGED_KEY, usuario)
+    localStorage.setItem(USER_LOGGED_KEY, JSON.stringify(usuario))
 }
 
 //Funcion para recuperar usuario logueado
 
 const recuperarUsuarioLogueado = () => {
-    return localStorage.getItem(USER_LOGGED_KEY) || false
+    return JSON.parse(localStorage.getItem(USER_LOGGED_KEY)) || false
 }
 
 // Funcion para crear Nodo
@@ -121,311 +121,322 @@ const calcularEdad=(fecha)=>{
 
     return edad
 }
+//Funcion para renderizar las rutinas
+
+const renderizarRutina=(nodoPadre, cuerpo, titulo)=>{
+    const NODO_CREADO = document.createElement('div')
+    NODO_CREADO.innerHTML = `<h1>${titulo}</h1>
+                              <p>${cuerpo}</p>
+                              <h3>A continuacion se detalla la rutina dia por dia</h3>`
+    NODO_CREADO.className= 'rutina'
+    nodoPadre.append(NODO_CREADO)
+}
 
 //Funcion que determina el tipo de entrenamiento y la dieta con restricciones
 const determinaTipoEntrenamientoYAlimentacion = (tipoEntrenamiento,restriccionesAlimenticias )=>{
-switch (tipoEntrenamiento) {
+const nodoPadre = document.getElementsByTagName('body')
+    switch (tipoEntrenamiento) {
     case "hipertrofiaavanzada":
         switch (restriccionesAlimenticias) {
             case 1:
-                alert(HIPERTROFIA_INTENSIVA + SIN_AZUCAR + CONTINUACION)
+                renderizarRutina(nodoPadre[0], HIPERTROFIA_INTENSIVA + SIN_AZUCAR, 'Entrenamiento de Hipertrofia Avanzado')
                 break
             case 2:
-                alert(HIPERTROFIA_INTENSIVA + SIN_SAL + CONTINUACION)
+                renderizarRutina(nodoPadre[0], HIPERTROFIA_INTENSIVA + SIN_SAL, 'Entrenamiento de Hipertrofia Avanzado')
                 break
             case 3:
-                alert(HIPERTROFIA_INTENSIVA + SIN_TACC + CONTINUACION)
+                renderizarRutina(nodoPadre[0], HIPERTROFIA_INTENSIVA + SIN_TACC, 'Entrenamiento de Hipertrofia Avanzado')
                 break
             case 4:
-                alert(HIPERTROFIA_INTENSIVA + VEGANO + CONTINUACION)
+                renderizarRutina(nodoPadre[0], HIPERTROFIA_INTENSIVA + VEGANO, 'Entrenamiento de Hipertrofia Avanzado')
                 break
             case 5:
-                alert(HIPERTROFIA_INTENSIVA + CONTINUACION)
+                renderizarRutina(nodoPadre[0], HIPERTROFIA_INTENSIVA, 'Entrenamiento de Hipertrofia Avanzado')
                 break
         }
         break
     case "hipertrofiaalta":
         switch (restriccionesAlimenticias) {
             case 1:
-                alert(HIPERTROFIA_ALTA + SIN_AZUCAR + CONTINUACION)
+                renderizarRutina(nodoPadre[0], HIPERTROFIA_ALTA + SIN_AZUCAR, 'Entrenamiento de Hipertrofia de alta exigencia')
                 break
             case 2:
-                alert(HIPERTROFIA_ALTA + SIN_SAL + CONTINUACION)
+                renderizarRutina(nodoPadre[0], HIPERTROFIA_ALTA + SIN_SAL, 'Entrenamiento de Hipertrofia de alta exigencia')
                 break
             case 3:
-                alert(HIPERTROFIA_ALTA + SIN_TACC + CONTINUACION)
+                renderizarRutina(nodoPadre[0], HIPERTROFIA_ALTA + SIN_TACC, 'Entrenamiento de Hipertrofia de alta exigencia')
                 break
             case 4:
-                alert(HIPERTROFIA_ALTA + VEGANO + CONTINUACION)
+                renderizarRutina(nodoPadre[0], HIPERTROFIA_ALTA + VEGANO, 'Entrenamiento de Hipertrofia de alta exigencia')
                 break
             case 5:
-                alert(HIPERTROFIA_ALTA + CONTINUACION)
+                renderizarRutina(nodoPadre[0], HIPERTROFIA_ALTA, 'Entrenamiento de Hipertrofia de alta exigencia')
                 break
         }
         break
     case "hipertrofiamoderada":
         switch (restriccionesAlimenticias) {
-            case 1:
-                alert(HIPERTROFIA_MODERADA + SIN_AZUCAR + CONTINUACION)
-                break
-            case 2:
-                alert(HIPERTROFIA_MODERADA + SIN_SAL + CONTINUACION)
-                break
-            case 3:
-                alert(HIPERTROFIA_MODERADA + SIN_TACC + CONTINUACION)
-                break
-            case 4:
-                alert(HIPERTROFIA_MODERADA + VEGANO + CONTINUACION)
-                break
-            case 5:
-                alert(HIPERTROFIA_MODERADA + CONTINUACION)
-                break
+        case 1:
+            renderizarRutina(nodoPadre[0], HIPERTROFIA_MODERADA + SIN_AZUCAR, 'Entrenamiento de Hipertrofia Moderado')
+            break
+        case 2:
+            renderizarRutina(nodoPadre[0], HIPERTROFIA_MODERADA + SIN_SAL, 'Entrenamiento de Hipertrofia Moderado')
+            break
+        case 3:
+            renderizarRutina(nodoPadre[0], HIPERTROFIA_MODERADA + SIN_TACC, 'Entrenamiento de Hipertrofia Moderado')
+            break
+        case 4:
+            renderizarRutina(nodoPadre[0], HIPERTROFIA_MODERADA + VEGANO, 'Entrenamiento de Hipertrofia Moderado')
+            break
+        case 5:
+            renderizarRutina(nodoPadre[0], HIPERTROFIA_MODERADA, 'Entrenamiento de Hipertrofia Moderado')
+            break
         }
         break
     case "hipertrofiabaja":
         switch (restriccionesAlimenticias) {
             case 1:
-                alert(HIPERTROFIA_BAJA + SIN_AZUCAR + CONTINUACION)
-                break
-            case 2:
-                alert(HIPERTROFIA_BAJA + SIN_SAL + CONTINUACION)
-                break
-            case 3:
-                alert(HIPERTROFIA_BAJA + SIN_TACC + CONTINUACION)
-                break
-            case 4:
-                alert(HIPERTROFIA_BAJA + VEGANO + CONTINUACION)
-                break
-            case 5:
-                alert(HIPERTROFIA_BAJA + CONTINUACION)
-                break
+            renderizarRutina(nodoPadre[0], HIPERTROFIA_BAJA+ SIN_AZUCAR, 'Entrenamiento de Hipertrofia de baja exigencia')
+            break
+        case 2:
+            renderizarRutina(nodoPadre[0], HIPERTROFIA_BAJA + SIN_SAL, 'Entrenamiento de Hipertrofia de baja exigencia')
+            break
+        case 3:
+            renderizarRutina(nodoPadre[0], HIPERTROFIA_BAJA + SIN_TACC, 'Entrenamiento de Hipertrofia de baja exigencia')
+            break
+        case 4:
+            renderizarRutina(nodoPadre[0], HIPERTROFIA_BAJA + VEGANO, 'Entrenamiento de Hipertrofia de baja exigencia')
+            break
+        case 5:
+            renderizarRutina(nodoPadre[0], HIPERTROFIA_BAJA, 'Entrenamiento de Hipertrofia de baja exigencia')
+            break
         }
         break
-    case "tonificacionavanzada":
+    case "tonificacionavanzada": 
         switch (restriccionesAlimenticias) {
             case 1:
-                alert(TONIFICACION_INTENSIVA + SIN_AZUCAR + CONTINUACION)
-                break
-            case 2:
-                alert(TONIFICACION_INTENSIVA + SIN_SAL + CONTINUACION)
-                break
-            case 3:
-                alert(TONIFICACION_INTENSIVA + SIN_TACC + CONTINUACION)
-                break
-            case 4:
-                alert(TONIFICACION_INTENSIVA + VEGANO + CONTINUACION)
-                break
-            case 5:
-                alert(TONIFICACION_INTENSIVA + CONTINUACION)
-                break
+            renderizarRutina(nodoPadre[0], TONIFICACION_INTENSIVA+ SIN_AZUCAR, 'Entrenamiento de Tonificacion Intensivo')
+            break
+        case 2:
+            renderizarRutina(nodoPadre[0], TONIFICACION_INTENSIVA + SIN_SAL, 'Entrenamiento de Tonificacion Intensivo')
+            break
+        case 3:
+            renderizarRutina(nodoPadre[0], TONIFICACION_INTENSIVA + SIN_TACC, 'Entrenamiento de Tonificacion Intensivo')
+            break
+        case 4:
+            renderizarRutina(nodoPadre[0], TONIFICACION_INTENSIVA + VEGANO, 'Entrenamiento de Tonificacion Intensivo')
+            break
+        case 5:
+            renderizarRutina(nodoPadre[0], TONIFICACION_INTENSIVA, 'Entrenamiento de Tonificacion Intensivo')
+            break
         }
         break
     case "tonificacionalta":
         switch (restriccionesAlimenticias) {
             case 1:
-                alert(TONIFICACION_ALTA + SIN_AZUCAR + CONTINUACION)
+                renderizarRutina(nodoPadre[0], TONIFICACION_ALTA+ SIN_AZUCAR, 'Entrenamiento de Tonificacion de alta exigencia')
                 break
             case 2:
-                alert(TONIFICACION_ALTA + SIN_SAL + CONTINUACION)
+                renderizarRutina(nodoPadre[0], TONIFICACION_ALTA+ SIN_SAL, 'Entrenamiento de Tonificacion de alta exigencia')
                 break
             case 3:
-                alert(TONIFICACION_ALTA + SIN_TACC + CONTINUACION)
+                renderizarRutina(nodoPadre[0], TONIFICACION_ALTA+ SIN_TACC, 'Entrenamiento de Tonificacion de alta exigencia')
                 break
             case 4:
-                alert(TONIFICACION_ALTA + VEGANO + CONTINUACION)
+                renderizarRutina(nodoPadre[0], TONIFICACION_ALTA+ VEGANO, 'Entrenamiento de Tonificacion de alta exigencia')
                 break
             case 5:
-                alert(TONIFICACION_ALTA + CONTINUACION)
+                renderizarRutina(nodoPadre[0], TONIFICACION_ALTA, 'Entrenamiento de Tonificacion de alta exigencia')
                 break
         }
         break
     case "tonificacionmoderada":
         switch (restriccionesAlimenticias) {
             case 1:
-                alert(TONIFICACION_MODERADA + SIN_AZUCAR + CONTINUACION)
+                renderizarRutina(nodoPadre[0], TONIFICACION_MODERADA + SIN_AZUCAR, 'Entrenamiento de Tonificacion de exigencia moderada')
                 break
             case 2:
-                alert(TONIFICACION_MODERADA + SIN_SAL + CONTINUACION)
+                renderizarRutina(nodoPadre[0], TONIFICACION_MODERADA + SIN_SAL, 'Entrenamiento de Tonificacion de exigencia moderada')
                 break
             case 3:
-                alert(TONIFICACION_MODERADA + SIN_TACC + CONTINUACION)
+                renderizarRutina(nodoPadre[0], TONIFICACION_MODERADA + SIN_TACC, 'Entrenamiento de Tonificacion de exigencia moderada')
                 break
             case 4:
-                alert(TONIFICACION_MODERADA + VEGANO + CONTINUACION)
+                renderizarRutina(nodoPadre[0], TONIFICACION_MODERADA + VEGANO, 'Entrenamiento de Tonificacion de exigencia moderada')
                 break
             case 5:
-                alert(TONIFICACION_MODERADA + CONTINUACION)
+                renderizarRutina(nodoPadre[0], TONIFICACION_MODERADA, 'Entrenamiento de Tonificacion de exigencia moderada')
                 break
         }
         break
     case "tonificacionbaja":
         switch (restriccionesAlimenticias) {
             case 1:
-                alert(TONIFICACION_BAJA + SIN_AZUCAR + CONTINUACION)
+                renderizarRutina(nodoPadre[0], TONIFICACION_BAJA + SIN_AZUCAR, 'Entrenamiento de Tonificacion de baja exigencia')
                 break
             case 2:
-                alert(TONIFICACION_BAJA + SIN_SAL + CONTINUACION)
+                renderizarRutina(nodoPadre[0], TONIFICACION_BAJA + SIN_SAL, 'Entrenamiento de Tonificacion de baja exigencia')
                 break
             case 3:
-                alert(TONIFICACION_BAJA + SIN_TACC + CONTINUACION)
+                renderizarRutina(nodoPadre[0], TONIFICACION_BAJA + SIN_TACC, 'Entrenamiento de Tonificacion de baja exigencia')
                 break
             case 4:
-                alert(TONIFICACION_BAJA + VEGANO + CONTINUACION)
+                renderizarRutina(nodoPadre[0], TONIFICACION_BAJA + VEGANO, 'Entrenamiento de Tonificacion de baja exigencia')
                 break
             case 5:
-                alert(TONIFICACION_BAJA + CONTINUACION)
+                renderizarRutina(nodoPadre[0], TONIFICACION_BAJA, 'Entrenamiento de Tonificacion de baja exigencia')
                 break
         }
         break
     case "cardioavanzada":
         switch (restriccionesAlimenticias) {
             case 1:
-                alert(CARDIO_INTENSIVO + SIN_AZUCAR + CONTINUACION)
+                renderizarRutina(nodoPadre[0], CARDIO_INTENSIVO + SIN_AZUCAR, 'Entrenamiento de Actividad Cardiovascular Intensiva')
                 break
             case 2:
-                alert(CARDIO_INTENSIVO + SIN_SAL + CONTINUACION)
+                renderizarRutina(nodoPadre[0], CARDIO_INTENSIVO + SIN_SAL, 'Entrenamiento de Actividad Cardiovascular Intensiva')
                 break
             case 3:
-                alert(CARDIO_INTENSIVO + SIN_TACC + CONTINUACION)
+                renderizarRutina(nodoPadre[0], CARDIO_INTENSIVO + SIN_TACC, 'Entrenamiento de Actividad Cardiovascular Intensiva')
                 break
             case 4:
-                alert(CARDIO_INTENSIVO + VEGANO + CONTINUACION)
+                renderizarRutina(nodoPadre[0], CARDIO_INTENSIVO + VEGANO, 'Entrenamiento de Actividad Cardiovascular Intensiva')
                 break
             case 5:
-                alert(CARDIO_INTENSIVO + CONTINUACION)
+                renderizarRutina(nodoPadre[0], CARDIO_INTENSIVO, 'Entrenamiento de Actividad Cardiovascular Intensiva')
                 break
         }
         break
     case "cardioalto":
         switch (restriccionesAlimenticias) {
             case 1:
-                alert(CARDIO_ALTO + SIN_AZUCAR + CONTINUACION)
+                renderizarRutina(nodoPadre[0], CARDIO_ALTO + SIN_AZUCAR, 'Entrenamiento de Actividad Cardiovascular de alta exigencia')
                 break
             case 2:
-                alert(CARDIO_ALTO + SIN_SAL + CONTINUACION)
+                renderizarRutina(nodoPadre[0], CARDIO_ALTO + SIN_SAL, 'Entrenamiento de Actividad Cardiovascular de alta exigencia')
                 break
             case 3:
-                alert(CARDIO_ALTO + SIN_TACC + CONTINUACION)
+                renderizarRutina(nodoPadre[0], CARDIO_ALTO + SIN_TACC, 'Entrenamiento de Actividad Cardiovascular de alta exigencia')
                 break
             case 4:
-                alert(CARDIO_ALTO + VEGANO + CONTINUACION)
+                renderizarRutina(nodoPadre[0], CARDIO_ALTO + VEGANO, 'Entrenamiento de Actividad Cardiovascular de alta exigencia')
                 break
             case 5:
-                alert(CARDIO_ALTO + CONTINUACION)
+                renderizarRutina(nodoPadre[0], CARDIO_ALTO, 'Entrenamiento de Actividad Cardiovascular de alta exigencia')
                 break
         }
         break
     case "cardiomoderado":
         switch (restriccionesAlimenticias) {
             case 1:
-                alert(CARDIO_MODERADO + SIN_AZUCAR + CONTINUACION)
+                renderizarRutina(nodoPadre[0], CARDIO_MODERADO + SIN_AZUCAR, 'Entrenamiento de Actividad Cardiovascular de exigencia moderada')
                 break
             case 2:
-                alert(CARDIO_MODERADO + SIN_SAL + CONTINUACION)
+                renderizarRutina(nodoPadre[0], CARDIO_MODERADO + SIN_SAL, 'Entrenamiento de Actividad Cardiovascular de exigencia moderada')
                 break
             case 3:
-                alert(CARDIO_MODERADO + SIN_TACC + CONTINUACION)
+                renderizarRutina(nodoPadre[0], CARDIO_MODERADO + SIN_TACC, 'Entrenamiento de Actividad Cardiovascular de exigencia moderada')
                 break
             case 4:
-                alert(CARDIO_MODERADO + VEGANO + CONTINUACION)
+                renderizarRutina(nodoPadre[0], CARDIO_MODERADO + VEGANO, 'Entrenamiento de Actividad Cardiovascular de exigencia moderada')
                 break
             case 5:
-                alert(CARDIO_MODERADO + CONTINUACION)
+                renderizarRutina(nodoPadre[0], CARDIO_MODERADO, 'Entrenamiento de Actividad Cardiovascular de exigencia moderada')
                 break
         }
         break
     case "cardiobajo":
         switch (restriccionesAlimenticias) {
             case 1:
-                alert(CARDIO_BAJO + SIN_AZUCAR + CONTINUACION)
+                renderizarRutina(nodoPadre[0], CARDIO_BAJO + SIN_AZUCAR, 'Entrenamiento de Actividad Cardiovascular de baja exigencia')
                 break
             case 2:
-                alert(CARDIO_BAJO + SIN_SAL + CONTINUACION)
+                renderizarRutina(nodoPadre[0], CARDIO_BAJO + SIN_SAL, 'Entrenamiento de Actividad Cardiovascular de baja exigencia')
                 break
             case 3:
-                alert(CARDIO_BAJO + SIN_TACC + CONTINUACION)
+                renderizarRutina(nodoPadre[0], CARDIO_BAJO + SIN_TACC, 'Entrenamiento de Actividad Cardiovascular de baja exigencia')
                 break
             case 4:
-                alert(CARDIO_BAJO + VEGANO + CONTINUACION)
+                renderizarRutina(nodoPadre[0], CARDIO_BAJO + VEGANO, 'Entrenamiento de Actividad Cardiovascular de baja exigencia')
                 break
             case 5:
-                alert(CARDIO_BAJO + CONTINUACION)
+                renderizarRutina(nodoPadre[0], CARDIO_BAJO, 'Entrenamiento de Actividad Cardiovascular de baja exigencia')
                 break
         }
         break
     case "recreativoavanzada":
         switch (restriccionesAlimenticias) {
             case 1:
-                alert(RECREATIVO_INTENSIVO + SIN_AZUCAR + CONTINUACION)
+                renderizarRutina(nodoPadre[0], RECREATIVO_INTENSO + SIN_AZUCAR, 'Entrenamiento de Actividad Recreativa Intensiva')
                 break
             case 2:
-                alert(RECREATIVO_INTENSIVO + SIN_SAL + CONTINUACION)
+                renderizarRutina(nodoPadre[0], RECREATIVO_INTENSO + SIN_SAL, 'Entrenamiento de Actividad Recreativa Intensiva')
                 break
             case 3:
-                alert(RECREATIVO_INTENSIVO + SIN_TACC + CONTINUACION)
+                renderizarRutina(nodoPadre[0], RECREATIVO_INTENSO + SIN_TACC, 'Entrenamiento de Actividad Recreativa Intensiva')
                 break
             case 4:
-                alert(RECREATIVO_INTENSIVO + VEGANO + CONTINUACION)
+                renderizarRutina(nodoPadre[0], RECREATIVO_INTENSO + VEGANO, 'Entrenamiento de Actividad Recreativa Intensiva')
                 break
             case 5:
-                alert(RECREATIVO_INTENSIVO + CONTINUACION)
+                renderizarRutina(nodoPadre[0], RECREATIVO_INTENSO, 'Entrenamiento de Actividad Recreativa Intensiva')
                 break
         }
         break
     case "recreativoalto":
         switch (restriccionesAlimenticias) {
             case 1:
-                alert(RECREATIVO_ALTO + SIN_AZUCAR + CONTINUACION)
+                renderizarRutina(nodoPadre[0], RECREATIVO_ALTO + SIN_AZUCAR, 'Entrenamiento de Actividad Recreativa de alta intensidad')
                 break
             case 2:
-                alert(RECREATIVO_ALTO + SIN_SAL + CONTINUACION)
+                renderizarRutina(nodoPadre[0], RECREATIVO_ALTO + SIN_SAL, 'Entrenamiento de Actividad Recreativa de alta intensidad')
                 break
             case 3:
-                alert(RECREATIVO_ALTO + SIN_TACC + CONTINUACION)
+                renderizarRutina(nodoPadre[0], RECREATIVO_ALTO + SIN_TACC, 'Entrenamiento de Actividad Recreativa de alta intensidad')
                 break
             case 4:
-                alert(RECREATIVO_ALTO + VEGANO + CONTINUACION)
+                renderizarRutina(nodoPadre[0], RECREATIVO_ALTO + VEGANO, 'Entrenamiento de Actividad Recreativa de alta intensidad')
                 break
             case 5:
-                alert(RECREATIVO_ALTO + CONTINUACION)
+                renderizarRutina(nodoPadre[0], RECREATIVO_ALTO, 'Entrenamiento de Actividad Recreativa de alta intensidad')
                 break
         }
         break
     case "recreativomoderado":
         switch (restriccionesAlimenticias) {
             case 1:
-                alert(RECREATIVO_MODERADO + SIN_AZUCAR + CONTINUACION)
+                renderizarRutina(nodoPadre[0], RECREATIVO_MODERADO + SIN_AZUCAR, 'Entrenamiento de Actividad Recreativa de intensidad moderada')
                 break
             case 2:
-                alert(RECREATIVO_MODERADO + SIN_SAL + CONTINUACION)
+                renderizarRutina(nodoPadre[0], RECREATIVO_MODERADO + SIN_SAL, 'Entrenamiento de Actividad Recreativa de intensidad moderada')
                 break
             case 3:
-                alert(RECREATIVO_MODERADO + SIN_TACC + CONTINUACION)
+                renderizarRutina(nodoPadre[0], RECREATIVO_MODERADO + SIN_TACC, 'Entrenamiento de Actividad Recreativa de intensidad moderada')
                 break
             case 4:
-                alert(RECREATIVO_MODERADO + VEGANO + CONTINUACION)
+                renderizarRutina(nodoPadre[0], RECREATIVO_MODERADO + VEGANO, 'Entrenamiento de Actividad Recreativa de intensidad moderada')
                 break
             case 5:
-                alert(RECREATIVO_MODERADO + CONTINUACION)
+                renderizarRutina(nodoPadre[0], RECREATIVO_MODERADO, 'Entrenamiento de Actividad Recreativa de intensidad moderada')
                 break
         }
         break
     case "recreativobajo":
         switch (restriccionesAlimenticias) {
             case 1:
-                alert(RECREATIVO_BAJO + SIN_AZUCAR + CONTINUACION)
+                renderizarRutina(nodoPadre[0], RECREATIVO_BAJO + SIN_AZUCAR, 'Entrenamiento de Actividad Recreativa de baja intensidad')
                 break
             case 2:
-                alert(RECREATIVO_BAJO + SIN_SAL + CONTINUACION)
+                renderizarRutina(nodoPadre[0], RECREATIVO_BAJO + SIN_SAL, 'Entrenamiento de Actividad Recreativa de baja intensidad')
                 break
             case 3:
-                alert(RECREATIVO_BAJO + SIN_TACC + CONTINUACION)
+                renderizarRutina(nodoPadre[0], RECREATIVO_BAJO + SIN_TACC, 'Entrenamiento de Actividad Recreativa de baja intensidad')
                 break
             case 4:
-                alert(RECREATIVO_BAJO + VEGANO + CONTINUACION)
+                renderizarRutina(nodoPadre[0], RECREATIVO_BAJO + VEGANO, 'Entrenamiento de Actividad Recreativa de baja intensidad')
                 break
             case 5:
-                alert(RECREATIVO_BAJO + CONTINUACION)
+                renderizarRutina(nodoPadre[0], RECREATIVO_BAJO, 'Entrenamiento de Actividad Recreativa de baja intensidad')
                 break
         }
         break

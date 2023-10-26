@@ -17,6 +17,7 @@ if (recuperarUsuarioLogueado()) {
   BOTON_CERRAR_SESION.className= "btn btn-primary btn-block btn-large";
   BOTON_CERRAR_SESION.addEventListener("click", () => {
     localStorage.clear();
+    sessionStorage.clear();
     window.location.reload();
   });
 }
