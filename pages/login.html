@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <title>log in</title>
+  </head>
+  <body>
+    <div class="login">
+      <h1>Bienvenido</h1>
+      <form id="formularioLogIn" method="post">
+        <input 
+          type="text"
+          name="u"
+          placeholder="Nombre de Usuario"
+          required="required"
+        />
+        <input 
+          type="password"
+          name="p"
+          placeholder="Contraseña"
+          required="required"
+        />
+        <button type="submit" class="btn btn-primary btn-block btn-large">
+          Loguearse
+        </button>
+      </form>
+    </div>
+    <div id="contenedorMensaje">
+      
+    </div>
+
+    <script src="../archivosJS/mockupUsuarios.js"></script>
+    <script src="../clases/Entrenamiento.js"></script>
+    <script src="../clases/Usuario.js"></script>
+    <script src="../archivosJS/funciones.js"></script>
+    <script src="../archivosJS/mainLogIn.js"></script>
+  </body>
+</html>

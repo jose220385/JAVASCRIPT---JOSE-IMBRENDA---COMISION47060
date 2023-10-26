@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <title>Registro de Usuario Nuevo</title>
+  </head>
+  <body>
+    <div class="login">
+      <h1>Registro de Usuario</h1>
+      <form method="post" id="formularioUsuarioNuevo">
+        <input id="usuario"
+          name="usuario"
+          placeholder="Nombre de Usuario"
+          required="required"
+        />
+        <input id="nombre"
+          type="text"
+          name="nombre"
+          placeholder="Ingrese su Nombre"
+          required="required"
+        />
+        <input id="apellido"
+          type="text"
+          name="apellido"
+          placeholder="Ingrese su Apellido"
+          required="required"
+        />
+        <input id="contraseniaUno" class="contrasenia"
+          type="password"
+          name="p1"
+          placeholder="Ingrese una Contraseña de al menos 6 caracteres"
+          required="required"
+          minlength="6"
+        />
+        <input id="contraseniaDos" class="contrasenia"
+          type="password"
+          name="p2"
+          placeholder="Repita la contraseña"
+          required="required"
+          minlength="6"
+        />
+        <button type="submit" class="btn btn-primary btn-block btn-large">
+          Registrarse
+        </button>
+      </form>
+    </div>
+    <div id="contenedorMensaje">
+      
+    </div>
+
+    <script src="../archivosJS/mockupUsuarios.js"></script>
+    <script src="../archivosJS/funciones.js"></script>
+    <script src="../archivosJS/mainUsuarioNuevo.js"></script>
+  </body>
+</html>

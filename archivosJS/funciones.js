@@ -1,4 +1,4 @@
-// Funcion para validad largo de contraseña
+/* // Funcion para validad largo de contraseña
 const validarContrasenia = (contrasenia) => {
     if (contrasenia.length < 6) {
         return true
@@ -30,17 +30,56 @@ const validarOpciones = (opciones, argumentos, cantidadOpciones) => {
     } else {
         return opciones
     }
-}
+} */
 
 //Funcion para validar Usuario y contraseña en caso que el Usuario exista
 const validarUsuarioYcontrasenia = (usuario, contrasenia) => {
-    usuarioEncontrado = usuarios.some((parametro) => {
+    usuarioEncontrado = usuariosRecuperados.some((parametro) => {
         return parametro.nombreUsuario === usuario
     })
-    contraseniaEncontrada = usuarios.some((parametro) => {
-        return parametro.contrasenia === contrasenia
+    contraseniaEncontrada = usuariosRecuperados.some((unUsuarioRecuperado) => {
+        return unUsuarioRecuperado.contrasenia === contrasenia
     })
     return usuarioEncontrado && contraseniaEncontrada
+        
+}
+
+//Funcion para saber si un usuario existe o no 
+const usuarioExistente = (usuario) => {
+    return usuariosRecuperados.some((unUsuarioRecuperado) => unUsuarioRecuperado.nombreUsuario === usuario)
+}
+
+//Funcion renderizar mensaje en log in o registro de usuario
+
+/* const renderizarMensaje =(mensaje)=>{
+    let contenedorMensaje = document.getElementById("contenedorMensaje")
+    contenedorMensaje.innerHTML = `<h2> ${mensaje} </h2>`
+} */
+
+const renderizarMensaje =(id, mensaje)=>{
+    let contenedorMensaje = document.getElementById(id)
+    contenedorMensaje.innerHTML = `<h2> ${mensaje} </h2>`
+}
+
+//Funcion para registrar inicio de sesion
+const USER_LOGGED_KEY = "usuarioLogueado"
+const registrarLogueo = (usuario) =>{
+    localStorage.setItem(USER_LOGGED_KEY, usuario)
+}
+
+//Funcion para recuperar usuario logueado
+
+const recuperarUsuarioLogueado = () => {
+    return localStorage.getItem(USER_LOGGED_KEY) || false
+}
+
+// Funcion para crear Nodo
+
+const crearNodo = (nodoPadre, tipoDeNodo, innerHTML ='') =>{
+    const NODO_CREADO = document.createElement(tipoDeNodo)
+    NODO_CREADO.innerHTML = innerHTML
+    nodoPadre.append(NODO_CREADO)
+    return NODO_CREADO
 }
 
 //Funcion para recuperar un usuario si ya existe
@@ -55,12 +94,32 @@ const devuelveValoresYconviertoUsuario = (usuario) => {
             let alturaRecuperada = obj.altura
             let entrenamientoRecuperado = obj.entrenamiento
             let restriccionesAlimenticiasRecuperada = obj.restriccionesAlimenticias
-            let unEntrenamiento = new Entrenamiento(entrenamientoRecuperado.objetivo, entrenamientoRecuperado.experiencia)
-            let usuarioRecuperado = new Usuario(obj.nombreUsuario, contraseniaRecuperada, nombreRecuperado, apellidoRecuperado, edadRecuperada, pesoRecuperado, alturaRecuperada, unEntrenamiento, restriccionesAlimenticiasRecuperada)
+            const unEntrenamiento = new Entrenamiento(entrenamientoRecuperado.objetivo, entrenamientoRecuperado.experiencia)
+            const usuarioRecuperado = new Usuario(obj.nombreUsuario, contraseniaRecuperada, nombreRecuperado, apellidoRecuperado, edadRecuperada, pesoRecuperado, alturaRecuperada, unEntrenamiento, restriccionesAlimenticiasRecuperada)
 
             return usuarioRecuperado
         }
     }
+}
+
+// Formula para calcular la edad
+const calcularEdad=(fecha)=>{
+    hoy=new Date()
+    const array_fecha = fecha.split("-")
+    if (array_fecha.length!=3)
+       return false
+    const ano = parseInt(array_fecha[0]);
+    const mes = parseInt(array_fecha[1]);
+    const dia = parseInt(array_fecha[2]);
+    const edad=hoy.getFullYear()- ano - 1; 
+    if (hoy.getMonth() + 1 - mes < 0)
+       return edad
+    if (hoy.getMonth() + 1 - mes > 0)
+       return edad+1
+    if (hoy.getUTCDate() - dia >= 0)
+       return edad + 1
+
+    return edad
 }
 
 //Funcion que determina el tipo de entrenamiento y la dieta con restricciones

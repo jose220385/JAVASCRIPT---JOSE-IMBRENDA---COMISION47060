@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <title>Carga de Datos</title>
+  </head>
+  <body>
+    <div class="login">
+      <h1></h1>
+      <p>Comenzaremos con la carga de datos para ingresarlo como usuario:</p>
+      <form method="post" id="formularioUsuarioNuevo">
+        <label for="">Fecha de Nacimiento:</label>
+        <input
+          id="fechaNacimiento"
+          name="fechaNacimiento"
+          type="date"
+          required="required"
+          min="1923-01-01"
+          max="2017-10-24"
+        />
+        <label for="">Peso:</label>
+        <input
+          id="peso"
+          type="number"
+          name="peso"
+          placeholder="Ingrese su peso en Kg."
+          required="required"
+          min="30"
+          max="200"
+        />
+        <label for="">Altura:</label>
+        <input
+          id="altura"
+          type="number"
+          name="altura"
+          placeholder="Ingrese su Altura en metros (Ej:1.75)"
+          required="required"
+          step="0.01"
+          min="0.80"
+          max="3.0"
+        />
+        <p>
+          A continuacion te haremos una serie de preguntas para poder darte la
+          mejor rutina de ejercicios y plan nutricional que se adapte a tus
+          necesidades:
+        </p>
+        <label for="">Indique su objetivo en entrenamiento deportivo:</label>
+        <select name="objetivosEntrenamiento" id="objetivosEntrenamiento">
+          <option value="1">Desarrollar mayor masa muscular</option>
+          <option value="2">Tonificar su cuerpo sin perder peso</option>
+          <option value="3">Hacer un entrenamiento para bajar de peso</option>
+          <option value="4">Entrenamiento recreativo</option>
+        </select>
+
+        <label for="">Indique su nivel de experiencia en entrenamiento deportivo:</label>
+        <select name="nivelExperiencia" id="nivelExperiencia">
+          <option value="1">No tiene experiencia</option>
+          <option value="2">Menos de 1 año de experiencia</option>
+          <option value="3">De 2 a 4 años de experiencia</option>
+          <option value="4">Más de 5 años de experiencia</option>
+        </select>
+
+        <label for="">Indique si no puede injerir alguno de los siguientes alimentos:</label>
+        <select name="restriccionesAlimenticias" id="restriccionesAlimenticias">
+          <option value="1">Azucar</option>
+          <option value="2">Sal</option>
+          <option value="3">Alimentos con TACC</option>
+          <option value="4">Derivados del Mundo Animal</option>
+          <option value="5">No tengo restricciones alimenticias</option>
+        </select>
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">
+          Cargar Datos
+        </button>
+        <button type="reset" class="btn btn-primary btn-block btn-large">
+          Borrar Datos
+        </button>
+      </form>
+    </div>
+    <div id="contenedorMensaje"></div>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@2.3.0/build/global/luxon.min.js"></script>
+    <script src="../archivosJS/funciones.js"></script>
+    <script src="../clases/Usuario.js"></script>
+    <script src="../clases/Entrenamiento.js"></script>
+    <script src="../archivosJS/mainCargaDeDatos.js"></script>
+  </body>
+</html>

@@ -1,0 +1,5 @@
+const usuario = recuperarUsuarioLogueado() 
+
+devuelveValoresYconviertoUsuario (usuario)
+
+determinaTipoEntrenamientoYAlimentacion(devuelveValoresYconviertoUsuario(usuario).entrenamiento.tipoDeEntrenamiento(devuelveValoresYconviertoUsuario(usuario).imc(), devuelveValoresYconviertoUsuario(usuario).edad), devuelveValoresYconviertoUsuario(usuario).restriccionesAlimenticias)
