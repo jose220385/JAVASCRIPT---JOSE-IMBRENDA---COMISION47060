@@ -12,12 +12,29 @@ FORMULARIO_USUARIO_NUEVO.addEventListener("submit", (e) => {
   usuarioNuevo = document.getElementById("usuario").value;
   contraseniaNuevaUno = document.getElementById("contraseniaUno").value;
   contraseniaNuevaDos = document.getElementById("contraseniaDos").value;
-  if (usuarioExistente(usuarioNuevo)) {
+  URL_USUARIOS.searchParams.append('nombreUsuario', usuarioNuevo)
+
+  fetch(URL_USUARIOS).then(res => {
+    if (res.ok) {
+        return res.json();
+    }
+  }).then(usuariosBD => {
+    console.log(usuariosBD)
+    if (usuariosBD.length!==0){
+      renderizarMensaje(
+        "contenedorMensaje",
+        "El nombre de Usuario ya existe. Intente con otro"
+      );
+    }
+    }
+  )
+
+  /* if (usuarioExistente(usuarioNuevo)) {
     renderizarMensaje(
       "contenedorMensaje",
       "El nombre de Usuario ya existe. Intente con otro"
     );
-  } else if (contraseniaNuevaUno != contraseniaNuevaDos) {
+  } else */ if (contraseniaNuevaUno != contraseniaNuevaDos) {
     renderizarMensaje(
       "contenedorMensaje",
       "La contraseña de verificación no coincide con la ingresada previamente"

@@ -1,11 +1,23 @@
+//Peticion de Datos a API
+const URL_USUARIOS = new URL('https://6545057a5a0b4b04436d78cb.mockapi.io/usuarios')
+/* let usuariosBD
 
+fetch(URL_BASE + "/usuarios")
+  .then((res) => {
+    return res.json();
+  })
+  .then((datos) => {
+    console.log(datos);
+    usuariosBD = datos
+  });
+ */
 
 //Funcion para validar Usuario y contraseña en caso que el Usuario exista
 const validarUsuarioYcontrasenia = (usuario, contrasenia) => {
-    usuarioEncontrado = usuariosRecuperados.some((parametro) => {
+    usuarioEncontrado = usuariosBD.some((parametro) => {
         return parametro.nombreUsuario === usuario
     })
-    contraseniaEncontrada = usuariosRecuperados.some((unUsuarioRecuperado) => {
+    contraseniaEncontrada = usuariosBD.some((unUsuarioRecuperado) => {
         return unUsuarioRecuperado.contrasenia === contrasenia
     })
     return usuarioEncontrado && contraseniaEncontrada
@@ -14,7 +26,7 @@ const validarUsuarioYcontrasenia = (usuario, contrasenia) => {
 
 //Funcion para saber si un usuario existe o no 
 const usuarioExistente = (usuario) => {
-    return usuariosRecuperados.some((unUsuarioRecuperado) => unUsuarioRecuperado.nombreUsuario === usuario)
+    return usuariosBD.some((unUsuarioRecuperado) => unUsuarioRecuperado.nombreUsuario === usuario)
 }
 
 const renderizarMensaje =(id, mensaje)=>{
