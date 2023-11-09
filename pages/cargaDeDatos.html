@@ -54,7 +54,9 @@
           <option value="4">Entrenamiento recreativo</option>
         </select>
 
-        <label for="">Indique su nivel de experiencia en entrenamiento deportivo:</label>
+        <label for=""
+          >Indique su nivel de experiencia en entrenamiento deportivo:</label
+        >
         <select name="nivelExperiencia" id="nivelExperiencia">
           <option value="1">No tiene experiencia</option>
           <option value="2">Menos de 1 año de experiencia</option>
@@ -62,7 +64,10 @@
           <option value="4">Más de 5 años de experiencia</option>
         </select>
 
-        <label for="">Indique si no puede injerir alguno de los siguientes alimentos:</label>
+        <label for=""
+          >Indique si no puede injerir alguno de los siguientes
+          alimentos:</label
+        >
         <select name="restriccionesAlimenticias" id="restriccionesAlimenticias">
           <option value="1">Azucar</option>
           <option value="2">Sal</option>
@@ -70,13 +75,14 @@
           <option value="4">Derivados del Mundo Animal</option>
           <option value="5">No tengo restricciones alimenticias</option>
         </select>
-
-        <button type="submit" class="btn btn-primary btn-block btn-large">
-          Cargar Datos
-        </button>
-        <button type="reset" class="btn btn-primary btn-block btn-large">
-          Borrar Datos
-        </button>
+        <div class="contenedorBotones">
+          <button type="submit" class="btn btn-primary btn-custom btn-large">
+            Cargar Datos
+          </button>
+          <button type="reset" class="btn btn-primary btn-custom btn-large">
+            Borrar Datos
+          </button>
+        </div>
       </form>
     </div>
     <div id="contenedorMensaje"></div>

@@ -32,6 +32,9 @@ const usuarioExistente = (usuario) => {
 const renderizarMensaje =(id, mensaje)=>{
     let contenedorMensaje = document.getElementById(id)
     contenedorMensaje.innerHTML = `<h2> ${mensaje} </h2>`
+    setTimeout(()=> {
+        window.location.reload();
+    }, 3000)
 }
 
 //Funcion para registrar inicio de sesion

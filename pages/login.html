@@ -10,26 +10,29 @@
     <div class="login">
       <h1>Bienvenido</h1>
       <form id="formularioLogIn" method="post">
-        <input 
+        <input
           type="text"
           name="u"
           placeholder="Nombre de Usuario"
           required="required"
         />
-        <input 
+        <input
           type="password"
           name="p"
           placeholder="Contraseña"
           required="required"
         />
-        <button type="submit" class="btn btn-primary btn-block btn-large">
-          Loguearse
-        </button>
+        <div class="contenedorBotones">
+          <button type="submit" class="btn btn-primary btn-custom btn-large">
+            Loguearse
+          </button>
+          <button type="reset" class="btn btn-primary btn-custom btn-large">
+            Borrar
+          </button>
+        </div>
       </form>
     </div>
-    <div id="contenedorMensaje">
-      
-    </div>
+    <div id="contenedorMensaje"></div>
 
     <script src="../archivosJS/mockupUsuarios.js"></script>
     <script src="../clases/Entrenamiento.js"></script>

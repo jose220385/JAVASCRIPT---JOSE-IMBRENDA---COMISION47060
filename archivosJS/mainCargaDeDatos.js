@@ -34,6 +34,8 @@ formularioUsuarioNuevo.addEventListener("submit", (e) => {
     nuevoUsuario.restriccionesAlimenticias = restriccionesAlimenticias;
   }
 
+  console.log(nuevoUsuario);
+
   usuarios.push(nuevoUsuario);
 
   registrarLogueo(nuevoUsuario);
@@ -43,7 +45,20 @@ formularioUsuarioNuevo.addEventListener("submit", (e) => {
     headers: { "content-type": "application/json" },
     // Send your data in the request body as JSON
     body: JSON.stringify(nuevoUsuario),
-  });
+  })
+    .then((res) => {
+      if (res.ok) {
+        return res.json();
+      }
+      // handle error
+    })
+    .then((data) => {
+        console.log(data)
+        window.location.href = "../index.html";
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 
-  window.location.href = "../index.html";
+  
 });

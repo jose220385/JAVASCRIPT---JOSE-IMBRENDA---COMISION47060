@@ -142,6 +142,10 @@ header h1 {
   display: block;
 }
 
+.btn-custom{
+  width: 45%;
+}
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -324,7 +328,7 @@ input:focus {
   color: white;
   text-decoration: none;
   font-size: 30px;
-  width: 100px;
+  
   text-align: center;
 }
 @media (max-width: 768px) {
@@ -422,4 +426,11 @@ select {
 .rutina h3{
   color: #fff;
   margin-top: 15px;
+}
+
+/* Estilos login */
+
+.contenedorBotones{
+  display: flex;
+  justify-content: space-around;
 }
