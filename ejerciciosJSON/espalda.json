@@ -1,0 +1,272 @@
+[
+    {
+        "id":"1",
+        "nombre": "Remo bajo con Polea",
+        "trenMotriz": "superior",
+        "grupoMuscular": "espalda",
+        "tiempo": {
+            "hipertrofiaInicial": "0-3-1-3",
+            "hipertrofia": "0-2-1-2",
+            "potencia": "0-1-0-2"
+        },
+        "cargas": {
+            "pesado": "mas del 80% del peso corporal",
+            "moderado": "del 40% al 79% del peso corporal",
+            "liviano": "hasta el 39% del peso corporal"
+        },
+        "repeticiones": {
+            "decrecientePesada": "10-8-6-4",
+            "decrecienteIntermedia": "12-10-8-8",
+            "decrecienteLiviana": "15-12-10-10",
+            "linealPesada": "8-8-8-8",
+            "linealIntermedia": "10-10-10-10",
+            "linealLiviana": "12-12-12-12"
+        },
+        "observaciones":"Posicion de arranque: Sentados frente a la polea. Se lleva la carga apuntando al vientre, sacando pecho y cerrando el omóplato. No hacer fuerza con el lumbar",
+        "comoSeHace": "https://www.youtube.com/watch?v=1SwxZZgl3xg"
+
+    },
+    {
+        "id":"2",
+        "nombre": "Jalon Frontal Dorsal en Multifuerza - agarre abierto",
+        "trenMotriz": "superior",
+        "grupoMuscular": "espalda",
+        "tiempo": {
+            "hipertrofiaInicial": "0-3-1-3",
+            "hipertrofia": "0-2-1-2",
+            "potencia": "0-1-0-2"
+        },
+        "cargas": {
+            "pesado": "mas del 100% del peso corporal",
+            "moderado": "del 50% al 99% del peso corporal",
+            "liviano": "hasta el 49% del peso corporal"
+        },
+        "repeticiones": {
+            "decrecientePesada": "10-8-6-4",
+            "decrecienteIntermedia": "12-10-8-8",
+            "decrecienteLiviana": "15-12-10-10",
+            "linealPesada": "8-8-8-8",
+            "linealIntermedia": "10-10-10-10",
+            "linealLiviana": "12-12-12-12"
+        },
+        "observaciones":"Posicion de arranque: Sentados frente a la maquina. Trabar bien los cuadriceps en el banco. Brazos extendidos. Contraigo sacando pecho y tratando de juntar el omoplato. No bajar el mentón",
+        "comoSeHace": "https://www.youtube.com/shorts/RD4t94XvKsU"
+
+    },
+    {
+    "id":"3",
+        "nombre": "Remo con mancuerna a un brazo",
+        "trenMotriz": "superior",
+        "grupoMuscular": "espalda",
+        "tiempo": {
+            "hipertrofiaInicial": "1-3-1-3",
+            "hipertrofia": "1-2-1-2",
+            "potencia": "1-1-0-2"
+        },
+        "cargas": {
+            "pesado": "mas del 40% del peso corporal por mancuerna",
+            "moderado": "del 20% al 39% del peso corporal por mancuerna",
+            "liviano": "hasta el 19% del peso corporal por mancuerna"
+        },
+        "repeticiones": {
+            "decrecientePesada": "10-8-6-4",
+            "decrecienteIntermedia": "12-10-8-8",
+            "decrecienteLiviana": "15-12-10-10",
+            "linealPesada": "8-8-8-8",
+            "linealIntermedia": "10-10-10-10",
+            "linealLiviana": "12-12-12-12"
+        },
+        "observaciones":"Posicion de arranque: Buscar un punto de apoyo y posicionarse con la espalda casi perpendicular a las piernas. Llevar el peso a la cadera",
+        "comoSeHace": "https://www.youtube.com/shorts/qE6zJlizVj8"
+
+    },
+    {
+        "id":"4",
+        "nombre": "Remo en T con apoyo",
+        "trenMotriz": "superior",
+        "grupoMuscular": "espalda",
+        "tiempo": {
+            "hipertrofiaInicial": "1-3-1-3",
+            "hipertrofia": "1-2-1-2",
+            "potencia": "1-1-0-2"
+        },
+        "cargas": {
+            "pesado": "mas del 60% del peso corporal",
+            "moderado": "del 30% al 59% del peso corporal",
+            "liviano": "hasta el 29% del peso corporal"
+        },
+        "repeticiones": {
+            "decrecientePesada": "10-8-6-4",
+            "decrecienteIntermedia": "12-10-8-8",
+            "decrecienteLiviana": "15-12-10-10",
+            "linealPesada": "8-8-8-8",
+            "linealIntermedia": "10-10-10-10",
+            "linealLiviana": "12-12-12-12"
+        },
+        "observaciones":"Posicion de arranque: apoyar el plexo (parte baja del pecho) en el banco. Estirar los brazos y agarrar la barra en el agarre semi-abierto. Relajar hombros y empujar el peso hacia el cuerpo",
+        "comoSeHace": "https://www.youtube.com/watch?v=KgEZTNLBMMQ"
+
+    },
+    {
+        "id":"5",
+        "nombre": "Pull over en polea alta con brazos extendidos",
+        "trenMotriz": "superior",
+        "grupoMuscular": "espalda",
+        "tiempo": {
+            "hipertrofiaInicial": "1-3-0-3",
+            "hipertrofia": "1-2-0-2",
+            "potencia": "1-1-0-2"
+        },
+        "cargas": {
+            "pesado": "mas del 60% del peso corporal",
+            "moderado": "del 30% al 59% del peso corporal",
+            "liviano": "hasta el 29% del peso corporal"
+        },
+        "repeticiones": {
+            "decrecientePesada": "10-8-6-4",
+            "decrecienteIntermedia": "12-10-8-8",
+            "decrecienteLiviana": "15-12-10-10",
+            "linealPesada": "8-8-8-8",
+            "linealIntermedia": "10-10-10-10",
+            "linealLiviana": "12-12-12-12"
+        },
+        "observaciones":"Posicion de arranque: Enfrentado a la maquina, brazos extendidos, traer el peso hacia el cuerpo sin flexionar los brazos, sacar pecho en el movimiento",
+        "comoSeHace": "https://www.youtube.com/shorts/QNCHZFa1zU8"
+
+    },
+    {
+        "id":"6",
+        "nombre": "Pull over en banco con mancuernas",
+        "trenMotriz": "superior",
+        "grupoMuscular": "espalda",
+        "tiempo": {
+            "hipertrofiaInicial": "0-3-0-3",
+            "hipertrofia": "0-2-0-2",
+            "potencia": "0-1-0-1"
+        },
+        "cargas": {
+            "pesado": "mas del 40% del peso corporal por mancuerna",
+            "moderado": "del 20% al 39% del peso corporal",
+            "liviano": "hasta el 19% del peso corporal"
+        },
+        "repeticiones": {
+            "decrecientePesada": "10-8-6-4",
+            "decrecienteIntermedia": "12-10-8-8",
+            "decrecienteLiviana": "15-12-10-10",
+            "linealPesada": "8-8-8-8",
+            "linealIntermedia": "10-10-10-10",
+            "linealLiviana": "12-12-12-12"
+        },
+        "observaciones":"Posicion de arranque: Acostarse en el banco, agarrar la mancuerna por la parte inferior donde uno de los lados apunte hacia nosotros con los brazos estirados. Llevar el peso hacia atras hasta la altura de la cabeza y volver hasta la altura de la frente",
+        "comoSeHace": "https://www.youtube.com/shorts/w1h4Fu_DRAg"
+
+    },
+    {
+    "id":"7",
+        "nombre": "Pull over en banco con mancuernas",
+        "trenMotriz": "superior",
+        "grupoMuscular": "espalda",
+        "tiempo": {
+            "hipertrofiaInicial": "0-3-0-3",
+            "hipertrofia": "0-2-0-2",
+            "potencia": "0-1-0-1"
+        },
+        "cargas": {
+            "pesado": "mas del 40% del peso corporal por mancuerna",
+            "moderado": "del 20% al 39% del peso corporal",
+            "liviano": "hasta el 19% del peso corporal"
+        },
+        "repeticiones": {
+            "decrecientePesada": "10-8-6-4",
+            "decrecienteIntermedia": "12-10-8-8",
+            "decrecienteLiviana": "15-12-10-10",
+            "linealPesada": "8-8-8-8",
+            "linealIntermedia": "10-10-10-10",
+            "linealLiviana": "12-12-12-12"
+        },
+        "observaciones":"Posicion de arranque: Acostarse en el banco, agarrar la mancuerna por la parte inferior donde uno de los lados apunte hacia nosotros con los brazos estirados. Llevar el peso hacia atras hasta la altura de la cabeza y volver hasta la altura de la frente",
+        "comoSeHace": "https://www.youtube.com/shorts/w1h4Fu_DRAg"
+
+    },
+    {
+        "id":"8",
+            "nombre": "Remo al Menton con mancuernas",
+            "trenMotriz": "superior",
+            "grupoMuscular": "espalda",
+            "tiempo": {
+                "hipertrofiaInicial": "0-3-1-3",
+                "hipertrofia": "0-2-1-2",
+                "potencia": "0-1-0-1"
+            },
+            "cargas": {
+                "pesado": "mas del 40% del peso corporal por mancuerna",
+                "moderado": "del 20% al 39% del peso corporal",
+                "liviano": "hasta el 19% del peso corporal"
+            },
+            "repeticiones": {
+                "decrecientePesada": "10-8-6-4",
+                "decrecienteIntermedia": "12-10-8-8",
+                "decrecienteLiviana": "15-12-10-10",
+                "linealPesada": "8-8-8-8",
+                "linealIntermedia": "10-10-10-10",
+                "linealLiviana": "12-12-12-12"
+            },
+            "observaciones":"Posicion de arranque: Posicion erguida, brazos estirados hacia abajo. Se suben las dos mancuernas al mismo tiempo apuntando al menton. ",
+            "comoSeHace": "https://www.youtube.com/shorts/8ufFoyxxyyE"
+    
+        },
+        {
+"id":"9",
+"nombre": "Dominadas agarre abierto",
+"trenMotriz": "superior",
+"grupoMuscular": "espalda",
+"tiempo": {
+    "hipertrofiaInicial": "0-3-0-3",
+    "hipertrofia": "0-2-0-2",
+    "potencia": "0-1-0-1"
+},
+"cargas": {
+    "pesado": "peso corporal",
+    "moderado": "peso corporal",
+    "liviano": "peso corporal"
+},
+"repeticiones": {
+    "decrecientePesada": "No aplica",
+    "decrecienteIntermedia": "No aplica",
+    "decrecienteLiviana": "No aplica",
+    "linealPesada": "mas de 10 rep por serie",
+    "linealIntermedia": "7 a 10 rep por serie",
+    "linealLiviana": "hasta 6 rep por serie"
+},
+"observaciones":"Posicion de arranque: Colgado en la barra con brazos extendidos. Subir apuntando la barra al pecho ",
+"comoSeHace": "https://www.youtube.com/shorts/LerajxEGimU"
+
+},
+{
+    "id":"9",
+    "nombre": "Dominadas agarre cerrado",
+    "trenMotriz": "superior",
+    "grupoMuscular": "espalda",
+    "tiempo": {
+        "hipertrofiaInicial": "0-3-0-3",
+        "hipertrofia": "0-2-0-2",
+        "potencia": "0-1-0-1"
+    },
+    "cargas": {
+        "pesado": "peso corporal",
+        "moderado": "peso corporal",
+        "liviano": "peso corporal"
+    },
+    "repeticiones": {
+        "decrecientePesada": "No aplica",
+        "decrecienteIntermedia": "No aplica",
+        "decrecienteLiviana": "No aplica",
+        "linealPesada": "mas de 12 rep por serie",
+        "linealIntermedia": "8 a 11 rep por serie",
+        "linealLiviana": "hasta 8 rep por serie"
+    },
+    "observaciones":"Posicion de arranque: Colgado en la barra con brazos extendidos. Subir apuntando la barra al pecho ",
+    "comoSeHace": "https://www.youtube.com/shorts/LerajxEGimU"
+    
+    }
+]

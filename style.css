@@ -279,9 +279,10 @@ input:focus {
 /* Estilos NAV */
 
 .navegador {
+  width: 100%;
   height: 80px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   z-index: 1;
 }
@@ -325,11 +326,7 @@ input:focus {
   list-style: none;
 }
 .navegador ul li a {
-  color: white;
   text-decoration: none;
-  font-size: 30px;
-  
-  text-align: center;
 }
 @media (max-width: 768px) {
   .navegador ul li a {
@@ -362,6 +359,10 @@ input:focus {
   .navegador .fa-bars:hover + ul {
     left: 0;
   }
+}
+
+#cerrarSesion{
+  height: 100%;
 }
 
 /* Estilos Formulario Carga */

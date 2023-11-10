@@ -1,0 +1,266 @@
+[
+    {
+        "id":"1",
+        "nombre": "Press Banco Plano con Barra",
+        "trenMotriz": "superior",
+        "grupoMuscular": "pectoral",
+        "tiempo": {
+            "hipertrofiaInicial": "0-4-1-3",
+            "hipertrofia": "0-2-0-2",
+            "potencia": "0-1-0-2"
+        },
+        "cargas": {
+            "pesado": "mas del 80% del peso corporal incluyendo la barra",
+            "moderado": "del 40% al 79% del peso corporal incluyendo la barra",
+            "liviano": "hasta el 39% del peso corporal incluyendo la barra"
+        },
+        "repeticiones": {
+            "decrecientePesada": "10-8-6-4",
+            "decrecienteIntermedia": "12-10-8-8",
+            "decrecienteLiviana": "15-12-10-10",
+            "linealPesada": "8-8-8-8",
+            "linealIntermedia": "10-10-10-10",
+            "linealLiviana": "12-12-12-12"
+        },
+        "observaciones":"Posicion de arranque: Brazos estirados semi-flexionados.",
+        "comoSeHace": "https://www.youtube.com/shorts/i14IBMNQDQQ"
+
+    },
+        {
+            "id":"2",
+            "nombre": "Press Banco Inclinado con Barra",
+            "trenMotriz": "superior",
+            "grupoMuscular": "pectoral",
+            "tiempo": {
+                "hipertrofiaInicial": "0-4-1-3",
+                "hipertrofia": "0-2-1-2",
+                "potencia": "0-1-0-2"
+            },
+            "cargas": {
+                "pesado": "mas del 70% del peso corporal incluyendo la barra",
+                "moderado": "del 40% al 69% del peso corporal incluyendo la barra",
+                "liviano": "hasta el 39% del peso corporal incluyendo la barra"
+            },
+            "repeticiones": {
+                "decrecientePesada": "10-8-6-4",
+                "decrecienteIntermedia": "12-10-8-8",
+                "decrecienteLiviana": "15-12-10-10",
+                "linealPesada": "8-8-8-8",
+                "linealIntermedia": "10-10-10-10",
+                "linealLiviana": "12-12-12-12"
+            },
+            "observaciones":"Posicion de arranque: Brazos estirados semi-flexionados.",
+            "comoSeHace": "https://www.youtube.com/watch?v=YWU4-SlJqDk"
+        },
+        {
+            "id":"3",
+            "nombre": "Press Banco Plano con Mancuernas",
+            "trenMotriz": "superior",
+            "grupoMuscular": "pectoral",
+            "tiempo": {
+                "hipertrofiaInicial": "0-4-1-3",
+                "hipertrofia": "0-2-1-2",
+                "potencia": "0-1-0-2"
+            },
+            "cargas": {
+                "pesado": "mancuernas de mas de 30kg",
+                "moderado": "mancuernas de 15 a 30kg",
+                "liviano": "mancuernas de menos de 15kg"
+            },
+            "repeticiones": {
+                "decrecientePesada": "10-8-6-4",
+                "decrecienteIntermedia": "12-10-8-8",
+                "decrecienteLiviana": "15-12-10-10",
+                "linealPesada": "8-8-8-8",
+                "linealIntermedia": "10-10-10-10",
+                "linealLiviana": "12-12-12-12"
+            },
+            "observaciones":"Posicion de arranque: Brazos estirados perpendiculares a la columna. Mancuernas a la altura de los hombros con una leve rotacion apuntando hacia la cabeza.",
+            "comoSeHace": "https://www.youtube.com/watch?v=hI4Ckjx2L5Y"
+        },
+        {
+            "id":"4",
+            "nombre": "Press Banco Inclinado con Mancuernas",
+            "trenMotriz": "superior",
+            "grupoMuscular": "pectoral",
+            "tiempo": {
+                "hipertrofiaInicial": "0-4-1-3",
+                "hipertrofia": "0-2-1-2",
+                "potencia": "0-1-0-2"
+            },
+            "cargas": {
+                "pesado": "mancuernas de mas de 25kg",
+                "moderado": "mancuernas de 12.5 a 25kg",
+                "liviano": "mancuernas de menos de 12.5kg"
+            },
+            "repeticiones": {
+                "decrecientePesada": "10-8-6-4",
+                "decrecienteIntermedia": "12-10-8-8",
+                "decrecienteLiviana": "15-12-10-10",
+                "linealPesada": "8-8-8-8",
+                "linealIntermedia": "10-10-10-10",
+                "linealLiviana": "12-12-12-12"
+            },
+            "observaciones":"Posicion de arranque: Brazos estirados apuntando al techo. Mancuernas a la altura de los hombros con una leve rotacion apuntando hacia la cabeza.",
+            "comoSeHace": "https://www.youtube.com/shorts/fPY39mb4_GA"
+        },
+        {
+            "id":"5",
+            "nombre": "Apertura en Banco Plano",
+            "trenMotriz": "superior",
+            "grupoMuscular": "pectoral",
+            "tiempo": {
+                "hipertrofiaInicial": "1-4-1-3",
+                "hipertrofia": "1-3-1-2",
+                "potencia": "1-2-0-1"
+            },
+            "cargas": {
+                "pesado": "mancuernas de mas de 20kg",
+                "moderado": "mancuernas de 10 a 20kg",
+                "liviano": "mancuernas de menos de 10kg"
+            },
+            "repeticiones": {
+                "decrecientePesada": "10-8-6-4",
+                "decrecienteIntermedia": "12-10-8-8",
+                "decrecienteLiviana": "15-12-10-10",
+                "linealPesada": "8-8-8-8",
+                "linealIntermedia": "10-10-10-10",
+                "linealLiviana": "12-12-12-12"
+            },
+            "observaciones":"Posicion de arranque: Brazos estirados perpendiculares a la columna. Mancuernas a la altura de los hombros en paralelo a la posicion corporal.",
+            "comoSeHace": "https://www.youtube.com/shorts/OWsPTRX7GK0"
+        },
+        {
+        "id":"6",
+            "nombre": "Apertura en Banco Inclinado",
+            "trenMotriz": "superior",
+            "grupoMuscular": "pectoral",
+            "tiempo": {
+                "hipertrofiaInicial": "1-4-1-3",
+                "hipertrofia": "1-3-1-2",
+                "potencia": "1-2-0-1"
+            },
+            "cargas": {
+                "pesado": "mancuernas de mas de 17.5kg",
+                "moderado": "mancuernas de 10 a 17.5kg",
+                "liviano": "mancuernas de menos de 10kg"
+            },
+            "repeticiones": {
+                "decrecientePesada": "10-8-6-4",
+                "decrecienteIntermedia": "12-10-8-8",
+                "decrecienteLiviana": "15-12-10-10",
+                "linealPesada": "8-8-8-8",
+                "linealIntermedia": "10-10-10-10",
+                "linealLiviana": "12-12-12-12"
+            },
+            "observaciones":"Posicion de arranque: Brazos estirados apuntando al techo. Mancuernas a la altura de los hombros en paralelo a la posicion corporal.",
+            "comoSeHace": "https://www.youtube.com/shorts/OWsPTRX7GK0"
+        },
+        {
+            "id":"7",
+            "nombre": "Apertura en Banco Plano",
+            "trenMotriz": "superior",
+            "grupoMuscular": "pectoral",
+            "tiempo": {
+                "hipertrofiaInicial": "1-4-1-3",
+                "hipertrofia": "1-3-1-2",
+                "potencia": "1-2-0-1"
+            },
+            "cargas": {
+                "pesado": "mancuernas de mas de 20kg",
+                "moderado": "mancuernas de 10 a 20kg",
+                "liviano": "mancuernas de menos de 10kg"
+            },
+            "repeticiones": {
+                "decrecientePesada": "10-8-6-4",
+                "decrecienteIntermedia": "12-10-8-8",
+                "decrecienteLiviana": "15-12-10-10",
+                "linealPesada": "8-8-8-8",
+                "linealIntermedia": "10-10-10-10",
+                "linealLiviana": "12-12-12-12"
+            },
+            "observaciones":"Posicion de arranque: Brazos estirados perpendiculares a la columna. Mancuernas a la altura de los hombros en paralelo a la posicion corporal.",
+            "comoSeHace": "https://www.youtube.com/shorts/OWsPTRX7GK0"
+        },
+
+        {
+        "id":"8",
+            "nombre": "Pec Deck con Maquina",
+            "trenMotriz": "superior",
+            "grupoMuscular": "pectoral",
+            "tiempo": {
+                "hipertrofiaInicial": "1-3-1-3",
+                "hipertrofia": "0-2-1-2",
+                "potencia": "0-1-0-1"
+            },
+            "cargas": {
+                "pesado": "mas del 60% del peso corporal",
+                "moderado": "del 40% al 59% del peso corporal",
+                "liviano": "menos del 40% del peso corporal"
+            },
+            "repeticiones": {
+                "decrecientePesada": "10-8-6-4",
+                "decrecienteIntermedia": "12-10-8-8",
+                "decrecienteLiviana": "15-12-10-10",
+                "linealPesada": "8-8-8-8",
+                "linealIntermedia": "10-10-10-10",
+                "linealLiviana": "12-12-12-12"
+            },
+            "observaciones":"Posicion de arranque: Antebrazo sobre el soporte en un angulo aprox de 90 verificando que los codos queden por debajo de los hombros. ",
+            "comoSeHace": "https://www.youtube.com/shorts/VpgeMU8jOu0"
+        },
+
+        {
+            "id":"9",
+                "nombre": "Cruce con poleas",
+                "trenMotriz": "superior",
+                "grupoMuscular": "pectoral",
+                "tiempo": {
+                    "hipertrofiaInicial": "1-3-1-3",
+                    "hipertrofia": "0-2-1-2",
+                    "potencia": "0-1-0-1"
+                },
+                "cargas": {
+                    "pesado": "mas del 60% del peso corporal sumando ambas poleas",
+                    "moderado": "del 40% al 59% del peso corporal sumando ambas poleas",
+                    "liviano": "menos del 40% del peso corporal sumando ambas poleas"
+                },
+                "repeticiones": {
+                    "decrecientePesada": "10-8-6-4",
+                    "decrecienteIntermedia": "12-10-8-8",
+                    "decrecienteLiviana": "15-12-10-10",
+                    "linealPesada": "8-8-8-8",
+                    "linealIntermedia": "10-10-10-10",
+                    "linealLiviana": "12-12-12-12"
+                },
+                "observaciones":"Posicion de arranque: Brazos semiflexionados lateralmente. El agarre por debajo de los hombros. Contraer con orientacion al vientre. No cruzarlas. ",
+                "comoSeHace": "https://www.youtube.com/shorts/B_5amA7vPbA"
+            },
+            {
+                "id":"10",
+                "nombre": "Flexiones de Brazos",
+                "trenMotriz": "superior",
+                "grupoMuscular": "pectoral",
+                "tiempo": {
+                    "hipertrofiaInicial": "1-2-1-2",
+                    "hipertrofia": "0-2-1-2",
+                    "potencia": "0-1-1-1"
+                },
+                "cargas": {
+                    "pesado": "peso corporal",
+                    "moderado": "peso corporal",
+                    "liviano": "peso corporal"
+                },
+                "repeticiones": {
+                    "decrecientePesada": "10-8-6-4",
+                    "decrecienteIntermedia": "12-10-8-8",
+                    "decrecienteLiviana": "15-12-10-10",
+                    "linealPesada": "8-8-8-8",
+                    "linealIntermedia": "10-10-10-10",
+                    "linealLiviana": "12-12-12-12"
+                },
+                "observaciones":"Posicion de arranque: Brasos Flexionados, torso tocando el piso. Dedos separados y dedo mayor apuntando hacia adelante",
+                "comoSeHace": "https://www.youtube.com/shorts/6N5SznlYoaY"
+            }
+
+        ]
