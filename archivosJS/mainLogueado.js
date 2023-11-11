@@ -1,5 +1,4 @@
 const usuarioLogueado = recuperarUsuarioLogueado();
-console.log(usuarioLogueado);
 let usuario;
 
 const entrenamientoLogueado = usuarioLogueado.entrenamiento;
@@ -19,8 +18,7 @@ usuario = new Usuario(
   usuarioLogueado.restriccionesAlimenticias
 );
 
-console.log(usuario);
-determinaTipoEntrenamientoYAlimentacion(
+determinaTipoEntrenamiento(
   usuario.entrenamiento.tipoDeEntrenamiento(usuario.imc(), usuario.edad),
   usuario.restriccionesAlimenticias
 );

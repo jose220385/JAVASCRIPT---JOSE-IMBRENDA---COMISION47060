@@ -28,7 +28,7 @@ tipoDeEntrenamiento = (imc,edad) =>{
         intensidad = "avanzada"
     } else if (imc < 25 && imc >= 23 && edad >= 20 && edad <= 60 && this.experiencia >= 1) {
         intensidad = "alta"
-    } else if (edad >= 20 && edad <= 60) {
+    } else if (imc >19 && edad >= 20 && edad <= 60 && this.experiencia >= 0) {
         intensidad = "moderada"
     } else {
         intensidad = "baja"
