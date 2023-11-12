@@ -134,9 +134,43 @@ function numerosAleatoriosUnicos(cantidad, rangoMin, rangoMax) {
     return Array.from(numerosSet);
   }
 
+// Funcion para renderizar tabla
+
+  const renderizarTabla = (dataArenderizar) => {
+    const tabla = document.createElement('table');
+    const encabezado = document.createElement('tr');
+
+    const primerObjeto = dataArenderizar[0];
+    for (let atributo in primerObjeto) {
+        if (Object.prototype.hasOwnProperty.call(primerObjeto, atributo)) {
+            const th = document.createElement('th');
+            th.textContent = atributo;
+            encabezado.appendChild(th);
+        }
+    }
+    tabla.appendChild(encabezado);
+
+    // Agregar filas con los valores de los atributos de cada objeto
+    dataArenderizar.forEach(objeto => {
+        const fila = document.createElement('tr');
+        for (let atributo in objeto) {
+            if (Object.prototype.hasOwnProperty.call(objeto, atributo)) {
+                const td = document.createElement('td');
+                td.textContent = objeto[atributo];
+                fila.appendChild(td);
+            }
+        }
+        tabla.appendChild(fila);
+    });
+
+    // Limpiar cualquier contenido previo y agregar la tabla al contenedor
+    contenedorTabla.appendChild(tabla);
+}
+
+
 //Funcion para renderizar la rutina por dia
 
-const rutinaPorDia = async (urlBase,endpoint, cantidad, rangoMin, rangoMax,tipoEntrenamiento) =>{
+const rutinaPorDia = async (urlBase,endpoint, cantidad, rangoMin, rangoMax,tipoEntrenamiento, carga, repeticiones) =>{
     const resp = await fetch(urlBase+endpoint)
     const data = await resp.json()
     console.log(data)
@@ -153,10 +187,6 @@ const rutinaPorDia = async (urlBase,endpoint, cantidad, rangoMin, rangoMax,tipoE
     console.log(dataFiltrada)
 
     dataArenderizar = dataFiltrada.map((dato)=>{
-        let tiempo 
-
-         
-
         /* if ( tipoEntrenamiento== "hipertrofiaavanzada" || tipoEntrenamiento == "hipertrofiaalta" ){
             tiempo = dato.tiempo.hipertrofia
         } else if (tipoEntrenamiento == "hipertrofiamoderada" || tipoEntrenamiento == "hipertrofiabaja"){
@@ -165,7 +195,11 @@ const rutinaPorDia = async (urlBase,endpoint, cantidad, rangoMin, rangoMax,tipoE
         
         return {
             nombre :dato.nombre,
-            tiempo :tipoEntrenamiento,
+            tiempo :dato.tiempo[tipoEntrenamiento],
+            carga: dato.cargas[carga],
+            repeticiones: dato.repeticiones[repeticiones],
+            observaciones: dato.observaciones,
+            comoSeHace: dato.comoSeHace
         }
     })
 
@@ -177,41 +211,10 @@ const rutinaPorDia = async (urlBase,endpoint, cantidad, rangoMin, rangoMax,tipoE
     contenedorPadre.appendChild(titulo)
     contenedorPadre.appendChild(contenedorTabla)
 
-function renderizarTabla(dataFiltrada) {
-    // Crear la estructura inicial de la tabla
-    const tabla = document.createElement('table');
-    const encabezado = document.createElement('tr');
 
-    // Definir los encabezados basados en los nombres de los atributos del primer objeto
-    const primerObjeto = array[0];
-    for (let atributo in primerObjeto) {
-        if (Object.prototype.hasOwnProperty.call(primerObjeto, atributo)) {
-            const th = document.createElement('th');
-            th.textContent = atributo;
-            encabezado.appendChild(th);
-        }
-    }
-    tabla.appendChild(encabezado);
-
-    // Agregar filas con los valores de los atributos de cada objeto
-    array.forEach(objeto => {
-        const fila = document.createElement('tr');
-        for (let atributo in objeto) {
-            if (Object.prototype.hasOwnProperty.call(objeto, atributo)) {
-                const td = document.createElement('td');
-                td.textContent = objeto[atributo];
-                fila.appendChild(td);
-            }
-        }
-        tabla.appendChild(fila);
-    });
-
-    // Limpiar cualquier contenido previo y agregar la tabla al contenedor
-    tablaContainer.appendChild(tabla);
-}
 
 // Llamada a la función para renderizar la tabla
-renderizarTabla(arrayDeObjetos);
+renderizarTabla(dataArenderizar);
 
 }
 
@@ -227,7 +230,10 @@ const determinaTipoEntrenamiento = (tipoEntrenamiento) => {
         HIPERTROFIA_INTENSIVA,
         "Entrenamiento de Hipertrofia Avanzado"
       );
-      rutinaPorDia("../ejerciciosJSON","/pectorales.json",6,1,10,tipoEntrenamiento)
+      let tiempoDelEjercicio = "hipertrofia"
+      let carga = "pesado"
+      let repeticiones = "decrecientePesada"
+      rutinaPorDia("../ejerciciosJSON","/pectorales.json",6,1,10,tipoEntrenamiento, tiempoDelEjercicio, carga, repeticiones)
       break;
     case "hipertrofiaalta":
       renderizarEncabezadoRutina(
