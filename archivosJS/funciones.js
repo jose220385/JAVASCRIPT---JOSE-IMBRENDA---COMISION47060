@@ -101,7 +101,12 @@ const renderizarEncabezadoRutina = (nodoPadre, cuerpo, titulo) => {
   const NODO_CREADO = document.createElement("div");
   NODO_CREADO.innerHTML = `<h1>${titulo}</h1>
                               <p>${cuerpo}</p>
-                              <h3>A continuacion se detalla la rutina dia por dia</h3>`;
+                              <h3>A continuacion se detalla la rutina dia por dia</h3>
+                              <div class="contenedorBotones ">
+                                <button id="cambiarRutina" class="btn btn-primary btn-large botones-rutina">Cambiar Rutina</button>
+                                <button id="volverInicio" class="btn btn-primary btn-large botones-rutina"> Volver a Inicio</button>
+                             </div>                             
+                              `;
   NODO_CREADO.className = "rutina";
   NODO_CREADO.setAttribute("id", "nodoRutina");
   nodoPadre.append(NODO_CREADO);
@@ -150,6 +155,8 @@ const renderizarTabla = (dataArenderizar, encabezados) => {
       if (index === encabezados.length - 1) {
         const boton = document.createElement("button");
         boton.className = "btn btn-primary btn-custom btn-large";
+        td.innerHTML = ""
+        td.className = "ultimaColumna"
         boton.innerText = "Ver Video";
         boton.addEventListener("click", () => {
           window.location.href = objeto[claveValor];

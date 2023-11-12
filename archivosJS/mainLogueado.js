@@ -23,3 +23,9 @@ determinaTipoEntrenamiento(
   usuario.entrenamiento.tipoDeEntrenamiento(usuario.imc(), usuario.edad),
   usuario.restriccionesAlimenticias
 );
+
+const nuevaRutina = document.getElementById('cambiarRutina')
+nuevaRutina.addEventListener('click', ()=> window.location.reload())
+
+const volverInicio = document.getElementById('volverInicio')
+volverInicio.addEventListener('click', ()=> window.location.href = "../index.html") 
