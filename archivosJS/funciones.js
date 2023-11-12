@@ -2,17 +2,6 @@
 const URL_USUARIOS = new URL(
   "https://6545057a5a0b4b04436d78cb.mockapi.io/usuarios"
 );
-/* let usuariosBD
-
-fetch(URL_BASE + "/usuarios")
-  .then((res) => {
-    return res.json();
-  })
-  .then((datos) => {
-    console.log(datos);
-    usuariosBD = datos
-  });
- */
 
 //Funcion para validar Usuario y contraseña en caso que el Usuario exista
 const validarUsuarioYcontrasenia = (usuario, contrasenia) => {
@@ -114,117 +103,140 @@ const renderizarEncabezadoRutina = (nodoPadre, cuerpo, titulo) => {
                               <p>${cuerpo}</p>
                               <h3>A continuacion se detalla la rutina dia por dia</h3>`;
   NODO_CREADO.className = "rutina";
-  NODO_CREADO.setAttribute("id","nodoRutina")
+  NODO_CREADO.setAttribute("id", "nodoRutina");
   nodoPadre.append(NODO_CREADO);
 };
 
 //Funcion Numeros aleatorios para variar los ejercicios en las rutinas
 
 function numerosAleatoriosUnicos(cantidad, rangoMin, rangoMax) {
-    const numerosSet = new Set();
-    while (numerosSet.size < cantidad) {
-      const numeroAleatorio = Math.floor(Math.random() * (rangoMax - rangoMin + 1)) + rangoMin;
-      numerosSet.add(numeroAleatorio);
-    }
-  
-    return Array.from(numerosSet);
+  const numerosSet = new Set();
+  while (numerosSet.size < cantidad) {
+    const numeroAleatorio =
+      Math.floor(Math.random() * (rangoMax - rangoMin + 1)) + rangoMin;
+    numerosSet.add(numeroAleatorio);
   }
+
+  return Array.from(numerosSet);
+}
 
 // Funcion para renderizar tabla
 
-  const renderizarTabla = (dataArenderizar, encabezados) => {
+const renderizarTabla = (dataArenderizar, encabezados) => {
+  const tabla = document.createElement("table");
+  const encabezado = document.createElement("tr");
 
-    
-    const tabla = document.createElement('table');
-    const encabezado = document.createElement('tr');
+  encabezados.forEach((encabezadoTexto) => {
+    const th = document.createElement("th");
+    th.textContent = encabezadoTexto;
+    encabezado.appendChild(th);
+  });
+  tabla.appendChild(encabezado);
 
-   
-    encabezados.forEach(encabezadoTexto => {
-        const th = document.createElement('th');
-        th.textContent = encabezadoTexto;
-        encabezado.appendChild(th);
-    });
-    tabla.appendChild(encabezado);
+  clavesValor = [
+    "nombre",
+    "tiempo",
+    "carga",
+    "repeticiones",
+    "observaciones",
+    "comoSeHace",
+  ];
 
-    clavesValor = ['nombre','tiempo','carga','repeticiones','observaciones','comoSeHace']
-  
-    dataArenderizar.forEach(objeto => {
-        const fila = document.createElement('tr');
-        clavesValor.forEach((claveValor, index) => {
-            const td = document.createElement('td');
-            td.innerHTML = objeto[claveValor];
-            if (index === encabezados.length - 1) { 
-                const boton = document.createElement('button');
-                boton.className = 'btn btn-primary btn-custom btn-large'
-                boton.innerText = 'Ver Video';
-                boton.addEventListener('click', () => {
-                    window.location.href = objeto[claveValor]; 
-                });
-                td.appendChild(boton);
-            }
-            fila.appendChild(td);
+  dataArenderizar.forEach((objeto) => {
+    const fila = document.createElement("tr");
+    clavesValor.forEach((claveValor, index) => {
+      const td = document.createElement("td");
+      td.innerHTML = objeto[claveValor];
+      if (index === encabezados.length - 1) {
+        const boton = document.createElement("button");
+        boton.className = "btn btn-primary btn-custom btn-large";
+        boton.innerText = "Ver Video";
+        boton.addEventListener("click", () => {
+          window.location.href = objeto[claveValor];
         });
-        tabla.appendChild(fila);
+        td.appendChild(boton);
+      }
+      fila.appendChild(td);
     });
-    contenedorTabla.appendChild(tabla)
-  }
+    tabla.appendChild(fila);
+  });
+  contenedorTabla.appendChild(tabla);
+};
 
 //Funcion para renderizar la rutina por dia
 
-const rutinaPorDia = async (urlBase,endpoint, cantidad, rangoMin, rangoMax,tiempoDelEjercicio, carga, repeticiones,dia) =>{
-    const resp = await fetch(urlBase+endpoint)
-    const data = await resp.json()
-    console.log(data)
-    numerosAleatorios = numerosAleatoriosUnicos(cantidad, rangoMin, rangoMax)
-    const pasarAString = numerosAleatorios.map(numero => numero.toString())
-    console.log(pasarAString)
-    let dataFiltrada =[]
-    for (let i = 0; i < pasarAString.length; i++){
-        for(let j = 0; j<data.length;j++){
-            if(data[j].id== pasarAString[i]){
-                dataFiltrada.push(data[j])
-            }
-        }
+const rutinaPorDia = async (
+  urlBase,
+  endpoint,
+  cantidad,
+  rangoMin,
+  rangoMax,
+  tiempoDelEjercicio,
+  carga,
+  repeticiones,
+  dia
+) => {
+  const resp = await fetch(urlBase + endpoint);
+  const data = await resp.json();
+  console.log(data);
+  numerosAleatorios = numerosAleatoriosUnicos(cantidad, rangoMin, rangoMax);
+  const pasarAString = numerosAleatorios.map((numero) => numero.toString());
+  console.log(pasarAString);
+  let dataFiltrada = [];
+  for (let i = 0; i < pasarAString.length; i++) {
+    for (let j = 0; j < data.length; j++) {
+      if (data[j].id == pasarAString[i]) {
+        dataFiltrada.push(data[j]);
+      }
     }
-    console.log(dataFiltrada)
+  }
+  console.log(dataFiltrada);
 
-    dataArenderizar = dataFiltrada.map((dato)=>{
-        return {
-            nombre :dato.nombre,
-            tiempo :dato.tiempo[tiempoDelEjercicio],
-            carga: dato.cargas[carga],
-            repeticiones: dato.repeticiones[repeticiones],
-            observaciones: dato.observaciones,
-            comoSeHace: dato.comoSeHace
-        }
-    })
+  dataArenderizar = dataFiltrada.map((dato) => {
+    return {
+      nombre: dato.nombre,
+      tiempo: dato.tiempo[tiempoDelEjercicio],
+      carga: dato.cargas[carga],
+      repeticiones: dato.repeticiones[repeticiones],
+      observaciones: dato.observaciones,
+      comoSeHace: dato.comoSeHace,
+    };
+  });
 
-    console.log(dataArenderizar)
+  console.log(dataArenderizar);
 
-    const contenedorPadre = document.getElementById("nodoRutina")
-    const contenedorTabla = document.createElement('div')
-    contenedorTabla.setAttribute("id","contenedorTabla")
-    const titulo = document.createElement('h4')
-    titulo.className= "tituloRutina"
-    titulo.innerHTML= `Día ${dia}`
-    contenedorPadre.appendChild(titulo)
-    contenedorPadre.appendChild(contenedorTabla)
-    const encabezados = ['Nombre del Ejercicio', 'Tiempo', 'Carga recomendada', 'Repeticiones', 'Observaciones', 'Como se hace']
+  const contenedorPadre = document.getElementById("nodoRutina");
+  const contenedorTabla = document.createElement("div");
+  contenedorTabla.setAttribute("id", "contenedorTabla");
+  const titulo = document.createElement("h4");
+  titulo.className = "tituloRutina";
+  titulo.innerHTML = `Día ${dia}`;
+  contenedorPadre.appendChild(titulo);
+  contenedorPadre.appendChild(contenedorTabla);
+  const encabezados = [
+    "Nombre del Ejercicio",
+    "Tiempo",
+    "Carga recomendada",
+    "Repeticiones",
+    "Observaciones",
+    "Como se hace",
+  ];
 
-
-// Llamada a la función para renderizar la tabla
-renderizarTabla(dataArenderizar, encabezados);
-
-}
-
-
+  renderizarTabla(dataArenderizar, encabezados);
+};
 
 //Funcion que determina el tipo de entrenamiento y la dieta con restricciones
 const determinaTipoEntrenamiento = (tipoEntrenamiento) => {
   const nodoPadre = document.getElementsByTagName("body");
-  const urlLocal = "../ejerciciosJSON"
-  const diasDeLaSemana =['Lunes', 'Martes', 'Miercoles','Jueves','Viernes']
-  const endPoints = ["/pectorales.json","/hombros.json","/piernas.json","/espalda.json","/brazos.json"]
+  const urlLocal = "../ejerciciosJSON";
+  const diasDeLaSemana = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes"];
+  const endPoints = [
+    "/pectorales.json",
+    "/hombros.json",
+    "/piernas.json",
+    "/espalda.json",
+    "/brazos.json",
+  ];
   switch (tipoEntrenamiento) {
     case "hipertrofiaavanzada":
       renderizarEncabezadoRutina(
@@ -232,17 +244,23 @@ const determinaTipoEntrenamiento = (tipoEntrenamiento) => {
         HIPERTROFIA_INTENSIVA,
         "Entrenamiento de Hipertrofia Avanzado"
       );
-      let tiempoDelEjercicio = "hipertrofia"
-      let carga = "pesado"
-      let repeticiones = "decrecientePesada"
-      diasDeLaSemana.forEach((dia, index)=>{
-        rutinaPorDia(urlLocal,endPoints[index],6,1,10, tiempoDelEjercicio, carga, repeticiones,dia)
-      })
-      /* rutinaPorDia("../ejerciciosJSON","/pectorales.json",6,1,10,tipoEntrenamiento, tiempoDelEjercicio, carga, repeticiones,'Lunes')
-      rutinaPorDia("../ejerciciosJSON","/hombros.json",6,1,10,tipoEntrenamiento, tiempoDelEjercicio, carga, repeticiones,'Martes')
-      rutinaPorDia("../ejerciciosJSON","/piernas.json",6,1,10,tipoEntrenamiento, tiempoDelEjercicio, carga, repeticiones,'Miercoles')
-      rutinaPorDia("../ejerciciosJSON","/piernas.json",6,1,10,tipoEntrenamiento, tiempoDelEjercicio, carga, repeticiones,'Jueves')
-      rutinaPorDia("../ejerciciosJSON","/piernas.json",6,1,10,tipoEntrenamiento, tiempoDelEjercicio, carga, repeticiones,'Viernes') */
+      let tiempoDelEjercicio = "hipertrofia";
+      let carga = "pesado";
+      let repeticiones = "decrecientePesada";
+      diasDeLaSemana.forEach((dia, index) => {
+        rutinaPorDia(
+          urlLocal,
+          endPoints[index],
+          6,
+          1,
+          10,
+          tiempoDelEjercicio,
+          carga,
+          repeticiones,
+          dia
+        );
+      });
+      
       break;
     case "hipertrofiaalta":
       renderizarEncabezadoRutina(
@@ -356,6 +374,4 @@ const determinaTipoEntrenamiento = (tipoEntrenamiento) => {
 
 /* const renderizarRutina(genero, objetivo, ) */
 
-const renderizarRutina = (nodo, genero, tipoEntrenamiento) =>{
-
-}
+const renderizarRutina = (nodo, genero, tipoEntrenamiento) => {};

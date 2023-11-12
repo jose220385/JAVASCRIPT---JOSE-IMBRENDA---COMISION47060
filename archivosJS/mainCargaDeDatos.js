@@ -38,21 +38,17 @@ formularioUsuarioNuevo.addEventListener("submit", (e) => {
 
   console.log(nuevoUsuario);
 
-  //usuarios.push(nuevoUsuario);
-
   registrarLogueo(nuevoUsuario);
 
   fetch(URL_USUARIOS, {
     method: "POST",
     headers: { "content-type": "application/json" },
-    // Send your data in the request body as JSON
     body: JSON.stringify(nuevoUsuario),
   })
     .then((res) => {
       if (res.ok) {
         return res.json();
       }
-      // handle error
     })
     .then((data) => {
         console.log(data)
