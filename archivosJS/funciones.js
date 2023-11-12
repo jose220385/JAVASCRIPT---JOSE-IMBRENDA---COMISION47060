@@ -118,13 +118,9 @@ const renderizarEncabezadoRutina = (nodoPadre, cuerpo, titulo) => {
   nodoPadre.append(NODO_CREADO);
 };
 
-//Funcion Numeros aleatorios
+//Funcion Numeros aleatorios para variar los ejercicios en las rutinas
 
 function numerosAleatoriosUnicos(cantidad, rangoMin, rangoMax) {
-    if (cantidad > (rangoMax - rangoMin + 1)) {
-      return 'No se pueden generar esa cantidad de números únicos en el rango especificado';
-    }
-  
     const numerosSet = new Set();
     while (numerosSet.size < cantidad) {
       const numeroAleatorio = Math.floor(Math.random() * (rangoMax - rangoMin + 1)) + rangoMin;
@@ -136,45 +132,51 @@ function numerosAleatoriosUnicos(cantidad, rangoMin, rangoMax) {
 
 // Funcion para renderizar tabla
 
-  const renderizarTabla = (dataArenderizar) => {
+  const renderizarTabla = (dataArenderizar, encabezados) => {
+
+    
     const tabla = document.createElement('table');
     const encabezado = document.createElement('tr');
 
-    const primerObjeto = dataArenderizar[0];
-    for (let atributo in primerObjeto) {
-        if (Object.prototype.hasOwnProperty.call(primerObjeto, atributo)) {
-            const th = document.createElement('th');
-            th.textContent = atributo;
-            encabezado.appendChild(th);
-        }
-    }
+   
+    encabezados.forEach(encabezadoTexto => {
+        const th = document.createElement('th');
+        th.textContent = encabezadoTexto;
+        encabezado.appendChild(th);
+    });
     tabla.appendChild(encabezado);
 
-    // Agregar filas con los valores de los atributos de cada objeto
+    clavesValor = ['nombre','tiempo','carga','repeticiones','observaciones','comoSeHace']
+  
     dataArenderizar.forEach(objeto => {
         const fila = document.createElement('tr');
-        for (let atributo in objeto) {
-            if (Object.prototype.hasOwnProperty.call(objeto, atributo)) {
-                const td = document.createElement('td');
-                td.textContent = objeto[atributo];
-                fila.appendChild(td);
+        clavesValor.forEach((claveValor, index) => {
+            const td = document.createElement('td');
+            td.innerHTML = objeto[claveValor];
+            if (index === encabezados.length - 1) { 
+                const boton = document.createElement('button');
+                boton.className = 'btn btn-primary btn-custom btn-large'
+                boton.innerText = 'Ver Video';
+                boton.addEventListener('click', () => {
+                    window.location.href = objeto[claveValor]; 
+                });
+                td.appendChild(boton);
             }
-        }
+            fila.appendChild(td);
+        });
         tabla.appendChild(fila);
     });
-
-    // Limpiar cualquier contenido previo y agregar la tabla al contenedor
-    contenedorTabla.appendChild(tabla);
-}
-
+    contenedorTabla.appendChild(tabla)
+  }
 
 //Funcion para renderizar la rutina por dia
 
-const rutinaPorDia = async (urlBase,endpoint, cantidad, rangoMin, rangoMax,tipoEntrenamiento, carga, repeticiones) =>{
+const rutinaPorDia = async (urlBase,endpoint, cantidad, rangoMin, rangoMax,tiempoDelEjercicio, carga, repeticiones,dia) =>{
     const resp = await fetch(urlBase+endpoint)
     const data = await resp.json()
     console.log(data)
-    const pasarAString = numerosAleatoriosUnicos(cantidad, rangoMin, rangoMax).map(numero => numero.toString())
+    numerosAleatorios = numerosAleatoriosUnicos(cantidad, rangoMin, rangoMax)
+    const pasarAString = numerosAleatorios.map(numero => numero.toString())
     console.log(pasarAString)
     let dataFiltrada =[]
     for (let i = 0; i < pasarAString.length; i++){
@@ -187,15 +189,9 @@ const rutinaPorDia = async (urlBase,endpoint, cantidad, rangoMin, rangoMax,tipoE
     console.log(dataFiltrada)
 
     dataArenderizar = dataFiltrada.map((dato)=>{
-        /* if ( tipoEntrenamiento== "hipertrofiaavanzada" || tipoEntrenamiento == "hipertrofiaalta" ){
-            tiempo = dato.tiempo.hipertrofia
-        } else if (tipoEntrenamiento == "hipertrofiamoderada" || tipoEntrenamiento == "hipertrofiabaja"){
-            tiempo = dato.tiempo.hipertrofiaInicial
-        }  */
-        
         return {
             nombre :dato.nombre,
-            tiempo :dato.tiempo[tipoEntrenamiento],
+            tiempo :dato.tiempo[tiempoDelEjercicio],
             carga: dato.cargas[carga],
             repeticiones: dato.repeticiones[repeticiones],
             observaciones: dato.observaciones,
@@ -203,18 +199,21 @@ const rutinaPorDia = async (urlBase,endpoint, cantidad, rangoMin, rangoMax,tipoE
         }
     })
 
+    console.log(dataArenderizar)
+
     const contenedorPadre = document.getElementById("nodoRutina")
     const contenedorTabla = document.createElement('div')
     contenedorTabla.setAttribute("id","contenedorTabla")
     const titulo = document.createElement('h4')
-    titulo.innerHTML= "Dia 1"
+    titulo.className= "tituloRutina"
+    titulo.innerHTML= `Día ${dia}`
     contenedorPadre.appendChild(titulo)
     contenedorPadre.appendChild(contenedorTabla)
-
+    const encabezados = ['Nombre del Ejercicio', 'Tiempo', 'Carga recomendada', 'Repeticiones', 'Observaciones', 'Como se hace']
 
 
 // Llamada a la función para renderizar la tabla
-renderizarTabla(dataArenderizar);
+renderizarTabla(dataArenderizar, encabezados);
 
 }
 
@@ -223,6 +222,9 @@ renderizarTabla(dataArenderizar);
 //Funcion que determina el tipo de entrenamiento y la dieta con restricciones
 const determinaTipoEntrenamiento = (tipoEntrenamiento) => {
   const nodoPadre = document.getElementsByTagName("body");
+  const urlLocal = "../ejerciciosJSON"
+  const diasDeLaSemana =['Lunes', 'Martes', 'Miercoles','Jueves','Viernes']
+  const endPoints = ["/pectorales.json","/hombros.json","/piernas.json","/espalda.json","/brazos.json"]
   switch (tipoEntrenamiento) {
     case "hipertrofiaavanzada":
       renderizarEncabezadoRutina(
@@ -233,7 +235,14 @@ const determinaTipoEntrenamiento = (tipoEntrenamiento) => {
       let tiempoDelEjercicio = "hipertrofia"
       let carga = "pesado"
       let repeticiones = "decrecientePesada"
-      rutinaPorDia("../ejerciciosJSON","/pectorales.json",6,1,10,tipoEntrenamiento, tiempoDelEjercicio, carga, repeticiones)
+      diasDeLaSemana.forEach((dia, index)=>{
+        rutinaPorDia(urlLocal,endPoints[index],6,1,10, tiempoDelEjercicio, carga, repeticiones,dia)
+      })
+      /* rutinaPorDia("../ejerciciosJSON","/pectorales.json",6,1,10,tipoEntrenamiento, tiempoDelEjercicio, carga, repeticiones,'Lunes')
+      rutinaPorDia("../ejerciciosJSON","/hombros.json",6,1,10,tipoEntrenamiento, tiempoDelEjercicio, carga, repeticiones,'Martes')
+      rutinaPorDia("../ejerciciosJSON","/piernas.json",6,1,10,tipoEntrenamiento, tiempoDelEjercicio, carga, repeticiones,'Miercoles')
+      rutinaPorDia("../ejerciciosJSON","/piernas.json",6,1,10,tipoEntrenamiento, tiempoDelEjercicio, carga, repeticiones,'Jueves')
+      rutinaPorDia("../ejerciciosJSON","/piernas.json",6,1,10,tipoEntrenamiento, tiempoDelEjercicio, carga, repeticiones,'Viernes') */
       break;
     case "hipertrofiaalta":
       renderizarEncabezadoRutina(

@@ -405,11 +405,18 @@ select {
 	  0 1px 1px rgba(255, 255, 255, 0.2);
   }
 
+/* Estilos login */
+
+.contenedorBotones{
+  display: flex;
+  justify-content: space-around;
+}
+
 /*  Estilos rutina */
 
 .rutina {
 	margin-top: 50px;
-  width: 500px;
+  width: 80%;
   text-align: center;
 }
 .rutina h1 {
@@ -426,12 +433,37 @@ select {
 
 .rutina h3{
   color: #fff;
-  margin-top: 15px;
+  margin-top: 25px;
 }
 
-/* Estilos login */
+#contenedorTabla{
+  width: 100%;
+}
 
-.contenedorBotones{
-  display: flex;
-  justify-content: space-around;
+.tituloRutina{
+  color: #ffffff;
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+td {
+border: 3px solid #092756;
+margin: none;
+color: #ffffff;
+padding: 5px;
+}
+
+th {
+  border: 3px solid #092756;
+margin: none;
+color: #ffffff;
+padding: 5px;
+}
+
+#contenedorRutina{
+  margin-top: 20px;
+}
+
+#contenedorTabla{
+  margin-top: 10px;
 }
