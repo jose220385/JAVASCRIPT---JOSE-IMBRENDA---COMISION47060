@@ -1,384 +1,393 @@
 [
-    {
-        "id": "1",
-        "nombre": "Prensa a 45",
-        "trenMotriz": "inferior",
-        "grupoMuscular": "cuadriceps",
-        "tiempo": {
-            "hipertrofiaInicial": "1-4-1-3",
-            "hipertrofia": "1-2-1-2",
-            "potencia": "0-1-0-2"
-        },
-        "cargas": {
-            "pesado": "mas del 200% del peso corporal",
-            "moderado": "del 70% al 199% del peso corporal",
-            "liviano": "hasta el 69% del peso corporal"
-        },
-        "repeticiones": {
-            "decrecientePesada": "10-8-6-4",
-            "decrecienteIntermedia": "12-10-8-8",
-            "decrecienteLiviana": "15-12-10-10",
-            "linealPesada": "8-8-8-8",
-            "linealIntermedia": "10-10-10-10",
-            "linealLiviana": "12-12-12-12"
-        },
-        "observaciones": "Posicion de arranque: Colocar el respaldo a 90 grados. Planta apoyada completamente en la maquina. Pies en un ancho de hombro, con puntas ligeramente hacia afuera. Empujar hasta llegar a una posición estirada semiflexionada de la pierna",
-        "comoSeHace": "https://www.youtube.com/watch?v=3T7EFxh8kq4"
+  {
+    "id": "1",
+    "nombre": "Prensa a 45",
+    "trenMotriz": "inferior",
+    "grupoMuscular": "cuadriceps",
+    "tiempo": {
+      "hipertrofiaInicial": "1-4-1-3",
+      "hipertrofia": "1-2-1-2",
+      "potencia": "0-1-0-2"
     },
-    {
-        "id": "2",
-        "nombre": "Sentadilla Libre",
-        "trenMotriz": "inferior",
-        "grupoMuscular": "cuadriceps",
-        "tiempo": {
-            "hipertrofiaInicial": "1-4-1-3",
-            "hipertrofia": "1-2-1-2",
-            "potencia": "0-1-1-2"
-        },
-        "cargas": {
-            "pesado": "mas del 90% del peso corporal incluyendo la barra",
-            "moderado": "del 50% al 89% del peso corporal incluyendo la barra",
-            "liviano": "hasta el 49% del peso corporal incluyendo la barra"
-        },
-        "repeticiones": {
-            "decrecientePesada": "10-8-6-4",
-            "decrecienteIntermedia": "12-10-8-8",
-            "decrecienteLiviana": "15-12-10-10",
-            "linealPesada": "8-8-8-8",
-            "linealIntermedia": "10-10-10-10",
-            "linealLiviana": "12-12-12-12"
-        },
-        "observaciones": "Posicion de arranque: Peso sobre el trapecio. Apertura de piernas en ancho de hombros. Cadera hacia atras. Desciendo controlando sacar la cadera hacia atras",
-        "comoSeHace": "https://www.youtube.com/shorts/oSxJ78WQBZ0"
+    "cargas": {
+      "pesado": "mas del 200% del peso corporal",
+      "moderado": "del 70% al 199% del peso corporal",
+      "liviano": "hasta el 69% del peso corporal"
     },
-    {
-        "id": "3",
-        "nombre": "Extension de Cuadriceps",
-        "trenMotriz": "inferior",
-        "grupoMuscular": "cuadriceps",
-        "tiempo": {
-            "hipertrofiaInicial": "0-4-1-3",
-            "hipertrofia": "0-2-1-2",
-            "potencia": "0-1-0-2"
-        },
-        "cargas": {
-            "pesado": "mas del 80% del peso corporal",
-            "moderado": "del 40% al 79% del peso corporal",
-            "liviano": "hasta el 39% del peso corporal"
-        },
-        "repeticiones": {
-            "decrecientePesada": "10-8-6-4",
-            "decrecienteIntermedia": "12-10-8-8",
-            "decrecienteLiviana": "15-12-10-10",
-            "linealPesada": "8-8-8-8",
-            "linealIntermedia": "10-10-10-10",
-            "linealLiviana": "12-12-12-12"
-        },
-        "observaciones": "Posicion de arranque: Sentado a 90º subir estirando las piernas con las puntas de los pies hacia arriba.",
-        "comoSeHace": "https://www.youtube.com/shorts/RiWKdWsufUw"
+    "repeticiones": {
+      "decrecientePesada": "10-8-6-4",
+      "decrecienteIntermedia": "12-10-8-8",
+      "decrecienteLiviana": "15-12-10-10",
+      "linealPesada": "8-8-8-8",
+      "linealIntermedia": "10-10-10-10",
+      "linealLiviana": "12-12-12-12"
     },
-    {
-        "id": "4",
-        "nombre": "Curl de Isquiotibiales/femorales en camilla",
-        "trenMotriz": "inferior",
-        "grupoMuscular": "Isquiotibiales/femorales",
-        "tiempo": {
-            "hipertrofiaInicial": "1-4-1-4",
-            "hipertrofia": "1-3-1-3",
-            "potencia": "1-2-1-2"
-        },
-        "cargas": {
-            "pesado": "mas del 65% del peso corporal",
-            "moderado": "del 30% al 64% del peso corporal",
-            "liviano": "hasta el 29% del peso corporal"
-        },
-        "repeticiones": {
-            "decrecientePesada": "10-8-6-4",
-            "decrecienteIntermedia": "12-10-8-8",
-            "decrecienteLiviana": "15-12-10-10",
-            "linealPesada": "8-8-8-8",
-            "linealIntermedia": "10-10-10-10",
-            "linealLiviana": "12-12-12-12"
-        },
-        "observaciones": "Posicion de arranque: Acostado boca abajo, sujetarse de los soportes. iniciar la elevacion controlando el movimiento.",
-        "comoSeHace": "https://www.youtube.com/shorts/6JQflLWhKfg"
+    "observaciones": "Posicion de arranque: Colocar el respaldo a 90 grados. Planta apoyada completamente en la maquina. Pies en un ancho de hombro, con puntas ligeramente hacia afuera. Empujar hasta llegar a una posición estirada semiflexionada de la pierna",
+    "comoSeHace": "https://www.youtube.com/watch?v=3T7EFxh8kq4"
+  },
+  {
+    "id": "2",
+    "nombre": "Sentadilla Libre",
+    "trenMotriz": "inferior",
+    "grupoMuscular": "cuadriceps",
+    "tiempo": {
+      "hipertrofiaInicial": "1-4-1-3",
+      "hipertrofia": "1-2-1-2",
+      "potencia": "0-1-1-2"
     },
-    {
-        "id": "5",
-        "nombre": "Hack Squat",
-        "trenMotriz": "inferior",
-        "grupoMuscular": "cuadriceps",
-        "tiempo": {
-            "hipertrofiaInicial": "1-4-1-3",
-            "hipertrofia": "1-3-1-2",
-            "potencia": "0-2-0-1"
-        },
-        "cargas": {
-            "pesado": "mas del 85% del peso corporal",
-            "moderado": "del 40% al 84% del peso corporal",
-            "liviano": "hasta el 39% del peso corporal"
-        },
-        "repeticiones": {
-            "decrecientePesada": "10-8-6-4",
-            "decrecienteIntermedia": "12-10-8-8",
-            "decrecienteLiviana": "15-12-10-10",
-            "linealPesada": "8-8-8-8",
-            "linealIntermedia": "10-10-10-10",
-            "linealLiviana": "12-12-12-12"
-        },
-        "observaciones": "Posicion de arranque: Espalda bien apoyada en la maquina. Pies en ancho de hombro, colocados en la parte inferior de la plataforma, con puntas ligeramente orientadas hacia el exterior. Bajar hasta maxima flexion de rodillas ",
-        "comoSeHace": "https://www.youtube.com/shorts/itmlCUc0P3k"
+    "cargas": {
+      "pesado": "mas del 90% del peso corporal incluyendo la barra",
+      "moderado": "del 50% al 89% del peso corporal incluyendo la barra",
+      "liviano": "hasta el 49% del peso corporal incluyendo la barra"
     },
-    {
-        "id": "6",
-        "nombre": "Hip Thrust",
-        "trenMotriz": "inferior",
-        "grupoMuscular": "Glúteos",
-        "tiempo": {
-            "hipertrofiaInicial": "1-3-3-3",
-            "hipertrofia": "1-2-2-3",
-            "potencia": "1-2-2-2"
-        },
-        "cargas": {
-            "pesado": "mas del 70% del peso corporal",
-            "moderado": "del 40% al 69% del peso corporal",
-            "liviano": "hasta el 39% del peso corporal"
-        },
-        "repeticiones": {
-            "decrecientePesada": "10-8-6-4",
-            "decrecienteIntermedia": "12-10-8-8",
-            "decrecienteLiviana": "15-12-10-10",
-            "linealPesada": "8-8-8-8",
-            "linealIntermedia": "10-10-10-10",
-            "linealLiviana": "12-12-12-12"
-        },
-        "observaciones": "Posicion de arranque: Sentarse delante del banco, peso sobre la cadera, pies en un ancho de hombros, levantar el peso contrayendo los gluteos",
-        "comoSeHace": "https://www.youtube.com/watch?v=b1nsBZm9sU8"
+    "repeticiones": {
+      "decrecientePesada": "10-8-6-4",
+      "decrecienteIntermedia": "12-10-8-8",
+      "decrecienteLiviana": "15-12-10-10",
+      "linealPesada": "8-8-8-8",
+      "linealIntermedia": "10-10-10-10",
+      "linealLiviana": "12-12-12-12"
     },
+    "observaciones": "Posicion de arranque: Peso sobre el trapecio. Apertura de piernas en ancho de hombros. Cadera hacia atras. Desciendo controlando sacar la cadera hacia atras",
+    "comoSeHace": "https://www.youtube.com/shorts/oSxJ78WQBZ0"
+  },
+  {
+    "id": "3",
+    "nombre": "Extension de Cuadriceps",
+    "trenMotriz": "inferior",
+    "grupoMuscular": "cuadriceps",
+    "tiempo": {
+      "hipertrofiaInicial": "0-4-1-3",
+      "hipertrofia": "0-2-1-2",
+      "potencia": "0-1-0-2"
+    },
+    "cargas": {
+      "pesado": "mas del 80% del peso corporal",
+      "moderado": "del 40% al 79% del peso corporal",
+      "liviano": "hasta el 39% del peso corporal"
+    },
+    "repeticiones": {
+      "decrecientePesada": "10-8-6-4",
+      "decrecienteIntermedia": "12-10-8-8",
+      "decrecienteLiviana": "15-12-10-10",
+      "linealPesada": "8-8-8-8",
+      "linealIntermedia": "10-10-10-10",
+      "linealLiviana": "12-12-12-12"
+    },
+    "observaciones": "Posicion de arranque: Sentado a 90º subir estirando las piernas con las puntas de los pies hacia arriba.",
+    "comoSeHace": "https://www.youtube.com/shorts/RiWKdWsufUw"
+  },
+  {
+    "id": "4",
+    "nombre": "Curl de Isquiotibiales/femorales en camilla",
+    "trenMotriz": "inferior",
+    "grupoMuscular": "Isquiotibiales/femorales",
+    "tiempo": {
+      "hipertrofiaInicial": "1-4-1-4",
+      "hipertrofia": "1-3-1-3",
+      "potencia": "1-2-1-2"
+    },
+    "cargas": {
+      "pesado": "mas del 65% del peso corporal",
+      "moderado": "del 30% al 64% del peso corporal",
+      "liviano": "hasta el 29% del peso corporal"
+    },
+    "repeticiones": {
+      "decrecientePesada": "10-8-6-4",
+      "decrecienteIntermedia": "12-10-8-8",
+      "decrecienteLiviana": "15-12-10-10",
+      "linealPesada": "8-8-8-8",
+      "linealIntermedia": "10-10-10-10",
+      "linealLiviana": "12-12-12-12"
+    },
+    "observaciones": "Posicion de arranque: Acostado boca abajo, sujetarse de los soportes. iniciar la elevacion controlando el movimiento.",
+    "comoSeHace": "https://www.youtube.com/shorts/6JQflLWhKfg"
+  },
+  {
+    "id": "5",
+    "nombre": "Hack Squat",
+    "trenMotriz": "inferior",
+    "grupoMuscular": "cuadriceps",
+    "tiempo": {
+      "hipertrofiaInicial": "1-4-1-3",
+      "hipertrofia": "1-3-1-2",
+      "potencia": "0-2-0-1"
+    },
+    "cargas": {
+      "pesado": "mas del 85% del peso corporal",
+      "moderado": "del 40% al 84% del peso corporal",
+      "liviano": "hasta el 39% del peso corporal"
+    },
+    "repeticiones": {
+      "decrecientePesada": "10-8-6-4",
+      "decrecienteIntermedia": "12-10-8-8",
+      "decrecienteLiviana": "15-12-10-10",
+      "linealPesada": "8-8-8-8",
+      "linealIntermedia": "10-10-10-10",
+      "linealLiviana": "12-12-12-12"
+    },
+    "observaciones": "Posicion de arranque: Espalda bien apoyada en la maquina. Pies en ancho de hombro, colocados en la parte inferior de la plataforma, con puntas ligeramente orientadas hacia el exterior. Bajar hasta maxima flexion de rodillas ",
+    "comoSeHace": "https://www.youtube.com/shorts/itmlCUc0P3k"
+  },
+  {
+    "id": "6",
+    "nombre": "Hip Thrust",
+    "trenMotriz": "inferior",
+    "grupoMuscular": "Glúteos",
+    "tiempo": {
+      "hipertrofiaInicial": "1-3-3-3",
+      "hipertrofia": "1-2-2-3",
+      "potencia": "1-2-2-2"
+    },
+    "cargas": {
+      "pesado": "mas del 70% del peso corporal",
+      "moderado": "del 40% al 69% del peso corporal",
+      "liviano": "hasta el 39% del peso corporal"
+    },
+    "repeticiones": {
+      "decrecientePesada": "10-8-6-4",
+      "decrecienteIntermedia": "12-10-8-8",
+      "decrecienteLiviana": "15-12-10-10",
+      "linealPesada": "8-8-8-8",
+      "linealIntermedia": "10-10-10-10",
+      "linealLiviana": "12-12-12-12"
+    },
+    "observaciones": "Posicion de arranque: Sentarse delante del banco, peso sobre la cadera, pies en un ancho de hombros, levantar el peso contrayendo los gluteos",
+    "comoSeHace": "https://www.youtube.com/watch?v=b1nsBZm9sU8"
+  },
 
-    {"id": "7",
-        "nombre": "Peso muerto sumo con Kb o mancuerna",
-        "trenMotriz": "inferior",
-        "grupoMuscular": "Glúteos",
-        "tiempo": {
-            "hipertrofiaInicial": "1-3-1-4",
-            "hipertrofia": "1-2-1-4",
-            "potencia": "1-2-1-3"
-        },
-        "cargas": {
-            "pesado": "mas del 50% del peso corporal",
-            "moderado": "del 25% al 49% del peso corporal",
-            "liviano": "hasta el 24% del peso corporal"
-        },
-        "repeticiones": {
-            "decrecientePesada": "10-8-6-4",
-            "decrecienteIntermedia": "12-10-8-8",
-            "decrecienteLiviana": "15-12-10-10",
-            "linealPesada": "8-8-8-8",
-            "linealIntermedia": "10-10-10-10",
-            "linealLiviana": "12-12-12-12"
-        },
-        "observaciones": "Posicion de arranque: Salir desde el piso, ponerse de pie y volver al piso. Concentrarse en la cadera",
-        "comoSeHace": "https://www.youtube.com/watch?v=odS65TnXgU0"
+  {
+    "id": "7",
+    "nombre": "Peso muerto sumo con Kb o mancuerna",
+    "trenMotriz": "inferior",
+    "grupoMuscular": "Glúteos",
+    "tiempo": {
+      "hipertrofiaInicial": "1-3-1-4",
+      "hipertrofia": "1-2-1-4",
+      "potencia": "1-2-1-3"
     },
-    {"id": "8",
-        "nombre": "Estocada con Mancuernas",
-        "trenMotriz": "inferior",
-        "grupoMuscular": "Glúteos/Cuadriceps",
-        "tiempo": {
-            "hipertrofiaInicial": "1-3-1-4",
-            "hipertrofia": "1-2-1-4",
-            "potencia": "1-2-1-3"
-        },
-        "cargas": {
-            "pesado": "mas del 15% del peso corporal por mancuerna",
-            "moderado": "del 6% al 14% del peso corporal por mancuerna",
-            "liviano": "hasta el 5% del peso corporal por mancuerna"
-        },
-        "repeticiones": {
-            "decrecientePesada": "10-8-6-4",
-            "decrecienteIntermedia": "12-10-8-8",
-            "decrecienteLiviana": "15-12-10-10",
-            "linealPesada": "8-8-8-8",
-            "linealIntermedia": "10-10-10-10",
-            "linealLiviana": "12-12-12-12"
-        },
-        "observaciones": "Posicion de arranque: Erguido, pies en paralelo. hacer un paso hacia adelante, la rodilla no debe pasar el pie delamntero, mantener el cuerpo derecho",
-        "comoSeHace": "https://www.youtube.com/shorts/lT-oysQ-qKY"
+    "cargas": {
+      "pesado": "mas del 50% del peso corporal",
+      "moderado": "del 25% al 49% del peso corporal",
+      "liviano": "hasta el 24% del peso corporal"
     },
-    {"id": "9",
-        "nombre": "Estocada en Smith",
-        "trenMotriz": "gluteos/cuadriceps",
-        "grupoMuscular": "Glúteos",
-        "tiempo": {
-            "hipertrofiaInicial": "1-4-1-3",
-            "hipertrofia": "1-3-1-2",
-            "potencia": "1-3-1-2"
-        },
-        "cargas": {
-            "pesado": "mas del 15% del peso corporal por mancuerna",
-            "moderado": "del 6% al 14% del peso corporal",
-            "liviano": "hasta el 5% del peso corporal"
-        },
-        "repeticiones": {
-            "decrecientePesada": "10-8-6-4",
-            "decrecienteIntermedia": "12-10-8-8",
-            "decrecienteLiviana": "15-12-10-10",
-            "linealPesada": "8-8-8-8",
-            "linealIntermedia": "10-10-10-10",
-            "linealLiviana": "12-12-12-12"
-        },
-        "observaciones": "Posicion de arranque: Erguido, peso sobre el deltoides, una pierna adelante flexionada y la otra atras. Bajar en paralelo a las guias de la maquina",
-        "comoSeHace": "https://www.youtube.com/shorts/VyfVmLqjCcs"
+    "repeticiones": {
+      "decrecientePesada": "10-8-6-4",
+      "decrecienteIntermedia": "12-10-8-8",
+      "decrecienteLiviana": "15-12-10-10",
+      "linealPesada": "8-8-8-8",
+      "linealIntermedia": "10-10-10-10",
+      "linealLiviana": "12-12-12-12"
     },
-    {"id": "10",
-        "nombre": "Frog Pump con mancuerna",
-        "trenMotriz": "inferior",
-        "grupoMuscular": "Gluteos",
-        "tiempo": {
-            "hipertrofiaInicial": "1-3-3-4",
-            "hipertrofia": "1-2-2-3",
-            "potencia": "1-2-2-2"
-        },
-        "cargas": {
-            "pesado": "mas del 15% del peso corporal por mancuerna",
-            "moderado": "del 6% al 14% del peso corporal por mancuerna",
-            "liviano": "hasta el 5% del peso corporal por mancuerna"
-        },
-        "repeticiones": {
-            "decrecientePesada": "10-8-6-4",
-            "decrecienteIntermedia": "12-10-8-8",
-            "decrecienteLiviana": "15-12-10-10",
-            "linealPesada": "8-8-8-8",
-            "linealIntermedia": "10-10-10-10",
-            "linealLiviana": "12-12-12-12"
-        },
-        "observaciones": "Posicion de arranque: Acostarse sobre colchoneta, juntar planta de los pies, colocar el peso sobre la cadera y elevar contrayendo el glúteo",
-        "comoSeHace": "https://www.youtube.com/watch?v=mLTnEB8qVRY"
+    "observaciones": "Posicion de arranque: Salir desde el piso, ponerse de pie y volver al piso. Concentrarse en la cadera",
+    "comoSeHace": "https://www.youtube.com/watch?v=odS65TnXgU0"
+  },
+  {
+    "id": "8",
+    "nombre": "Estocada con Mancuernas",
+    "trenMotriz": "inferior",
+    "grupoMuscular": "Glúteos/Cuadriceps",
+    "tiempo": {
+      "hipertrofiaInicial": "1-3-1-4",
+      "hipertrofia": "1-2-1-4",
+      "potencia": "1-2-1-3"
     },
-    {"id": "11",
-        "nombre": "Sentadilla goblet con mancuerna",
-        "trenMotriz": "inferior",
-        "grupoMuscular": "Cuadriceps/Gluteos",
-        "tiempo": {
-            "hipertrofiaInicial": "1-4-1-3",
-            "hipertrofia": "1-3-1-2",
-            "potencia": "1-2-1-1"
-        },
-        "cargas": {
-            "pesado": "mas del 20% del peso corporal por mancuerna",
-            "moderado": "del 10% al 19% del peso corporal",
-            "liviano": "hasta el 9% del peso corporal"
-        },
-        "repeticiones": {
-            "decrecientePesada": "10-8-6-4",
-            "decrecienteIntermedia": "12-10-8-8",
-            "decrecienteLiviana": "15-12-10-10",
-            "linealPesada": "8-8-8-8",
-            "linealIntermedia": "10-10-10-10",
-            "linealLiviana": "12-12-12-12"
-        },
-        "observaciones": "Posicion de arranque: Erguido, mancuerna al pecho sujetando desde abajo con las palmas hacia arriba. Bajamos hasta casi tocar las rodillas con los codos",
-        "comoSeHace": "https://www.youtube.com/shorts/SpMrPG3RiCQ"
+    "cargas": {
+      "pesado": "mas del 15% del peso corporal por mancuerna",
+      "moderado": "del 6% al 14% del peso corporal por mancuerna",
+      "liviano": "hasta el 5% del peso corporal por mancuerna"
     },
-    {"id": "12",
-        "nombre": "Sentadilla búlgara con mancuerna",
-        "trenMotriz": "inferior",
-        "grupoMuscular": "Cuadriceps/Gluteos",
-        "tiempo": {
-            "hipertrofiaInicial": "1-4-1-3",
-            "hipertrofia": "1-3-1-2",
-            "potencia": "1-2-1-1"
-        },
-        "cargas": {
-            "pesado": "mas del 20% del peso corporal por mancuerna",
-            "moderado": "del 10% al 19% del peso corporal",
-            "liviano": "hasta el 9% del peso corporal"
-        },
-        "repeticiones": {
-            "decrecientePesada": "10-8-6-4 de cada lado",
-            "decrecienteIntermedia": "12-10-8-8 de cada lado",
-            "decrecienteLiviana": "15-12-10-10 de cada lado",
-            "linealPesada": "8-8-8-8 de cada lado",
-            "linealIntermedia": "10-10-10-10 de cada lado",
-            "linealLiviana": "12-12-12-12 de cada lado"
-        },
-        "observaciones": "Posicion de arranque: Colocar el pie de atrás sobre base redonda como el rodillo del sillón de cuádriceps, evitar que sea un banco. Buscar bajar en una diagonal hacia atrás, presionar desde el talón",
-        "comoSeHace": "https://www.youtube.com/watch?v=MGh5po3i5cE"
+    "repeticiones": {
+      "decrecientePesada": "10-8-6-4",
+      "decrecienteIntermedia": "12-10-8-8",
+      "decrecienteLiviana": "15-12-10-10",
+      "linealPesada": "8-8-8-8",
+      "linealIntermedia": "10-10-10-10",
+      "linealLiviana": "12-12-12-12"
     },
-    {"id": "13",
-        "nombre": "Patada de gluteos con polea",
-        "trenMotriz": "inferior",
-        "grupoMuscular": "Gluteos",
-        "tiempo": {
-            "hipertrofiaInicial": "1-3-1-4",
-            "hipertrofia": "1-2-1-3",
-            "potencia": "1-2-1-2"
-        },
-        "cargas": {
-            "pesado": "mas del 25% del peso corporal por pierna",
-            "moderado": "del 10% al 24% del peso corporal por pierna",
-            "liviano": "hasta el 9% del peso corporal por pierna"
-        },
-        "repeticiones": {
-            "decrecientePesada": "10-8-6-4 de cada lado",
-            "decrecienteIntermedia": "12-10-8-8 de cada lado",
-            "decrecienteLiviana": "15-12-10-10 de cada lado",
-            "linealPesada": "8-8-8-8 de cada lado",
-            "linealIntermedia": "10-10-10-10 de cada lado",
-            "linealLiviana": "12-12-12-12 de cada lado"
-        },
-        "observaciones": "Posicion de arranque: Colocarse frente a la maquina. Buscar un punto de apoyo en la maquina. Semiflexionar las rodillas. Empujar apuntando el talon, no los pies",
-        "comoSeHace": "https://www.youtube.com/shorts/rrhcfdBFz9s"
+    "observaciones": "Posicion de arranque: Erguido, pies en paralelo. hacer un paso hacia adelante, la rodilla no debe pasar el pie delamntero, mantener el cuerpo derecho",
+    "comoSeHace": "https://www.youtube.com/shorts/lT-oysQ-qKY"
+  },
+  {
+    "id": "9",
+    "nombre": "Estocada en Smith",
+    "trenMotriz": "gluteos/cuadriceps",
+    "grupoMuscular": "Glúteos",
+    "tiempo": {
+      "hipertrofiaInicial": "1-4-1-3",
+      "hipertrofia": "1-3-1-2",
+      "potencia": "1-3-1-2"
     },
-    {"id": "14",
-        "nombre": "Abducción en Máquina - contracción hacia adentro",
-        "trenMotriz": "inferior",
-        "grupoMuscular": "abductores",
-        "tiempo": {
-            "hipertrofiaInicial": "1-2-1-4",
-            "hipertrofia": "1-1-1-3",
-            "potencia": "1-1-1-2"
-        },
-        "cargas": {
-            "pesado": "mas del 35% del peso corporal por pierna",
-            "moderado": "del 15% al 34% del peso corporal por pierna",
-            "liviano": "hasta el 14% del peso corporal por pierna"
-        },
-        "repeticiones": {
-            "decrecientePesada": "10-8-6-4",
-            "decrecienteIntermedia": "12-10-8-8",
-            "decrecienteLiviana": "15-12-10-10",
-            "linealPesada": "8-8-8-8",
-            "linealIntermedia": "10-10-10-10",
-            "linealLiviana": "12-12-12-12"
-        },
-        "observaciones": "Posicion de arranque: Sentarse en la maquina con piernas abiertas y contraer hacia el centro",
-        "comoSeHace": "https://www.youtube.com/shorts/76uNT_VMhPI"
+    "cargas": {
+      "pesado": "mas del 15% del peso corporal por mancuerna",
+      "moderado": "del 6% al 14% del peso corporal",
+      "liviano": "hasta el 5% del peso corporal"
     },
-    {"id": "15",
-        "nombre": "Abducción en Máquina - contracción hacia afuera",
-        "trenMotriz": "inferior",
-        "grupoMuscular": "abductores",
-        "tiempo": {
-            "hipertrofiaInicial": "1-2-1-4",
-            "hipertrofia": "1-1-1-3",
-            "potencia": "1-1-1-2"
-        },
-        "cargas": {
-            "pesado": "mas del 35% del peso corporal por pierna",
-            "moderado": "del 15% al 34% del peso corporal por pierna",
-            "liviano": "hasta el 14% del peso corporal por pierna"
-        },
-        "repeticiones": {
-            "decrecientePesada": "10-8-6-4",
-            "decrecienteIntermedia": "12-10-8-8",
-            "decrecienteLiviana": "15-12-10-10",
-            "linealPesada": "8-8-8-8",
-            "linealIntermedia": "10-10-10-10",
-            "linealLiviana": "12-12-12-12"
-        },
-        "observaciones": "Posicion de arranque: Sentarse en la maquina con piernas cerradas y contraer hacia afuera",
-        "comoSeHace": "https://www.youtube.com/shorts/76uNT_VMhPI"
-    }
+    "repeticiones": {
+      "decrecientePesada": "10-8-6-4",
+      "decrecienteIntermedia": "12-10-8-8",
+      "decrecienteLiviana": "15-12-10-10",
+      "linealPesada": "8-8-8-8",
+      "linealIntermedia": "10-10-10-10",
+      "linealLiviana": "12-12-12-12"
+    },
+    "observaciones": "Posicion de arranque: Erguido, peso sobre el deltoides, una pierna adelante flexionada y la otra atras. Bajar en paralelo a las guias de la maquina",
+    "comoSeHace": "https://www.youtube.com/shorts/VyfVmLqjCcs"
+  },
+  {
+    "id": "10",
+    "nombre": "Frog Pump con mancuerna",
+    "trenMotriz": "inferior",
+    "grupoMuscular": "Gluteos",
+    "tiempo": {
+      "hipertrofiaInicial": "1-3-3-4",
+      "hipertrofia": "1-2-2-3",
+      "potencia": "1-2-2-2"
+    },
+    "cargas": {
+      "pesado": "mas del 15% del peso corporal por mancuerna",
+      "moderado": "del 6% al 14% del peso corporal por mancuerna",
+      "liviano": "hasta el 5% del peso corporal por mancuerna"
+    },
+    "repeticiones": {
+      "decrecientePesada": "10-8-6-4",
+      "decrecienteIntermedia": "12-10-8-8",
+      "decrecienteLiviana": "15-12-10-10",
+      "linealPesada": "8-8-8-8",
+      "linealIntermedia": "10-10-10-10",
+      "linealLiviana": "12-12-12-12"
+    },
+    "observaciones": "Posicion de arranque: Acostarse sobre colchoneta, juntar planta de los pies, colocar el peso sobre la cadera y elevar contrayendo el glúteo",
+    "comoSeHace": "https://www.youtube.com/watch?v=mLTnEB8qVRY"
+  },
+  {
+    "id": "11",
+    "nombre": "Sentadilla goblet con mancuerna",
+    "trenMotriz": "inferior",
+    "grupoMuscular": "Cuadriceps/Gluteos",
+    "tiempo": {
+      "hipertrofiaInicial": "1-4-1-3",
+      "hipertrofia": "1-3-1-2",
+      "potencia": "1-2-1-1"
+    },
+    "cargas": {
+      "pesado": "mas del 20% del peso corporal por mancuerna",
+      "moderado": "del 10% al 19% del peso corporal",
+      "liviano": "hasta el 9% del peso corporal"
+    },
+    "repeticiones": {
+      "decrecientePesada": "10-8-6-4",
+      "decrecienteIntermedia": "12-10-8-8",
+      "decrecienteLiviana": "15-12-10-10",
+      "linealPesada": "8-8-8-8",
+      "linealIntermedia": "10-10-10-10",
+      "linealLiviana": "12-12-12-12"
+    },
+    "observaciones": "Posicion de arranque: Erguido, mancuerna al pecho sujetando desde abajo con las palmas hacia arriba. Bajamos hasta casi tocar las rodillas con los codos",
+    "comoSeHace": "https://www.youtube.com/shorts/SpMrPG3RiCQ"
+  },
+  {
+    "id": "12",
+    "nombre": "Sentadilla búlgara con mancuerna",
+    "trenMotriz": "inferior",
+    "grupoMuscular": "Cuadriceps/Gluteos",
+    "tiempo": {
+      "hipertrofiaInicial": "1-4-1-3",
+      "hipertrofia": "1-3-1-2",
+      "potencia": "1-2-1-1"
+    },
+    "cargas": {
+      "pesado": "mas del 20% del peso corporal por mancuerna",
+      "moderado": "del 10% al 19% del peso corporal",
+      "liviano": "hasta el 9% del peso corporal"
+    },
+    "repeticiones": {
+      "decrecientePesada": "10-8-6-4 de cada lado",
+      "decrecienteIntermedia": "12-10-8-8 de cada lado",
+      "decrecienteLiviana": "15-12-10-10 de cada lado",
+      "linealPesada": "8-8-8-8 de cada lado",
+      "linealIntermedia": "10-10-10-10 de cada lado",
+      "linealLiviana": "12-12-12-12 de cada lado"
+    },
+    "observaciones": "Posicion de arranque: Colocar el pie de atrás sobre base redonda como el rodillo del sillón de cuádriceps, evitar que sea un banco. Buscar bajar en una diagonal hacia atrás, presionar desde el talón",
+    "comoSeHace": "https://www.youtube.com/watch?v=MGh5po3i5cE"
+  },
+  {
+    "id": "13",
+    "nombre": "Patada de gluteos con polea",
+    "trenMotriz": "inferior",
+    "grupoMuscular": "Gluteos",
+    "tiempo": {
+      "hipertrofiaInicial": "1-3-1-4",
+      "hipertrofia": "1-2-1-3",
+      "potencia": "1-2-1-2"
+    },
+    "cargas": {
+      "pesado": "mas del 25% del peso corporal por pierna",
+      "moderado": "del 10% al 24% del peso corporal por pierna",
+      "liviano": "hasta el 9% del peso corporal por pierna"
+    },
+    "repeticiones": {
+      "decrecientePesada": "10-8-6-4 de cada lado",
+      "decrecienteIntermedia": "12-10-8-8 de cada lado",
+      "decrecienteLiviana": "15-12-10-10 de cada lado",
+      "linealPesada": "8-8-8-8 de cada lado",
+      "linealIntermedia": "10-10-10-10 de cada lado",
+      "linealLiviana": "12-12-12-12 de cada lado"
+    },
+    "observaciones": "Posicion de arranque: Colocarse frente a la maquina. Buscar un punto de apoyo en la maquina. Semiflexionar las rodillas. Empujar apuntando el talon, no los pies",
+    "comoSeHace": "https://www.youtube.com/shorts/rrhcfdBFz9s"
+  },
+  {
+    "id": "14",
+    "nombre": "Abducción en Máquina - contracción hacia adentro",
+    "trenMotriz": "inferior",
+    "grupoMuscular": "abductores",
+    "tiempo": {
+      "hipertrofiaInicial": "1-2-1-4",
+      "hipertrofia": "1-1-1-3",
+      "potencia": "1-1-1-2"
+    },
+    "cargas": {
+      "pesado": "mas del 35% del peso corporal por pierna",
+      "moderado": "del 15% al 34% del peso corporal por pierna",
+      "liviano": "hasta el 14% del peso corporal por pierna"
+    },
+    "repeticiones": {
+      "decrecientePesada": "10-8-6-4",
+      "decrecienteIntermedia": "12-10-8-8",
+      "decrecienteLiviana": "15-12-10-10",
+      "linealPesada": "8-8-8-8",
+      "linealIntermedia": "10-10-10-10",
+      "linealLiviana": "12-12-12-12"
+    },
+    "observaciones": "Posicion de arranque: Sentarse en la maquina con piernas abiertas y contraer hacia el centro",
+    "comoSeHace": "https://www.youtube.com/shorts/76uNT_VMhPI"
+  },
+  {
+    "id": "15",
+    "nombre": "Abducción en Máquina - contracción hacia afuera",
+    "trenMotriz": "inferior",
+    "grupoMuscular": "abductores",
+    "tiempo": {
+      "hipertrofiaInicial": "1-2-1-4",
+      "hipertrofia": "1-1-1-3",
+      "potencia": "1-1-1-2"
+    },
+    "cargas": {
+      "pesado": "mas del 35% del peso corporal por pierna",
+      "moderado": "del 15% al 34% del peso corporal por pierna",
+      "liviano": "hasta el 14% del peso corporal por pierna"
+    },
+    "repeticiones": {
+      "decrecientePesada": "10-8-6-4",
+      "decrecienteIntermedia": "12-10-8-8",
+      "decrecienteLiviana": "15-12-10-10",
+      "linealPesada": "8-8-8-8",
+      "linealIntermedia": "10-10-10-10",
+      "linealLiviana": "12-12-12-12"
+    },
+    "observaciones": "Posicion de arranque: Sentarse en la maquina con piernas cerradas y contraer hacia afuera",
+    "comoSeHace": "https://www.youtube.com/shorts/76uNT_VMhPI"
+  }
 ]

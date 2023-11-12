@@ -1,12 +1,12 @@
 const usuarioLogueado = recuperarUsuarioLogueado();
-let usuario;
+
 
 const entrenamientoLogueado = usuarioLogueado.entrenamiento;
 const entrenamiento = new Entrenamiento(
   entrenamientoLogueado.objetivo,
   entrenamientoLogueado.experiencia
 );
-usuario = new Usuario(
+const usuario = new Usuario(
   usuarioLogueado.nombreUsuario,
   usuarioLogueado.contrasenia,
   usuarioLogueado.nombre,
@@ -14,6 +14,7 @@ usuario = new Usuario(
   usuarioLogueado.edad,
   usuarioLogueado.peso,
   usuarioLogueado.altura,
+  usuarioLogueado.genero,
   entrenamiento,
   usuarioLogueado.restriccionesAlimenticias
 );

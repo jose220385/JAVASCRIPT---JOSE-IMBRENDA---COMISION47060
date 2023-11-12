@@ -114,8 +114,108 @@ const renderizarEncabezadoRutina = (nodoPadre, cuerpo, titulo) => {
                               <p>${cuerpo}</p>
                               <h3>A continuacion se detalla la rutina dia por dia</h3>`;
   NODO_CREADO.className = "rutina";
+  NODO_CREADO.setAttribute("id","nodoRutina")
   nodoPadre.append(NODO_CREADO);
 };
+
+//Funcion Numeros aleatorios
+
+function numerosAleatoriosUnicos(cantidad, rangoMin, rangoMax) {
+    if (cantidad > (rangoMax - rangoMin + 1)) {
+      return 'No se pueden generar esa cantidad de números únicos en el rango especificado';
+    }
+  
+    const numerosSet = new Set();
+    while (numerosSet.size < cantidad) {
+      const numeroAleatorio = Math.floor(Math.random() * (rangoMax - rangoMin + 1)) + rangoMin;
+      numerosSet.add(numeroAleatorio);
+    }
+  
+    return Array.from(numerosSet);
+  }
+
+//Funcion para renderizar la rutina por dia
+
+const rutinaPorDia = async (urlBase,endpoint, cantidad, rangoMin, rangoMax,tipoEntrenamiento) =>{
+    const resp = await fetch(urlBase+endpoint)
+    const data = await resp.json()
+    console.log(data)
+    const pasarAString = numerosAleatoriosUnicos(cantidad, rangoMin, rangoMax).map(numero => numero.toString())
+    console.log(pasarAString)
+    let dataFiltrada =[]
+    for (let i = 0; i < pasarAString.length; i++){
+        for(let j = 0; j<data.length;j++){
+            if(data[j].id== pasarAString[i]){
+                dataFiltrada.push(data[j])
+            }
+        }
+    }
+    console.log(dataFiltrada)
+
+    dataArenderizar = dataFiltrada.map((dato)=>{
+        let tiempo 
+
+         
+
+        /* if ( tipoEntrenamiento== "hipertrofiaavanzada" || tipoEntrenamiento == "hipertrofiaalta" ){
+            tiempo = dato.tiempo.hipertrofia
+        } else if (tipoEntrenamiento == "hipertrofiamoderada" || tipoEntrenamiento == "hipertrofiabaja"){
+            tiempo = dato.tiempo.hipertrofiaInicial
+        }  */
+        
+        return {
+            nombre :dato.nombre,
+            tiempo :tipoEntrenamiento,
+        }
+    })
+
+    const contenedorPadre = document.getElementById("nodoRutina")
+    const contenedorTabla = document.createElement('div')
+    contenedorTabla.setAttribute("id","contenedorTabla")
+    const titulo = document.createElement('h4')
+    titulo.innerHTML= "Dia 1"
+    contenedorPadre.appendChild(titulo)
+    contenedorPadre.appendChild(contenedorTabla)
+
+function renderizarTabla(dataFiltrada) {
+    // Crear la estructura inicial de la tabla
+    const tabla = document.createElement('table');
+    const encabezado = document.createElement('tr');
+
+    // Definir los encabezados basados en los nombres de los atributos del primer objeto
+    const primerObjeto = array[0];
+    for (let atributo in primerObjeto) {
+        if (Object.prototype.hasOwnProperty.call(primerObjeto, atributo)) {
+            const th = document.createElement('th');
+            th.textContent = atributo;
+            encabezado.appendChild(th);
+        }
+    }
+    tabla.appendChild(encabezado);
+
+    // Agregar filas con los valores de los atributos de cada objeto
+    array.forEach(objeto => {
+        const fila = document.createElement('tr');
+        for (let atributo in objeto) {
+            if (Object.prototype.hasOwnProperty.call(objeto, atributo)) {
+                const td = document.createElement('td');
+                td.textContent = objeto[atributo];
+                fila.appendChild(td);
+            }
+        }
+        tabla.appendChild(fila);
+    });
+
+    // Limpiar cualquier contenido previo y agregar la tabla al contenedor
+    tablaContainer.appendChild(tabla);
+}
+
+// Llamada a la función para renderizar la tabla
+renderizarTabla(arrayDeObjetos);
+
+}
+
+
 
 //Funcion que determina el tipo de entrenamiento y la dieta con restricciones
 const determinaTipoEntrenamiento = (tipoEntrenamiento) => {
@@ -127,6 +227,7 @@ const determinaTipoEntrenamiento = (tipoEntrenamiento) => {
         HIPERTROFIA_INTENSIVA,
         "Entrenamiento de Hipertrofia Avanzado"
       );
+      rutinaPorDia("../ejerciciosJSON","/pectorales.json",6,1,10,tipoEntrenamiento)
       break;
     case "hipertrofiaalta":
       renderizarEncabezadoRutina(
@@ -235,3 +336,11 @@ const determinaTipoEntrenamiento = (tipoEntrenamiento) => {
       break;
   }
 };
+
+//Funcion Renderizar Rutina
+
+/* const renderizarRutina(genero, objetivo, ) */
+
+const renderizarRutina = (nodo, genero, tipoEntrenamiento) =>{
+
+}

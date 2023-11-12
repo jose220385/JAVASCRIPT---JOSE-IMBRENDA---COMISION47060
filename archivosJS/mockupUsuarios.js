@@ -6,8 +6,8 @@ const usuarios = [
         apellido: "Perez",
         edad: 34,
         peso: 87,
-
         altura: 1.78,
+        genero: 1,
         entrenamiento: {
             objetivo: 2,
             experiencia: 3,
@@ -21,8 +21,8 @@ const usuarios = [
         apellido: "Saenz",
         edad: 25,
         peso: 62,
-
         altura: 1.56,
+        genero:2,
         entrenamiento: {
             objetivo: 2,
             experiencia: 2,
@@ -36,8 +36,8 @@ const usuarios = [
         apellido: "Panzotti",
         edad: 42,
         peso: 96,
-
         altura: 1.70,
+        genero: 3,
         entrenamiento: {
             objetivo: 1,
             experiencia: 2,

@@ -2,23 +2,23 @@ class Usuario {
     constructor(
         nombreUsuario,
         contrasenia,
-        //dni,
         nombre,
         apellido,
         edad,
         peso,
         altura,
+        genero,
         entrenamiento,
         restriccionesAlimenticias
     ) {
         this.nombreUsuario = nombreUsuario;
         this.contrasenia = contrasenia;
-        //this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
         this.edad = edad;
         this.peso = peso;
         this.altura = altura;
+        this.genero = genero;
         this.entrenamiento = entrenamiento;
         this.restriccionesAlimenticias = restriccionesAlimenticias;
     }

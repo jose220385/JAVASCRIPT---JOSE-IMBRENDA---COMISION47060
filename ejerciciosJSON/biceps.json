@@ -1,158 +1,158 @@
 [
-    {
-      "id": "1",
-      "nombre": "Curl de bíceps con barra Z en banco Scott",
-      "trenMotriz": "superior",
-      "grupoMuscular": "biceps",
-      "tiempo": {
-        "hipertrofiaInicial": "1-4-2-4",
-        "hipertrofia": "1-3-1-3",
-        "potencia": "1-2-1-2"
-      },
-      "cargas": {
-        "pesado": "mas del 35% del peso corporal",
-        "moderado": "del 20% al 34% del peso corporal",
-        "liviano": "hasta el 19% del peso corporal"
-      },
-      "repeticiones": {
-        "decrecientePesada": "10-8-6-4",
-        "decrecienteIntermedia": "12-10-8-8",
-        "decrecienteLiviana": "15-12-10-10",
-        "linealPesada": "8-8-8-8",
-        "linealIntermedia": "10-10-10-10",
-        "linealLiviana": "12-12-12-12"
-      },
-      "observaciones": "Posicion de arranque: Brazos extendidos. Mantener todo el tiempo el peso del cuerpo sobre el asiento, no balanzearse y hacer el rango de movimiento completo",
-      "comoSeHace": "https://www.youtube.com/watch?v=Ks5KNBSmw6A"
+  {
+    "id": "1",
+    "nombre": "Curl de bíceps con barra Z en banco Scott",
+    "trenMotriz": "superior",
+    "grupoMuscular": "biceps",
+    "tiempo": {
+      "hipertrofiaInicial": "1-4-2-4",
+      "hipertrofia": "1-3-1-3",
+      "potencia": "1-2-1-2"
     },
-    {
-        "id": "2",
-        "nombre": "Curl alternado con mancuernas parado",
-        "trenMotriz": "superior",
-        "grupoMuscular": "biceps",
-        "tiempo": {
-          "hipertrofiaInicial": "1-4-2-4",
-          "hipertrofia": "1-3-1-3",
-          "potencia": "1-2-1-2"
-        },
-        "cargas": {
-          "pesado": "mas del 20% del peso corporal por mancuerna",
-          "moderado": "del 10% al 19% del peso corporal por mancuerna",
-          "liviano": "hasta el 9% del peso corporal por mancuerna"
-        },
-        "repeticiones": {
-          "decrecientePesada": "10-8-6-4",
-          "decrecienteIntermedia": "12-10-8-8",
-          "decrecienteLiviana": "15-12-10-10",
-          "linealPesada": "8-8-8-8",
-          "linealIntermedia": "10-10-10-10",
-          "linealLiviana": "12-12-12-12"
-        },
-        "observaciones": "Posicion de arranque: Erguido, brazos extendidos. Subir de a una mancuerna con la palma hacia arriba, no balanzearse y hacer el rango de movimiento completo",
-        "comoSeHace": "https://www.youtube.com/shorts/3AdTKHAbRns"
-      },
-      {
-        "id": "3",
-        "nombre": "Curl alternado martillo parado",
-        "trenMotriz": "superior",
-        "grupoMuscular": "biceps",
-        "tiempo": {
-          "hipertrofiaInicial": "1-4-2-4",
-          "hipertrofia": "1-3-1-3",
-          "potencia": "1-2-1-2"
-        },
-        "cargas": {
-          "pesado": "mas del 20% del peso corporal por mancuerna",
-          "moderado": "del 10% al 19% del peso corporal por mancuerna",
-          "liviano": "hasta el 9% del peso corporal por mancuerna"
-        },
-        "repeticiones": {
-          "decrecientePesada": "10-8-6-4",
-          "decrecienteIntermedia": "12-10-8-8",
-          "decrecienteLiviana": "15-12-10-10",
-          "linealPesada": "8-8-8-8",
-          "linealIntermedia": "10-10-10-10",
-          "linealLiviana": "12-12-12-12"
-        },
-        "observaciones": "Posicion de arranque: Erguido, brazos extendidos. Agarre de mancuerna con palma apuntando hacia el cuerpo. Subir de a una mancuerna sin rotar, no balanzearse y hacer el rango de movimiento completo",
-        "comoSeHace": "https://www.youtube.com/shorts/3AdTKHAbRns"
-      },
-      {
-        "id": "4",
-        "nombre": "Curl en banco inclinado con mancuernas",
-        "trenMotriz": "superior",
-        "grupoMuscular": "biceps",
-        "tiempo": {
-          "hipertrofiaInicial": "1-4-2-4",
-          "hipertrofia": "1-3-1-3",
-          "potencia": "1-2-1-2"
-        },
-        "cargas": {
-          "pesado": "mas del 15% del peso corporal por mancuerna",
-          "moderado": "del 7% al 14% del peso corporal por mancuerna",
-          "liviano": "hasta el 6% del peso corporal por mancuerna"
-        },
-        "repeticiones": {
-          "decrecientePesada": "10-8-6-4",
-          "decrecienteIntermedia": "12-10-8-8",
-          "decrecienteLiviana": "15-12-10-10",
-          "linealPesada": "8-8-8-8",
-          "linealIntermedia": "10-10-10-10",
-          "linealLiviana": "12-12-12-12"
-        },
-        "observaciones": "Posicion de arranque: Acostarse sobre el banco inclinado. Cerrar escápulas. Evitar que el hombro se adelante y evitar cerrar el menton contra el pecho",
-        "comoSeHace": "https://www.youtube.com/watch?v=ZY19YNmm7tQ"
-      },
-      {
-        "id": "5",
-        "nombre": "Curl de biceps en polea baja",
-        "trenMotriz": "superior",
-        "grupoMuscular": "biceps",
-        "tiempo": {
-          "hipertrofiaInicial": "1-4-2-4",
-          "hipertrofia": "1-3-1-3",
-          "potencia": "1-2-1-2"
-        },
-        "cargas": {
-          "pesado": "mas del 50% del peso corporal",
-          "moderado": "del 25% al 49% del peso corporal",
-          "liviano": "hasta el 24% del peso corporal"
-        },
-        "repeticiones": {
-          "decrecientePesada": "10-8-6-4",
-          "decrecienteIntermedia": "12-10-8-8",
-          "decrecienteLiviana": "15-12-10-10",
-          "linealPesada": "8-8-8-8",
-          "linealIntermedia": "10-10-10-10",
-          "linealLiviana": "12-12-12-12"
-        },
-        "observaciones": "Posicion de arranque: Codos pegados al cuerpo, manos en las cuerdas y concentrar el movimiento al máximo subiendo lentamente los brazos desde abajo. Hacer el recorrido completo. No balancearse",
-        "comoSeHace": "https://www.youtube.com/shorts/eqckDC1heYc"
-      },
-      {
-        "id": "6",
-        "nombre": "Curl concentrado con mancuerna",
-        "trenMotriz": "superior",
-        "grupoMuscular": "biceps",
-        "tiempo": {
-          "hipertrofiaInicial": "1-6-2-6",
-          "hipertrofia": "1-5-2-5",
-          "potencia": "1-2-1-2"
-        },
-        "cargas": {
-          "pesado": "mas del 15% del peso corporal por mancuerna",
-          "moderado": "del 7% al 14% del peso corporal por mancuerna",
-          "liviano": "hasta el 6% del peso corporal por mancuerna"
-        },
-        "repeticiones": {
-          "decrecientePesada": "10-8-6-4",
-          "decrecienteIntermedia": "12-10-8-8",
-          "decrecienteLiviana": "15-12-10-10",
-          "linealPesada": "8-8-8-8",
-          "linealIntermedia": "10-10-10-10",
-          "linealLiviana": "12-12-12-12"
-        },
-        "observaciones": "Posicion de arranque: Sentado en el banco. Apoyar el codo en la altura del abductor. Hacer fuerza hacia atras con el codo y llevar la mancuerna hacia arriba con la palma hacia arriba",
-        "comoSeHace": "https://www.youtube.com/shorts/NKehjTZEc7s"
-      }
+    "cargas": {
+      "pesado": "mas del 35% del peso corporal",
+      "moderado": "del 20% al 34% del peso corporal",
+      "liviano": "hasta el 19% del peso corporal"
+    },
+    "repeticiones": {
+      "decrecientePesada": "10-8-6-4",
+      "decrecienteIntermedia": "12-10-8-8",
+      "decrecienteLiviana": "15-12-10-10",
+      "linealPesada": "8-8-8-8",
+      "linealIntermedia": "10-10-10-10",
+      "linealLiviana": "12-12-12-12"
+    },
+    "observaciones": "Posicion de arranque: Brazos extendidos. Mantener todo el tiempo el peso del cuerpo sobre el asiento, no balanzearse y hacer el rango de movimiento completo",
+    "comoSeHace": "https://www.youtube.com/watch?v=Ks5KNBSmw6A"
+  },
+  {
+    "id": "2",
+    "nombre": "Curl alternado con mancuernas parado",
+    "trenMotriz": "superior",
+    "grupoMuscular": "biceps",
+    "tiempo": {
+      "hipertrofiaInicial": "1-4-2-4",
+      "hipertrofia": "1-3-1-3",
+      "potencia": "1-2-1-2"
+    },
+    "cargas": {
+      "pesado": "mas del 20% del peso corporal por mancuerna",
+      "moderado": "del 10% al 19% del peso corporal por mancuerna",
+      "liviano": "hasta el 9% del peso corporal por mancuerna"
+    },
+    "repeticiones": {
+      "decrecientePesada": "10-8-6-4",
+      "decrecienteIntermedia": "12-10-8-8",
+      "decrecienteLiviana": "15-12-10-10",
+      "linealPesada": "8-8-8-8",
+      "linealIntermedia": "10-10-10-10",
+      "linealLiviana": "12-12-12-12"
+    },
+    "observaciones": "Posicion de arranque: Erguido, brazos extendidos. Subir de a una mancuerna con la palma hacia arriba, no balanzearse y hacer el rango de movimiento completo",
+    "comoSeHace": "https://www.youtube.com/shorts/3AdTKHAbRns"
+  },
+  {
+    "id": "3",
+    "nombre": "Curl alternado martillo parado",
+    "trenMotriz": "superior",
+    "grupoMuscular": "biceps",
+    "tiempo": {
+      "hipertrofiaInicial": "1-4-2-4",
+      "hipertrofia": "1-3-1-3",
+      "potencia": "1-2-1-2"
+    },
+    "cargas": {
+      "pesado": "mas del 20% del peso corporal por mancuerna",
+      "moderado": "del 10% al 19% del peso corporal por mancuerna",
+      "liviano": "hasta el 9% del peso corporal por mancuerna"
+    },
+    "repeticiones": {
+      "decrecientePesada": "10-8-6-4",
+      "decrecienteIntermedia": "12-10-8-8",
+      "decrecienteLiviana": "15-12-10-10",
+      "linealPesada": "8-8-8-8",
+      "linealIntermedia": "10-10-10-10",
+      "linealLiviana": "12-12-12-12"
+    },
+    "observaciones": "Posicion de arranque: Erguido, brazos extendidos. Agarre de mancuerna con palma apuntando hacia el cuerpo. Subir de a una mancuerna sin rotar, no balanzearse y hacer el rango de movimiento completo",
+    "comoSeHace": "https://www.youtube.com/shorts/3AdTKHAbRns"
+  },
+  {
+    "id": "4",
+    "nombre": "Curl en banco inclinado con mancuernas",
+    "trenMotriz": "superior",
+    "grupoMuscular": "biceps",
+    "tiempo": {
+      "hipertrofiaInicial": "1-4-2-4",
+      "hipertrofia": "1-3-1-3",
+      "potencia": "1-2-1-2"
+    },
+    "cargas": {
+      "pesado": "mas del 15% del peso corporal por mancuerna",
+      "moderado": "del 7% al 14% del peso corporal por mancuerna",
+      "liviano": "hasta el 6% del peso corporal por mancuerna"
+    },
+    "repeticiones": {
+      "decrecientePesada": "10-8-6-4",
+      "decrecienteIntermedia": "12-10-8-8",
+      "decrecienteLiviana": "15-12-10-10",
+      "linealPesada": "8-8-8-8",
+      "linealIntermedia": "10-10-10-10",
+      "linealLiviana": "12-12-12-12"
+    },
+    "observaciones": "Posicion de arranque: Acostarse sobre el banco inclinado. Cerrar escápulas. Evitar que el hombro se adelante y evitar cerrar el menton contra el pecho",
+    "comoSeHace": "https://www.youtube.com/watch?v=ZY19YNmm7tQ"
+  },
+  {
+    "id": "5",
+    "nombre": "Curl de biceps en polea baja",
+    "trenMotriz": "superior",
+    "grupoMuscular": "biceps",
+    "tiempo": {
+      "hipertrofiaInicial": "1-4-2-4",
+      "hipertrofia": "1-3-1-3",
+      "potencia": "1-2-1-2"
+    },
+    "cargas": {
+      "pesado": "mas del 50% del peso corporal",
+      "moderado": "del 25% al 49% del peso corporal",
+      "liviano": "hasta el 24% del peso corporal"
+    },
+    "repeticiones": {
+      "decrecientePesada": "10-8-6-4",
+      "decrecienteIntermedia": "12-10-8-8",
+      "decrecienteLiviana": "15-12-10-10",
+      "linealPesada": "8-8-8-8",
+      "linealIntermedia": "10-10-10-10",
+      "linealLiviana": "12-12-12-12"
+    },
+    "observaciones": "Posicion de arranque: Codos pegados al cuerpo, manos en las cuerdas y concentrar el movimiento al máximo subiendo lentamente los brazos desde abajo. Hacer el recorrido completo. No balancearse",
+    "comoSeHace": "https://www.youtube.com/shorts/eqckDC1heYc"
+  },
+  {
+    "id": "6",
+    "nombre": "Curl concentrado con mancuerna",
+    "trenMotriz": "superior",
+    "grupoMuscular": "biceps",
+    "tiempo": {
+      "hipertrofiaInicial": "1-6-2-6",
+      "hipertrofia": "1-5-2-5",
+      "potencia": "1-2-1-2"
+    },
+    "cargas": {
+      "pesado": "mas del 15% del peso corporal por mancuerna",
+      "moderado": "del 7% al 14% del peso corporal por mancuerna",
+      "liviano": "hasta el 6% del peso corporal por mancuerna"
+    },
+    "repeticiones": {
+      "decrecientePesada": "10-8-6-4",
+      "decrecienteIntermedia": "12-10-8-8",
+      "decrecienteLiviana": "15-12-10-10",
+      "linealPesada": "8-8-8-8",
+      "linealIntermedia": "10-10-10-10",
+      "linealLiviana": "12-12-12-12"
+    },
+    "observaciones": "Posicion de arranque: Sentado en el banco. Apoyar el codo en la altura del abductor. Hacer fuerza hacia atras con el codo y llevar la mancuerna hacia arriba con la palma hacia arriba",
+    "comoSeHace": "https://www.youtube.com/shorts/NKehjTZEc7s"
+  }
 ]

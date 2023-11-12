@@ -130,33 +130,33 @@
     "observaciones": "Posicion de arranque: Sentado levemente inclinado hacia atras. Brazos flexionados, palmas apuntando hacia el pecho y mancuernas formando una linea trasversal. Subir abriendo los codos hacia los laterales",
     "comoSeHace": "https://www.youtube.com/watch?v=6zUrUsCa3KQ"
   },
- {
-  "id": "6",
-  "nombre": "Vuelo Frontal agarre prono",
-  "trenMotriz": "superior",
-  "grupoMuscular": "hombros",
-  "tiempo": {
-    "hipertrofiaInicial": "1-3-1-4",
-    "hipertrofia": "1-2-1-3",
-    "potencia": "0-1-0-2"
+  {
+    "id": "6",
+    "nombre": "Vuelo Frontal agarre prono",
+    "trenMotriz": "superior",
+    "grupoMuscular": "hombros",
+    "tiempo": {
+      "hipertrofiaInicial": "1-3-1-4",
+      "hipertrofia": "1-2-1-3",
+      "potencia": "0-1-0-2"
+    },
+    "cargas": {
+      "pesado": "mas del 25% del peso corporal por mancuerna",
+      "moderado": "del 10% al 24% del peso corporal por mancuerna",
+      "liviano": "hasta el 9% del peso corporal"
+    },
+    "repeticiones": {
+      "decrecientePesada": "10-8-6-4",
+      "decrecienteIntermedia": "12-10-8-8",
+      "decrecienteLiviana": "15-12-10-10",
+      "linealPesada": "8-8-8-8",
+      "linealIntermedia": "10-10-10-10",
+      "linealLiviana": "12-12-12-12"
+    },
+    "observaciones": "Posicion de arranque: Parado, brazos extendidos hacia abajo, subo con las palmas apuntando hacia abajo",
+    "comoSeHace": "https://www.youtube.com/shorts/nbNMK8ahVsk"
   },
-  "cargas": {
-    "pesado": "mas del 25% del peso corporal por mancuerna",
-    "moderado": "del 10% al 24% del peso corporal por mancuerna",
-    "liviano": "hasta el 9% del peso corporal"
-  },
-  "repeticiones": {
-    "decrecientePesada": "10-8-6-4",
-    "decrecienteIntermedia": "12-10-8-8",
-    "decrecienteLiviana": "15-12-10-10",
-    "linealPesada": "8-8-8-8",
-    "linealIntermedia": "10-10-10-10",
-    "linealLiviana": "12-12-12-12"
-  },
-  "observaciones": "Posicion de arranque: Parado, brazos extendidos hacia abajo, subo con las palmas apuntando hacia abajo",
-  "comoSeHace": "https://www.youtube.com/shorts/nbNMK8ahVsk"
-},
-{
+  {
     "id": "7",
     "nombre": "Vuelo lateral con polea a una mano",
     "trenMotriz": "superior",
@@ -234,5 +234,4 @@
     "observaciones": "Posicion de arranque: sentado, pecho apoyado sobre el respaldo mirando hacia la maquina, agarre con palmas hacia abajo llevar el peso hacia atras a la altura de los hombros",
     "comoSeHace": "https://www.youtube.com/shorts/vCEO78SpY9E"
   }
-
 ]

@@ -41,6 +41,13 @@
           min="0.80"
           max="3.0"
         />
+        <label for="">Indique con que género se autopercibe</label>
+        <select name="genero" id="genero">
+          <option value="1">Masculino</option>
+          <option value="2">Femenino</option>
+          <option value="3">Ninguno de los anteriores</option>
+        </select>
+        
         <p>
           A continuacion te haremos una serie de preguntas para poder darte la
           mejor rutina de ejercicios y plan nutricional que se adapte a tus
@@ -86,11 +93,11 @@
       </form>
     </div>
     <div id="contenedorMensaje"></div>
-    <script src="https://cdn.jsdelivr.net/npm/luxon@2.3.0/build/global/luxon.min.js"></script>
     <script src="../archivosJS/mockupUsuarios.js"></script>
     <script src="../archivosJS/funciones.js"></script>
     <script src="../clases/Usuario.js"></script>
     <script src="../clases/Entrenamiento.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="../archivosJS/mainCargaDeDatos.js"></script>
   </body>
 </html>

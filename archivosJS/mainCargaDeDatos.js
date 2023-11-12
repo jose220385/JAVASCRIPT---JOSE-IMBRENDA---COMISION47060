@@ -10,6 +10,7 @@ formularioUsuarioNuevo.addEventListener("submit", (e) => {
   const fechaNacimiento = document.getElementById("fechaNacimiento").value;
   const peso = document.getElementById("peso").value;
   const altura = document.getElementById("altura").value;
+  const genero = parseInt(document.getElementById("genero").value)
   const nuevoUsuario = new Usuario(
     DATOS_TEMPORALES.usuario,
     DATOS_TEMPORALES.contrasenia,
@@ -17,7 +18,8 @@ formularioUsuarioNuevo.addEventListener("submit", (e) => {
     DATOS_TEMPORALES.apellido,
     calcularEdad(fechaNacimiento),
     peso,
-    altura
+    altura,
+    genero
   );
   const objetivo = parseInt(
     document.getElementById("objetivosEntrenamiento").value
@@ -36,7 +38,7 @@ formularioUsuarioNuevo.addEventListener("submit", (e) => {
 
   console.log(nuevoUsuario);
 
-  usuarios.push(nuevoUsuario);
+  //usuarios.push(nuevoUsuario);
 
   registrarLogueo(nuevoUsuario);
 
@@ -54,7 +56,15 @@ formularioUsuarioNuevo.addEventListener("submit", (e) => {
     })
     .then((data) => {
         console.log(data)
-        window.location.href = "../index.html";
+        swal({
+            icon: "success",
+            text: `Ya hemos registrado tus datos ${DATOS_TEMPORALES.nombre}!! Podras acceder a tu rutina desde el menu principal!!`,
+            confirmButtonText: "ok",
+          })
+            .then((value) => {
+                window.location.href = "../index.html";
+            })
+        
     })
     .catch((error) => {
       console.log(error);
