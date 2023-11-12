@@ -1,7 +1,7 @@
 # JAVASCRIPT---JOSE-IMBRENDA---COMISION47060
 ## Titulo: "Sistema Interactivo de Personal Trainer"
 ## Informacion General: 
-Sistema interactivo donde el usuario pueda loguearse, ingresar valores y asi tener una rutina recomendada
+Sistema interactivo donde el usuario pueda loguearse, ingresar valores y asi tener una rutina recomendada (se deja preparado para una futura incorporacion de plan de alimentacion recomendado)
 ## Archivos: 
 El sistema se compone por los siguientes archivos 
 - index.html

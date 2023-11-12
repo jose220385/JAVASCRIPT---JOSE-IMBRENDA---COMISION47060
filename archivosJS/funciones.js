@@ -160,7 +160,7 @@ const renderizarTabla = (dataArenderizar, encabezados) => {
     });
     tabla.appendChild(fila);
   });
-  contenedorTabla.appendChild(tabla);
+  return tabla
 };
 
 //Funcion para renderizar la rutina por dia
@@ -178,10 +178,8 @@ const rutinaPorDia = async (
 ) => {
   const resp = await fetch(urlBase + endpoint);
   const data = await resp.json();
-  console.log(data);
   numerosAleatorios = numerosAleatoriosUnicos(cantidad, rangoMin, rangoMax);
   const pasarAString = numerosAleatorios.map((numero) => numero.toString());
-  console.log(pasarAString);
   let dataFiltrada = [];
   for (let i = 0; i < pasarAString.length; i++) {
     for (let j = 0; j < data.length; j++) {
@@ -190,7 +188,6 @@ const rutinaPorDia = async (
       }
     }
   }
-  console.log(dataFiltrada);
 
   dataArenderizar = dataFiltrada.map((dato) => {
     return {
@@ -202,8 +199,6 @@ const rutinaPorDia = async (
       comoSeHace: dato.comoSeHace,
     };
   });
-
-  console.log(dataArenderizar);
 
   const contenedorPadre = document.getElementById("nodoRutina");
   const contenedorTabla = document.createElement("div");
@@ -221,22 +216,43 @@ const rutinaPorDia = async (
     "Observaciones",
     "Como se hace",
   ];
+  contenedorTabla.appendChild (renderizarTabla(dataArenderizar, encabezados));
 
-  renderizarTabla(dataArenderizar, encabezados);
 };
 
-//Funcion que determina el tipo de entrenamiento y la dieta con restricciones
+// Funcion rutina segun genero
+
+const determinoGeneroYRutina = (genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones) =>{
+    let endPoints = [
+        "/pectorales.json",
+        "/hombros.json",
+        "/piernas.json",
+        "/espalda.json",
+        "/brazos.json",
+      ];
+    if(genero == 1){
+    diasDeLaSemana.forEach((dia, index) => {
+      rutinaPorDia(urlLocal,endPoints[index],6,1,10,tiempoDelEjercicio,carga,repeticiones,dia);
+    });
+  } else {
+      endPoints = [
+          "/piernas.json",
+          "/hombros.json",
+          "/espalda.json",
+          "/piernas.json",
+          "/brazos.json",
+        ];
+        rutinaPorDia(urlLocal,endPoints[index],6,1,10,tiempoDelEjercicio,carga,repeticiones,dia);
+  }
+}
+//Funcion que determina el tipo de entrenamiento
 const determinaTipoEntrenamiento = (tipoEntrenamiento) => {
   const nodoPadre = document.getElementsByTagName("body");
   const urlLocal = "../ejerciciosJSON";
   const diasDeLaSemana = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes"];
-  const endPoints = [
-    "/pectorales.json",
-    "/hombros.json",
-    "/piernas.json",
-    "/espalda.json",
-    "/brazos.json",
-  ];
+      let tiempoDelEjercicio 
+      let carga 
+      let repeticiones 
   switch (tipoEntrenamiento) {
     case "hipertrofiaavanzada":
       renderizarEncabezadoRutina(
@@ -244,23 +260,10 @@ const determinaTipoEntrenamiento = (tipoEntrenamiento) => {
         HIPERTROFIA_INTENSIVA,
         "Entrenamiento de Hipertrofia Avanzado"
       );
-      let tiempoDelEjercicio = "hipertrofia";
-      let carga = "pesado";
-      let repeticiones = "decrecientePesada";
-      diasDeLaSemana.forEach((dia, index) => {
-        rutinaPorDia(
-          urlLocal,
-          endPoints[index],
-          6,
-          1,
-          10,
-          tiempoDelEjercicio,
-          carga,
-          repeticiones,
-          dia
-        );
-      });
-      
+      tiempoDelEjercicio = "hipertrofia";
+      carga = "pesado";
+      repeticiones = "decrecientePesada";
+      determinoGeneroYRutina(usuario.genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones)
       break;
     case "hipertrofiaalta":
       renderizarEncabezadoRutina(
@@ -268,6 +271,10 @@ const determinaTipoEntrenamiento = (tipoEntrenamiento) => {
         HIPERTROFIA_ALTA,
         "Entrenamiento de Hipertrofia de alta exigencia"
       );
+      tiempoDelEjercicio = "hipertrofia";
+      carga = "pesado";
+      repeticiones = "decrecienteIntermedia";
+      determinoGeneroYRutina(usuario.genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones)
       break;
     case "hipertrofiamoderada":
       renderizarEncabezadoRutina(
@@ -275,13 +282,21 @@ const determinaTipoEntrenamiento = (tipoEntrenamiento) => {
         HIPERTROFIA_MODERADA,
         "Entrenamiento de Hipertrofia Moderado"
       );
+      tiempoDelEjercicio = "hipertrofia";
+      carga = "moderado";
+      repeticiones = "decrecienteIntermedia";
+      determinoGeneroYRutina(usuario.genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones)
       break;
     case "hipertrofiabaja":
       renderizarEncabezadoRutina(
         nodoPadre[0],
         HIPERTROFIA_BAJA,
         "Entrenamiento de Hipertrofia de baja exigencia"
-      );
+      )
+      tiempoDelEjercicio = "hipertrofiaInicial";
+      carga = "liviano";
+      repeticiones = "decrecienteLiviana";
+      determinoGeneroYRutina(usuario.genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones)
       break;
     case "tonificacionavanzada":
       renderizarEncabezadoRutina(
@@ -289,6 +304,10 @@ const determinaTipoEntrenamiento = (tipoEntrenamiento) => {
         TONIFICACION_INTENSIVA,
         "Entrenamiento de Tonificacion Intensivo"
       );
+      tiempoDelEjercicio = "potencia";
+      carga = "pesado";
+      repeticiones = "linealIntermedia";
+      determinoGeneroYRutina(usuario.genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones)
       break;
     case "tonificacionalta":
       renderizarEncabezadoRutina(
@@ -296,6 +315,10 @@ const determinaTipoEntrenamiento = (tipoEntrenamiento) => {
         TONIFICACION_ALTA,
         "Entrenamiento de Tonificacion de alta exigencia"
       );
+      tiempoDelEjercicio = "potencia";
+      carga = "pesado";
+      repeticiones = "linealLiviana";
+      determinoGeneroYRutina(usuario.genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones)
       break;
     case "tonificacionmoderada":
       renderizarEncabezadoRutina(
@@ -303,6 +326,10 @@ const determinaTipoEntrenamiento = (tipoEntrenamiento) => {
         TONIFICACION_MODERADA,
         "Entrenamiento de Tonificacion de exigencia moderada"
       );
+      tiempoDelEjercicio = "potencia";
+      carga = "moderado";
+      repeticiones = "linealLiviana";
+      determinoGeneroYRutina(usuario.genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones)
       break;
     case "tonificacionbaja":
       renderizarEncabezadoRutina(
@@ -310,6 +337,10 @@ const determinaTipoEntrenamiento = (tipoEntrenamiento) => {
         TONIFICACION_BAJA,
         "Entrenamiento de Tonificacion de baja exigencia"
       );
+      tiempoDelEjercicio = "potencia";
+      carga = "moderado";
+      repeticiones = "linealLiviana";
+      determinoGeneroYRutina(usuario.genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones)
       break;
     case "cardioavanzada":
       renderizarEncabezadoRutina(
@@ -317,6 +348,10 @@ const determinaTipoEntrenamiento = (tipoEntrenamiento) => {
         CARDIO_INTENSIVO,
         "Entrenamiento de Actividad Cardiovascular Intensiva"
       );
+      tiempoDelEjercicio = "potencia";
+      carga = "liviano";
+      repeticiones = "linealLiviana";
+      determinoGeneroYRutina(usuario.genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones)
       break;
     case "cardioalto":
       renderizarEncabezadoRutina(
@@ -324,6 +359,10 @@ const determinaTipoEntrenamiento = (tipoEntrenamiento) => {
         CARDIO_ALTO,
         "Entrenamiento de Actividad Cardiovascular de alta exigencia"
       );
+      tiempoDelEjercicio = "potencia";
+      carga = "moderado";
+      repeticiones = "linealLiviana";
+      determinoGeneroYRutina(usuario.genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones)
       break;
     case "cardiomoderado":
       renderizarEncabezadoRutina(
@@ -331,6 +370,10 @@ const determinaTipoEntrenamiento = (tipoEntrenamiento) => {
         CARDIO_MODERADO,
         "Entrenamiento de Actividad Cardiovascular de exigencia moderada"
       );
+      tiempoDelEjercicio = "potencia";
+      carga = "moderado";
+      repeticiones = "linealLiviana";
+      determinoGeneroYRutina(usuario.genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones)
       break;
     case "cardiobajo":
       renderizarEncabezadoRutina(
@@ -338,6 +381,10 @@ const determinaTipoEntrenamiento = (tipoEntrenamiento) => {
         CARDIO_BAJO,
         "Entrenamiento de Actividad Cardiovascular de baja exigencia"
       );
+      tiempoDelEjercicio = "potencia";
+      carga = "liviano";
+      repeticiones = "linealLiviana";
+      determinoGeneroYRutina(usuario.genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones)
       break;
     case "recreativoavanzada":
       renderizarEncabezadoRutina(
@@ -345,6 +392,10 @@ const determinaTipoEntrenamiento = (tipoEntrenamiento) => {
         RECREATIVO_INTENSO,
         "Entrenamiento de Actividad Recreativa Intensiva"
       );
+      tiempoDelEjercicio = "hipertrofiaInicial";
+      carga = "moderado";
+      repeticiones = "linealIntermedia";
+      determinoGeneroYRutina(usuario.genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones)
       break;
     case "recreativoalto":
       renderizarEncabezadoRutina(
@@ -352,6 +403,10 @@ const determinaTipoEntrenamiento = (tipoEntrenamiento) => {
         RECREATIVO_ALTO,
         "Entrenamiento de Actividad Recreativa de alta intensidad"
       );
+      tiempoDelEjercicio = "hipertrofiaInicial";
+      carga = "moderado";
+      repeticiones = "linealIntermedia";
+      determinoGeneroYRutina(usuario.genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones)
       break;
     case "recreativomoderado":
       renderizarEncabezadoRutina(
@@ -359,6 +414,10 @@ const determinaTipoEntrenamiento = (tipoEntrenamiento) => {
         RECREATIVO_MODERADO,
         "Entrenamiento de Actividad Recreativa de intensidad moderada"
       );
+      tiempoDelEjercicio = "hipertrofiaInicial";
+      carga = "liviano";
+      repeticiones = "linealIntermedia";
+      determinoGeneroYRutina(usuario.genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones)
       break;
     case "recreativobajo":
       renderizarEncabezadoRutina(
@@ -366,12 +425,10 @@ const determinaTipoEntrenamiento = (tipoEntrenamiento) => {
         RECREATIVO_BAJO,
         "Entrenamiento de Actividad Recreativa de baja intensidad"
       );
+      tiempoDelEjercicio = "hipertrofiaInicial";
+      carga = "liviano";
+      repeticiones = "linealIntermedia";
       break;
   }
 };
 
-//Funcion Renderizar Rutina
-
-/* const renderizarRutina(genero, objetivo, ) */
-
-const renderizarRutina = (nodo, genero, tipoEntrenamiento) => {};
