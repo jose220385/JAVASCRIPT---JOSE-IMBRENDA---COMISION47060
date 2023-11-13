@@ -229,7 +229,7 @@ const rutinaPorDia = async (
 
 // Funcion rutina segun genero
 
-const determinoGeneroYRutina = (genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones) =>{
+const determinoGeneroYRutina = (genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones,cantidadDeEjerciciosPorDia) =>{
     let endPoints = [
         "/pectorales.json",
         "/hombros.json",
@@ -239,7 +239,7 @@ const determinoGeneroYRutina = (genero,diasDeLaSemana,urlLocal,tiempoDelEjercici
       ];
     if(genero == 1){
     diasDeLaSemana.forEach((dia, index) => {
-      rutinaPorDia(urlLocal,endPoints[index],6,1,10,tiempoDelEjercicio,carga,repeticiones,dia);
+      rutinaPorDia(urlLocal,endPoints[index],cantidadDeEjerciciosPorDia,1,10,tiempoDelEjercicio,carga,repeticiones,dia);
     });
   } else {
       endPoints = [
@@ -249,9 +249,25 @@ const determinoGeneroYRutina = (genero,diasDeLaSemana,urlLocal,tiempoDelEjercici
           "/piernas.json",
           "/brazos.json",
         ];
-        rutinaPorDia(urlLocal,endPoints[index],6,1,10,tiempoDelEjercicio,carga,repeticiones,dia);
-  }
+        diasDeLaSemana.forEach((dia, index) => {   
+        rutinaPorDia(urlLocal,endPoints[index],cantidadDeEjerciciosPorDia,1,10,tiempoDelEjercicio,carga,repeticiones,dia);
+  })
 }
+}
+//Funcion para renderizar aerobico
+const renderizarEjerciciosAerobico = (nodoPadre,tiempo) => {
+    const NODO_CREADO = document.createElement("div");
+    NODO_CREADO.innerHTML = `<h3 id="tituloAerobico">Al finalizar cada dia de ejercicios realizar:</h3>                           
+                                <ul>
+                                <li>${tiempo} minutos de Cinta</li>
+                                <li>${tiempo} minutos de Bicicleta rigida</li>
+                                <li>${tiempo/2} minutos de salto de soga</li>
+                                </ul>`;
+    NODO_CREADO.className = "rutina";
+    NODO_CREADO.setAttribute("id", "nodoRutina");
+    nodoPadre.append(NODO_CREADO);
+  };
+
 //Funcion que determina el tipo de entrenamiento
 const determinaTipoEntrenamiento = (tipoEntrenamiento) => {
   const nodoPadre = document.getElementsByTagName("body");
@@ -260,6 +276,8 @@ const determinaTipoEntrenamiento = (tipoEntrenamiento) => {
       let tiempoDelEjercicio 
       let carga 
       let repeticiones 
+      let cantidadDeEjerciciosPorDia
+      let tiempoCardio
   switch (tipoEntrenamiento) {
     case "hipertrofiaavanzada":
       renderizarEncabezadoRutina(
@@ -270,7 +288,8 @@ const determinaTipoEntrenamiento = (tipoEntrenamiento) => {
       tiempoDelEjercicio = "hipertrofia";
       carga = "pesado";
       repeticiones = "decrecientePesada";
-      determinoGeneroYRutina(usuario.genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones)
+      cantidadDeEjerciciosPorDia = 6
+      determinoGeneroYRutina(usuario.genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones,cantidadDeEjerciciosPorDia)
       break;
     case "hipertrofiaalta":
       renderizarEncabezadoRutina(
@@ -281,7 +300,8 @@ const determinaTipoEntrenamiento = (tipoEntrenamiento) => {
       tiempoDelEjercicio = "hipertrofia";
       carga = "pesado";
       repeticiones = "decrecienteIntermedia";
-      determinoGeneroYRutina(usuario.genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones)
+      cantidadDeEjerciciosPorDia = 5
+      determinoGeneroYRutina(usuario.genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones,cantidadDeEjerciciosPorDia)
       break;
     case "hipertrofiamoderada":
       renderizarEncabezadoRutina(
@@ -292,7 +312,8 @@ const determinaTipoEntrenamiento = (tipoEntrenamiento) => {
       tiempoDelEjercicio = "hipertrofia";
       carga = "moderado";
       repeticiones = "decrecienteIntermedia";
-      determinoGeneroYRutina(usuario.genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones)
+      cantidadDeEjerciciosPorDia = 4
+      determinoGeneroYRutina(usuario.genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones,cantidadDeEjerciciosPorDia)
       break;
     case "hipertrofiabaja":
       renderizarEncabezadoRutina(
@@ -303,7 +324,8 @@ const determinaTipoEntrenamiento = (tipoEntrenamiento) => {
       tiempoDelEjercicio = "hipertrofiaInicial";
       carga = "liviano";
       repeticiones = "decrecienteLiviana";
-      determinoGeneroYRutina(usuario.genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones)
+      cantidadDeEjerciciosPorDia = 4
+      determinoGeneroYRutina(usuario.genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones,cantidadDeEjerciciosPorDia)
       break;
     case "tonificacionavanzada":
       renderizarEncabezadoRutina(
@@ -314,7 +336,8 @@ const determinaTipoEntrenamiento = (tipoEntrenamiento) => {
       tiempoDelEjercicio = "potencia";
       carga = "pesado";
       repeticiones = "linealIntermedia";
-      determinoGeneroYRutina(usuario.genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones)
+      cantidadDeEjerciciosPorDia = 6
+      determinoGeneroYRutina(usuario.genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones,cantidadDeEjerciciosPorDia)
       break;
     case "tonificacionalta":
       renderizarEncabezadoRutina(
@@ -325,7 +348,8 @@ const determinaTipoEntrenamiento = (tipoEntrenamiento) => {
       tiempoDelEjercicio = "potencia";
       carga = "pesado";
       repeticiones = "linealLiviana";
-      determinoGeneroYRutina(usuario.genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones)
+      cantidadDeEjerciciosPorDia = 5
+      determinoGeneroYRutina(usuario.genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones,cantidadDeEjerciciosPorDia)
       break;
     case "tonificacionmoderada":
       renderizarEncabezadoRutina(
@@ -336,7 +360,8 @@ const determinaTipoEntrenamiento = (tipoEntrenamiento) => {
       tiempoDelEjercicio = "potencia";
       carga = "moderado";
       repeticiones = "linealLiviana";
-      determinoGeneroYRutina(usuario.genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones)
+      cantidadDeEjerciciosPorDia = 4
+      determinoGeneroYRutina(usuario.genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones,cantidadDeEjerciciosPorDia)
       break;
     case "tonificacionbaja":
       renderizarEncabezadoRutina(
@@ -347,7 +372,8 @@ const determinaTipoEntrenamiento = (tipoEntrenamiento) => {
       tiempoDelEjercicio = "potencia";
       carga = "moderado";
       repeticiones = "linealLiviana";
-      determinoGeneroYRutina(usuario.genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones)
+      cantidadDeEjerciciosPorDia = 4
+      determinoGeneroYRutina(usuario.genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones,cantidadDeEjerciciosPorDia)
       break;
     case "cardioavanzada":
       renderizarEncabezadoRutina(
@@ -358,7 +384,10 @@ const determinaTipoEntrenamiento = (tipoEntrenamiento) => {
       tiempoDelEjercicio = "potencia";
       carga = "liviano";
       repeticiones = "linealLiviana";
-      determinoGeneroYRutina(usuario.genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones)
+      cantidadDeEjerciciosPorDia = 4
+      tiempoCardio = 40
+      determinoGeneroYRutina(usuario.genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones,cantidadDeEjerciciosPorDia)
+      renderizarEjerciciosAerobico(nodoPadre[0],tiempoCardio)
       break;
     case "cardioalto":
       renderizarEncabezadoRutina(
@@ -369,7 +398,10 @@ const determinaTipoEntrenamiento = (tipoEntrenamiento) => {
       tiempoDelEjercicio = "potencia";
       carga = "moderado";
       repeticiones = "linealLiviana";
-      determinoGeneroYRutina(usuario.genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones)
+      cantidadDeEjerciciosPorDia = 4
+      tiempoCardio = 30
+      determinoGeneroYRutina(usuario.genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones,cantidadDeEjerciciosPorDia)
+      renderizarEjerciciosAerobico(nodoPadre[0],tiempoCardio)
       break;
     case "cardiomoderado":
       renderizarEncabezadoRutina(
@@ -380,7 +412,10 @@ const determinaTipoEntrenamiento = (tipoEntrenamiento) => {
       tiempoDelEjercicio = "potencia";
       carga = "moderado";
       repeticiones = "linealLiviana";
-      determinoGeneroYRutina(usuario.genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones)
+      cantidadDeEjerciciosPorDia = 3
+      tiempoCardio = 24
+      determinoGeneroYRutina(usuario.genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones,cantidadDeEjerciciosPorDia)
+      renderizarEjerciciosAerobico(nodoPadre[0],tiempoCardio)
       break;
     case "cardiobajo":
       renderizarEncabezadoRutina(
@@ -391,7 +426,10 @@ const determinaTipoEntrenamiento = (tipoEntrenamiento) => {
       tiempoDelEjercicio = "potencia";
       carga = "liviano";
       repeticiones = "linealLiviana";
-      determinoGeneroYRutina(usuario.genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones)
+      cantidadDeEjerciciosPorDia = 3
+      tiempoCardio=20
+      determinoGeneroYRutina(usuario.genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones,cantidadDeEjerciciosPorDia)
+      renderizarEjerciciosAerobico(nodoPadre[0],tiempoCardio)
       break;
     case "recreativoavanzada":
       renderizarEncabezadoRutina(
@@ -402,7 +440,10 @@ const determinaTipoEntrenamiento = (tipoEntrenamiento) => {
       tiempoDelEjercicio = "hipertrofiaInicial";
       carga = "moderado";
       repeticiones = "linealIntermedia";
-      determinoGeneroYRutina(usuario.genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones)
+      cantidadDeEjerciciosPorDia = 5
+      tiempoCardio = 30
+      determinoGeneroYRutina(usuario.genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones,cantidadDeEjerciciosPorDia)
+      renderizarEjerciciosAerobico(nodoPadre[0],tiempoCardio)
       break;
     case "recreativoalto":
       renderizarEncabezadoRutina(
@@ -413,7 +454,10 @@ const determinaTipoEntrenamiento = (tipoEntrenamiento) => {
       tiempoDelEjercicio = "hipertrofiaInicial";
       carga = "moderado";
       repeticiones = "linealIntermedia";
-      determinoGeneroYRutina(usuario.genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones)
+      cantidadDeEjerciciosPorDia = 4
+      tiempoCardio = 24
+      determinoGeneroYRutina(usuario.genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones,cantidadDeEjerciciosPorDia)
+      renderizarEjerciciosAerobico(nodoPadre[0],tiempoCardio)
       break;
     case "recreativomoderado":
       renderizarEncabezadoRutina(
@@ -424,7 +468,10 @@ const determinaTipoEntrenamiento = (tipoEntrenamiento) => {
       tiempoDelEjercicio = "hipertrofiaInicial";
       carga = "liviano";
       repeticiones = "linealIntermedia";
-      determinoGeneroYRutina(usuario.genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones)
+      cantidadDeEjerciciosPorDia = 3
+      tiempoCardio = 20
+      determinoGeneroYRutina(usuario.genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones,cantidadDeEjerciciosPorDia)
+      renderizarEjerciciosAerobico(nodoPadre[0],tiempoCardio)
       break;
     case "recreativobajo":
       renderizarEncabezadoRutina(
@@ -435,7 +482,10 @@ const determinaTipoEntrenamiento = (tipoEntrenamiento) => {
       tiempoDelEjercicio = "hipertrofiaInicial";
       carga = "liviano";
       repeticiones = "linealIntermedia";
+      cantidadDeEjerciciosPorDia = 3
+      tiempoCardio = 16
+      determinoGeneroYRutina(usuario.genero,diasDeLaSemana,urlLocal,tiempoDelEjercicio,carga,repeticiones,cantidadDeEjerciciosPorDia)
+      renderizarEjerciciosAerobico(nodoPadre[0],tiempoCardio)
       break;
   }
-};
-
+}
